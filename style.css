@@ -1,14 +1,3 @@
-/* ─── FONT FALLBACK: Cormorant Garamond サイズ補正 ─── */
-/* Times New Roman を CG と同サイズにスケールし、フォント読み込み前後の見た目のジャンプを防ぐ */
-@font-face {
-  font-family: 'CG Fallback';
-  src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Times');
-  size-adjust: 83%;
-  ascent-override: 90%;
-  descent-override: 20%;
-  line-gap-override: 0%;
-}
-
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -17,37 +6,23 @@
   --gray: #999;
   --border: #e8e8e8;
   --bg: #fff;
-  --serif: 'Cormorant Garamond', 'CG Fallback', serif;
+  --serif: 'Cormorant Garamond', serif;
   --mincho: 'Zen Old Mincho', 'Noto Serif JP', serif;
   --sans: 'Noto Sans JP', sans-serif;
 }
 
-/* ⑤ 見出しを明朝体に — h1〜h4タグ＋主要クラスを統一 */
-h1, h2, h3, h4,
+/* ⑤ 見出しを明朝体に */
 .section-heading,
 .page-header-en,
-.page-header-ja,
 .access-title,
 .contact-title,
 .company-catch,
 .message-quote,
-.profile-en,
-.hero-catch,
-.service-title,
-.blog-title,
-.member-name,
-.card-title,
-.faq-q {
+.profile-en {
   font-family: var(--mincho);
-  font-weight: 400;
 }
 
-/* 本文・説明文はゴシック */
-p, li, span, td, th, label, input, textarea, select, button {
-  font-family: var(--sans);
-}
-
-html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--sans);
   font-weight: 300;
@@ -65,12 +40,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 28px 52px;
-  transition: box-shadow 0.15s;
-  transform: translateZ(0);
+  transition: background 0.15s, box-shadow 0.15s;
   will-change: transform;
-  isolation: isolate;
 }
-nav.on-hero { background: linear-gradient(rgba(0,0,0,0.28), transparent); box-shadow: none; }
+nav.on-hero { background: transparent; box-shadow: none; }
 nav.solid, nav.page-nav {
   background: rgba(255,255,255,0.97);
   box-shadow: 0 1px 0 var(--border);
@@ -84,12 +57,10 @@ nav.solid, nav.page-nav {
 }
 .nav-logo-mark {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 0.3em;
   color: inherit;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 nav.on-hero .nav-logo-mark { color: #fff; }
 nav.solid .nav-logo-mark,
@@ -102,42 +73,26 @@ nav.on-hero .nav-logo-sub { color: rgba(255,255,255,0.7); }
 nav.solid .nav-logo-sub,
 nav.page-nav .nav-logo-sub { color: var(--gray); }
 .nav-links {
-  position: absolute;
-  right: 52px;
-  top: 0;
-  bottom: 0;
   display: flex;
-  align-items: center;
-  gap: 36px;
+  gap: 40px;
   list-style: none;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
 }
 .nav-links a {
-  font-family: var(--sans);
+  font-family: var(--serif);
   font-size: 13px;
-  font-weight: 400;
   letter-spacing: 0.1em;
   text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  transition: none; /* transitionを完全に除去：ページ遷移時の中間状態フラッシュを防ぐ */
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
 }
-.nav-links a:active { color: inherit; }
-.nav-links a:focus,
-.nav-links a:focus-visible { outline: none; } /* クリック時フォーカスリングを非表示 */
-nav.on-hero .nav-links a { color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
+nav.on-hero .nav-links a { color: rgba(255,255,255,0.9); }
 nav.solid .nav-links a,
 nav.page-nav .nav-links a { color: var(--black); }
-nav.on-hero .nav-links a:hover { color: #fff; }
+nav.on-hero .nav-links a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.5); }
 nav.solid .nav-links a:hover,
-nav.page-nav .nav-links a:hover { color: var(--black); }
-nav.on-hero .nav-links a.active { color: #fff; }
-nav.solid .nav-links a.active,
-nav.page-nav .nav-links a.active { color: var(--black); }
+nav.page-nav .nav-links a:hover { color: var(--mid); border-bottom-color: var(--border); }
+.nav-links a.active { border-bottom-color: currentColor; }
 
 /* ─── PAGE HEADER ─── */
 .page-header {
@@ -211,28 +166,11 @@ nav.page-nav .nav-links a.active { color: var(--black); }
 @media (max-width: 860px) {
   .page-header { height: 60vw; min-height: 240px; }
   .page-header-img { height: 60vw; min-height: 240px; }
-  .page-header-bg { top: 0; bottom: 0; background-position: center 20%; transform: none !important; }
-  /* グラデーションを強化して文字を見えやすく */
-  .page-header-body { padding: 28px 24px 36px; background: linear-gradient(transparent 30%, rgba(0,0,0,0.68)); }
-  .page-header-en, .page-header-ja, .page-header-msg { text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
+  .page-header-bg { top: -20%; bottom: -20%; background-position: center center; transform: none !important; }
+  .page-header-body { padding: 28px 24px 36px; }
   .page-header-en { font-size: clamp(28px, 8vw, 44px); margin-bottom: 8px; }
   .page-header-ja { font-size: 10px; margin-bottom: 12px; }
   .page-header-msg { font-size: 12px; line-height: 1.9; }
-}
-
-/* ─── モバイル横向き（landscape）対応 ─── */
-@media (orientation: landscape) and (max-height: 560px) {
-  .page-header { height: 56vh; min-height: 200px; }
-  .page-header-img { height: 56vh; min-height: 200px; }
-  /* parallaxオフセットをリセット（横向きはmax-width:860pxが当たらない場合がある） */
-  .page-header-bg { top: 0 !important; bottom: 0 !important; transform: none !important; background-size: cover; }
-  .page-header-body {
-    padding: 16px 32px 24px;
-    background: linear-gradient(transparent 20%, rgba(0,0,0,0.72));
-  }
-  .page-header-en { font-size: clamp(20px, 5vh, 32px); margin-bottom: 4px; text-shadow: 0 1px 10px rgba(0,0,0,0.6); }
-  .page-header-ja { font-size: 9px; margin-bottom: 6px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
-  .page-header-msg { font-size: 11px; line-height: 1.7; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
 }
 
 /* ─── SECTION LABEL ─── */
@@ -529,9 +467,6 @@ footer {
   flex-direction: column;
   gap: 6px;
   z-index: 110;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
 }
 .nav-ham span {
   display: block;
@@ -586,9 +521,6 @@ nav.page-nav .nav-ham span { background: var(--black); }
   color: var(--black);
   cursor: pointer;
   line-height: 1;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  padding: 12px;
 }
 body.nav-open { overflow: hidden; }
 /* オーバーレイが開いているときはハンバーガーを無効化 */
@@ -601,11 +533,6 @@ body.nav-open .nav-ham { pointer-events: none; }
 /* ─── TOUCH DEVICE: ホバーエフェクト無効化 ─── */
 /* タッチデバイスではhoverが「貼り付いて」しまうため無効にする */
 @media (hover: none) {
-  /* ナビリンク：タッチ時のhover色変化を抑制 */
-  nav.on-hero .nav-links a:hover { color: rgba(255,255,255,0.75); }
-  nav.solid .nav-links a:hover,
-  nav.page-nav .nav-links a:hover { color: var(--mid); }
-  /* カード類 */
   .member-card:hover .member-photo { transform: none; filter: none; }
   .member-card:hover .member-name  { opacity: 1; }
   .blog-card:hover   .blog-thumb   { transform: none; filter: brightness(1); }
