@@ -22,15 +22,29 @@
   --sans: 'Noto Sans JP', sans-serif;
 }
 
-/* ⑤ 見出しを明朝体に */
+/* ⑤ 見出しを明朝体に — h1〜h4タグ＋主要クラスを統一 */
+h1, h2, h3, h4,
 .section-heading,
 .page-header-en,
+.page-header-ja,
 .access-title,
 .contact-title,
 .company-catch,
 .message-quote,
-.profile-en {
+.profile-en,
+.hero-catch,
+.service-title,
+.blog-title,
+.member-name,
+.card-title,
+.faq-q {
   font-family: var(--mincho);
+  font-weight: 400;
+}
+
+/* 本文・説明文はゴシック */
+p, li, span, td, th, label, input, textarea, select, button {
+  font-family: var(--sans);
 }
 
 html { scroll-behavior: smooth; scrollbar-gutter: stable; }
