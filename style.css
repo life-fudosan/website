@@ -57,7 +57,7 @@ nav.solid, nav.page-nav {
 }
 .nav-logo-mark {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 400;
   letter-spacing: 0.3em;
   color: inherit;
@@ -92,7 +92,7 @@ nav.page-nav .nav-links a { color: var(--black); }
 nav.on-hero .nav-links a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.5); }
 nav.solid .nav-links a:hover,
 nav.page-nav .nav-links a:hover { color: var(--mid); border-bottom-color: var(--border); }
-.nav-links a.active { border-bottom-color: currentColor; }
+.nav-links a.active { border-bottom: 2px solid var(--black); padding-bottom: 3px; }
 
 /* ─── PAGE HEADER ─── */
 .page-header {
