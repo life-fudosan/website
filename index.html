@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="センスある暮らしを、福岡から。LIFE株式会社は賃貸・売買・不動産福利厚生・テナント紹介・不動産管理を手がける福岡の不動産会社です。">
+  <title>LIFE株式会社 | 福岡の不動産</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Hero ── */
+    #hero { position: relative; height: 100vh; overflow: hidden; }
+    .hero-img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.82);
+      opacity: 0;
+      animation: heroReveal 1.4s ease 0.1s forwards;
+    }
+    @keyframes heroReveal { to { opacity: 1; } }
+    .hero-text {
+      position: absolute;
+      bottom: 150px; left: 64px;
+      opacity: 0; transform: translateY(16px);
+      animation: heroText 0.9s ease 0.4s forwards;
+    }
+    @keyframes heroText { to { opacity: 1; transform: translateY(0); } }
+    .hero-tag {
+      font-family: var(--serif); font-style: italic;
+      font-size: 10.5px; letter-spacing: 0.32em;
+      color: rgba(255,255,255,0.45);
+      display: block; margin-bottom: 14px;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    .hero-name {
+      font-family: var(--mincho);
+      font-size: clamp(24px, 3.2vw, 42px);
+      font-weight: 400; letter-spacing: 0.14em;
+      color: #fff; line-height: 1.55;
+      margin: 0; padding: 0;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+    }
+    .hero-catch {
+      margin: 20px 0 0 12px; padding: 0;
+      font-family: var(--mincho);
+      font-size: 15px; letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.7;
+      opacity: 0;
+      animation: heroText 0.8s ease 0.8s forwards;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+    .hero-scroll {
+      position: absolute; bottom: 40px; right: 52px;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      font-family: var(--serif); font-size: 10px; letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.45);
+      opacity: 0; animation: heroText 0.8s ease 1.2s forwards;
+    }
+    .hero-scroll::after {
+      content: ''; width: 1px; height: 48px; background: rgba(255,255,255,0.3);
+      animation: sl 2s ease-in-out 1.8s infinite;
+    }
+    @keyframes sl {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      49%  { transform: scaleY(1); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 0 48px; align-items: center;
+    }
+    .about-left { }
+    .about-en {
+      font-family: var(--serif); font-style: italic;
+      font-size: 11px; letter-spacing: 0.28em; color: var(--gray);
+      display: block;
+    }
+    .about-text {
+      font-family: var(--mincho);
+      font-size: clamp(15px, 1.6vw, 19px);
+      line-height: 2.2; color: var(--black);
+      letter-spacing: 0.06em;
+      border-left: 1px solid var(--border);
+      padding-left: 48px;
+    }
+
+    /* ── SERVICE LIST ── */
+    .service-section {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0 80px;
+    }
+    .service-head {
+      padding: 72px 0 40px;
+      display: flex; align-items: baseline; gap: 16px;
+    }
+    .service-head-en {
+      font-family: var(--serif); font-style: italic;
+      font-size: 11px; letter-spacing: 0.28em; color: var(--gray);
+    }
+    .service-head-ja { font-size: 11px; letter-spacing: 0.2em; color: var(--gray); }
+    .service-list { border-top: 1px solid var(--border); }
+    .service-list-item {
+      display: grid;
+      grid-template-columns: 56px 1fr auto auto;
+      align-items: center;
+      gap: 0 32px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none; color: inherit;
+      transition: opacity 0.2s;
+    }
+    .service-list-item:hover { opacity: 0.5; }
+    .sli-num {
+      font-family: var(--serif); font-style: italic;
+      font-size: 12px; color: var(--gray); letter-spacing: 0.08em;
+    }
+    .sli-name {
+      font-size: 17px; letter-spacing: 0.14em; font-weight: 400;
+    }
+    .sli-sub {
+      font-family: var(--serif); font-style: italic;
+      font-size: 11px; color: var(--gray); letter-spacing: 0.06em;
+    }
+    .sli-arrow {
+      font-size: 13px; color: var(--gray);
+      transition: transform 0.25s ease;
+    }
+    .service-list-item:hover .sli-arrow { transform: translateX(5px); }
+
+    /* ── FEE ── */
+    .fee-section {
+      border-bottom: 1px solid var(--border);
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .fee-en {
+      font-family: var(--serif); font-style: italic;
+      font-size: 10.5px; letter-spacing: 0.3em; color: var(--gray);
+      display: block; margin-bottom: 32px;
+    }
+    .fee-number-wrap {
+      display: inline-flex; align-items: flex-end; gap: 2px; line-height: 1;
+      margin-bottom: 8px;
+    }
+    .fee-num {
+      font-family: var(--mincho);
+      font-size: clamp(64px, 9vw, 112px);
+      font-weight: 400; color: var(--black); letter-spacing: -0.01em;
+    }
+    .fee-pct {
+      font-family: var(--mincho);
+      font-size: clamp(20px, 2.8vw, 36px);
+      font-weight: 400; color: var(--mid);
+      padding-bottom: 10px;
+    }
+    .fee-off {
+      font-size: 10px; letter-spacing: 0.45em; color: var(--gray);
+      display: block; margin-bottom: 28px;
+    }
+    .fee-text {
+      font-size: 12px; letter-spacing: 0.12em; line-height: 2.2; color: var(--mid);
+    }
+
+    /* ── CTA strip ── */
+    .cta-strip {
+      padding: 80px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .cta-strip-heading {
+      font-family: var(--mincho);
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 400; letter-spacing: 0.06em; line-height: 1.7;
+    }
+    .btn-line-cta {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      background:#06C755; color:#fff;
+      padding:16px 48px; font-size:13px; letter-spacing:0.15em;
+      text-decoration:none; transition:opacity 0.2s; flex-shrink:0;
+    }
+    .btn-line-cta:hover { opacity:0.8; }
+
+    @media (max-width: 960px) {
+      .hero-text { left: 32px; bottom: 60px; }
+      .about-section { padding: 64px 0; }
+      .about-inner { grid-template-columns: 1fr; gap: 20px; padding: 0 24px; }
+      .about-text { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 24px; text-align: center; }
+      .about-en { text-align: center; }
+      .service-section { padding: 0 32px; }
+      .service-head { padding: 56px 0 32px; }
+      .service-list-item { grid-template-columns: 36px 1fr auto; gap: 0 20px; }
+      .sli-sub { display: none; }
+      .fee-section { padding: 64px 24px; }
+      .cta-strip { flex-direction: column; gap: 28px; padding: 64px 32px; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .hero-text { left: 24px; bottom: 48px; }
+      .service-section { padding: 0 24px; }
+      .fee-section { padding: 56px 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="on-hero">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-mark">LIFE</span>
+    <span class="nav-logo-sub">不動産</span>
+  </a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<!-- HERO -->
+<section id="hero">
+  <img class="hero-img" src="office.jpg" alt="LIFE不動産" style="object-position: center bottom;">
+  <div class="hero-text">
+    <span class="hero-tag">Fukuoka Real Estate</span>
+    <p class="hero-name">住む場所に、</p>
+    <p class="hero-name">もっとわがままでいい。</p>
+    <p class="hero-catch">賃貸・売買・不動産福利厚生・不動産管理・テナント紹介</p>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-section fade">
+  <div class="about-inner">
+    <div class="about-left">
+      <span class="about-en">About LIFE</span>
+    </div>
+    <p class="about-text">毎日帰りたくなる場所を、一緒に探したい。<br>これから始まる暮らしの、ワクワクした第一歩を。</p>
+  </div>
+</div>
+
+<!-- SERVICE -->
+<div class="service-section">
+  <div class="service-head fade">
+    <span class="service-head-en">Service</span>
+    <span class="service-head-ja">サービス一覧</span>
+  </div>
+  <div class="service-list">
+    <a class="service-list-item fade" href="service-rental.html">
+      <span class="sli-num">01</span>
+      <span class="sli-name">賃貸</span>
+      <span class="sli-sub">Rental</span>
+      <span class="sli-arrow">→</span>
+    </a>
+    <a class="service-list-item fade" href="service-sale.html">
+      <span class="sli-num">02</span>
+      <span class="sli-name">売買</span>
+      <span class="sli-sub">Purchase &amp; Sale</span>
+      <span class="sli-arrow">→</span>
+    </a>
+    <a class="service-list-item fade" href="service-welfare.html">
+      <span class="sli-num">03</span>
+      <span class="sli-name">不動産福利厚生</span>
+      <span class="sli-sub">Employee Benefit</span>
+      <span class="sli-arrow">→</span>
+    </a>
+    <a class="service-list-item fade" href="service-tenant.html">
+      <span class="sli-num">04</span>
+      <span class="sli-name">テナント紹介</span>
+      <span class="sli-sub">Tenant</span>
+      <span class="sli-arrow">→</span>
+    </a>
+    <a class="service-list-item fade" href="service-management.html">
+      <span class="sli-num">05</span>
+      <span class="sli-name">不動産管理</span>
+      <span class="sli-sub">Management</span>
+      <span class="sli-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- FEE -->
+<div class="fee-section fade">
+  <span class="fee-en">Commission Fee</span>
+  <div class="fee-number-wrap">
+    <span class="fee-num" id="feeNum">0</span>
+    <span class="fee-pct">%</span>
+  </div>
+  <span class="fee-off">O F F</span>
+  <p class="fee-text">賃貸の仲介手数料を50%OFFでご提供しています。<br>少しでも余裕のある暮らしを届けたい、その想いから。</p>
+</div>
+
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">LIFE</span>
+      <p class="footer-tagline">センスある暮らしを、<br>福岡から。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">
+        〒812-0018<br>
+        福岡県福岡市住吉二丁目16番36号<br>
+        
+        
+        TEL：070-8333-8023<br>
+        MAIL：keiri@life-ec.info<br><br>
+        福岡県知事(1)20655<br>
+        (公社) 福岡県宅地建物取引業協会
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4); text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns">
+      <a href="#">Instagram</a>
+      <a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.7) {
+      nav.classList.remove('on-hero'); nav.classList.add('solid');
+    } else {
+      nav.classList.add('on-hero'); nav.classList.remove('solid');
+    }
+  });
+
+  // fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // count-up for fee number
+  const feeEl = document.getElementById('feeNum');
+  let counted = false;
+  const feeObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting && !counted) {
+        counted = true;
+        const target = 50;
+        const duration = 1200;
+        const start = performance.now();
+        function step(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // ease-out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          feeEl.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        feeObs.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  if (feeEl) feeObs.observe(feeEl.closest('.fee-section'));
+</script>
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+  LINE で相談
+</a>
+
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

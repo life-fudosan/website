@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="LIFE株式会社 早永 海槻のプロフィール。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早永 海槻 | LIFE株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh}
+    .profile-hero-img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+    .profile-hero-body{padding:140px 72px 80px;display:flex;flex-direction:column;justify-content:center}
+    .profile-back{font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.15em;color:var(--gray);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:64px;transition:opacity .2s}
+    .profile-back:hover{opacity:.5}
+    .profile-en{font-family:var(--mincho);font-size:clamp(28px,4vw,48px);font-weight:300;letter-spacing:.2em;line-height:1.2;margin-bottom:10px}
+    .profile-ja{font-size:14px;letter-spacing:.25em;color:var(--gray);margin-bottom:6px}
+    .profile-role{font-size:11px;letter-spacing:.2em;color:#bbb;margin-bottom:48px}
+    .profile-intro{font-size:13px;line-height:2.3;color:var(--mid);max-width:400px}
+    .message-section{padding:120px 80px 140px;max-width:800px;margin:0 auto}
+    .message-quote{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:300;line-height:1.8;letter-spacing:.05em;border-left:1px solid #ddd;padding-left:32px;margin-bottom:48px}
+    .message-text{font-size:13.5px;line-height:2.5;color:var(--mid)}
+    .hobby-section{padding:80px 140px 160px}
+    .hobby-section .sec-label{margin-bottom:48px}
+    .photo-editorial{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .pe-photo{overflow:hidden}
+    .pe-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .7s ease}
+    .pe-photo:hover img{transform:scale(1.03)}
+    .profile-nav{padding:60px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .profile-nav a{font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.15em;color:var(--gray);text-decoration:none;transition:color .2s}
+    .profile-nav a:hover{color:var(--black)}
+    @media(max-width:860px){
+      .profile-hero{grid-template-columns:1fr;min-height:auto}
+      .profile-hero-img{width:100%;height:90vw;max-height:580px;object-fit:cover;object-position:center 30%}
+      .profile-hero-body{padding:40px 24px 36px}
+      .profile-back{margin-bottom:24px}
+      .message-section{padding:56px 24px 72px}
+      .message-quote{font-size:20px;padding-left:20px}
+      .hobby-section{padding:56px 16px 80px}
+      .photo-editorial{grid-template-columns:repeat(3,1fr);gap:4px}
+      .profile-nav{padding:36px 24px}
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-mark">LIFE</span><span class="nav-logo-sub">不動産</span></a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<div class="profile-hero">
+  <img class="profile-hero-img" src="photo-hayanaga_fixed.jpg" alt="早永 海槻" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=900&auto=format&fit=crop&q=80'">
+  <div class="profile-hero-body fade">
+    <a class="profile-back" href="member.html">← Member</a>
+    <p class="profile-en">MIZUKI<br>HAYANAGA</p>
+    <p class="profile-ja">早永 海槻</p>
+    <p class="profile-role">ルームアシスタント</p>
+    <p class="profile-intro">宮崎出身。幼い頃の経験から、家が人にとっていかに大切な場所かを知り、不動産の世界へ。「売る」より「一緒に探す」スタンスで、お客様一人ひとりの「還れる場所」を見つけるお手伝いをしています。趣味は異国を旅して知らない土地や文化を肌で感じること、自然に触れること。</p>
+  </div>
+</div>
+
+<div class="message-section fade">
+  <div class="sec-label">
+    <span class="sec-num">01</span><span class="sec-line"></span><span class="sec-name">思い</span>
+  </div>
+  <p class="message-quote">家は、あなたが還る場所。</p>
+  <p class="message-text">幼い頃、父と母が必死に働いてつくり上げた家がありました。母が内装の一つひとつにこだわり、愛情を注いだその家は、道路拡張のため、ある日取り壊されることになりました。重機が壁を崩していくその瞬間、母は涙を流しながら見つめていました。私もその隣に立ちながら、家というものが単なる「建物」ではないことを、身をもって知りました。<br><br>もともと対人恐怖症だった私にとって、家は特別な場所でした。誰の目も声も気にしなくていい、ありのままの自分に還れる、唯一の場所。それを失ったとき、自分の「帰り場所」そのものを失った気がしました。<br><br>だから私は不動産の仕事を選びました。家を売るためではなく、あなたの「還れる場所」を一緒に探すために。内覧のとき、あなたがふっと肩の力を抜いた瞬間、「ここかもしれない」と感じる瞬間を、私は大切にしたいと思っています。家は住む人の数だけ、意味があります。あなたにとっての家が何なのかを、誰よりも真剣に考えられる仲介業者でありたい。それが、あの日涙を流した母への、私なりの答えです。</p>
+</div>
+
+<div class="hobby-section">
+  <div class="sec-label fade">
+    <span class="sec-num">02</span><span class="sec-line"></span><span class="sec-name">趣味・日常</span>
+  </div>
+  <div class="photo-editorial fade">
+    <div class="pe-photo"><img src="hayanaga/IMG_5907_Original.jpg" alt="タイ メークロン線路市場"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_4236_Original.jpg" alt="上海外灘夜景"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_1918_Original.jpg" alt="伏見稲荷 鳥居"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_5423_Original.jpg" alt="タイ水上マーケット"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_9132_preview.jpg" alt="モネの池"></div>
+    <div class="pe-photo"><img src="hayanaga/3F3DBE9D-87AA-4974-AF4F-6C1690992C34.JPG" alt="カヌー競技"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_8709_preview.jpg" alt="夕日と海"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_9499_preview.jpg" alt="機内から空と雲"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_2176.JPG" alt="光と影のインテリア"></div>
+  </div>
+</div>
+
+<div class="profile-nav">
+  <a href="member-takagi.html">← 高木 枝惟奈</a>
+  <a href="member-eto.html">江藤 愛 →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><span class="footer-logo">LIFE</span><p class="footer-tagline">センスある暮らしを、<br>福岡から。</p></div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li><li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

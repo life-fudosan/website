@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="はじめての賃貸契約でチェックすべき5つのポイント | LIFE株式会社ブログ">
+  <title>はじめての賃貸契約でチェックすべき5つのポイント | LIFE Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 60px 160px;
+    }
+
+    .article-back {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      transition: opacity 0.2s;
+    }
+    .article-back:hover { opacity: 0.5; }
+
+    /* ヘッダー */
+    .article-header { margin-bottom: 52px; }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .article-date {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+    }
+    .article-cat {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+    }
+    .article-title {
+      font-family: var(--mincho);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+    .article-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 56px;
+    }
+
+    /* 本文 */
+    .article-body { font-size: 14px; line-height: 2.6; color: var(--mid); }
+    .article-body p { margin-bottom: 28px; }
+    .article-body h2 {
+      font-family: var(--mincho);
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      margin: 52px 0 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body h3 {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      margin: 36px 0 14px;
+    }
+    .article-body img {
+      width: 100%;
+      margin: 32px 0;
+      display: block;
+    }
+    .article-body ul {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+    }
+    .article-body ul li {
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .article-body ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--border);
+      padding: 4px 0 4px 24px;
+      margin: 32px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* CTA */
+    .article-cta {
+      margin-top: 72px;
+      padding: 48px 40px;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .article-cta p { font-size: 13px; color: var(--mid); line-height: 2; margin-bottom: 24px; }
+
+    /* ナビ */
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .article-nav a {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-nav a:hover { color: var(--black); }
+
+    @media (max-width: 860px) {
+      .article-wrap { padding: 56px 20px 100px; }
+      .article-title { font-size: clamp(18px, 5.5vw, 26px); margin-bottom: 16px; }
+      .article-thumb { margin-bottom: 36px; }
+      .article-body { font-size: 13px; line-height: 2.4; }
+      .article-body h2 { font-size: 16px; margin: 40px 0 16px; }
+      .article-body h3 { font-size: 14px; margin: 28px 0 10px; }
+      .article-body p { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-mark">LIFE</span>
+    <span class="nav-logo-sub">不動産</span>
+  </a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<div class="article-wrap">
+  <a class="article-back" href="blog.html">← Blog 一覧へ</a>
+
+  <div class="article-header">
+    <div class="article-meta">
+      <span class="article-date">2024.06.01</span>
+      <span class="article-cat">お役立ち情報</span>
+    </div>
+    <h1 class="article-title">はじめての賃貸契約でチェックすべき5つのポイント</h1>
+  </div>
+
+  <img class="article-thumb"
+    src="https://images.unsplash.com/photo-1712232907812-4bd219a99a49?w=1200&auto=format&fit=crop&q=80"
+    alt="">
+
+  <div class="article-body">
+
+    <p>はじめて賃貸物件を借りる方にとって、契約書類は難解に感じることが多いです。でも、いくつかのポイントさえ押さえておけば、安心して契約に進むことができます。今回はLIFEスタッフが実際によく相談を受ける5つのポイントをご紹介します。</p>
+
+    <h2>01. 初期費用の内訳を確認する</h2>
+    <p>「家賃が安い」と思っていたのに、初期費用が高くて驚いた——そんなケースが少なくありません。初期費用には以下のものが含まれます。</p>
+    <ul>
+      <li>敷金（退去時に返還される場合あり）</li>
+      <li>礼金（返還されない）</li>
+      <li>仲介手数料（LIFEなら大幅割引可能）</li>
+      <li>前家賃・日割り家賃</li>
+      <li>火災保険料</li>
+    </ul>
+    <p>特に仲介手数料は交渉の余地がある場合もあります。LIFEでは福利厚生契約の方は最大無料になるケースもありますので、お気軽にご相談ください。</p>
+
+    <h2>02. 設備の状態を内見時に確認する</h2>
+    <p>エアコン・給湯器・水回りなど、設備の動作確認は内見時に行いましょう。「入居後に壊れていた」となっても、入居前からの故障か入居後の故障かの判断が難しくなります。</p>
+
+    <blockquote>気になった設備は写真に残しておくと、退去時のトラブル防止にもなります。</blockquote>
+
+    <h2>03. 騒音・生活音のチェック</h2>
+    <p>内見は昼間に行われることが多いですが、できれば夜や朝の時間帯にも周辺を歩いてみることをおすすめします。近くに幹線道路や飲食店があると、夜間の騒音が気になる場合もあります。</p>
+
+    <h2>04. 契約期間と更新条件を確認する</h2>
+    <p>通常の賃貸契約は2年更新ですが、「定期借家契約」の場合は更新ができない場合があります。契約期間と更新の可否、更新料の有無は必ず確認しましょう。</p>
+
+    <h2>05. 退去時の原状回復ルールを知る</h2>
+    <p>退去時に「修繕費を請求された」というトラブルは非常に多いです。国土交通省のガイドラインでは、通常の使用による劣化（経年変化）は貸主負担とされていますが、物件によって特約が設けられている場合もあります。契約書の「特約事項」は必ず目を通してください。</p>
+
+    <p>不明な点があればどんな些細なことでも遠慮なくLIFEにご相談ください。しつこい営業は一切しませんので、お気軽にLINEでご連絡いただければと思います。</p>
+
+  </div>
+
+  <div class="article-cta">
+    <p>お部屋探しのご相談、お気軽にどうぞ。<br>LINEは24時間365日受付中です。</p>
+    <a class="btn" href="contact.html">お問い合わせ</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="blog.html">← Blog 一覧へ戻る</a>
+    <a href="blog-002.html">次の記事 →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">LIFE</span>
+      <p class="footer-tagline">センスある暮らしを、<br>福岡から。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">
+        〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>
+        福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+
+
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

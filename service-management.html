@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="オーナー様の大切な資産を、誠実に・丁寧に管理します。LIFE株式会社の不動産管理サービス。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不動産管理 | LIFE株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .detail-wrap { max-width: 900px; margin: 0 auto; padding: 80px 60px 160px; }
+    .detail-section { margin-bottom: 80px; }
+    .detail-title {
+      font-family: var(--mincho); font-size: clamp(20px,2.5vw,28px); font-weight:400;
+      letter-spacing:0.08em; margin-bottom:32px; padding-bottom:18px;
+      border-bottom:1px solid var(--border); display:flex; align-items:center; gap:14px;
+    }
+    .detail-title::before { content:attr(data-num); font-family:var(--serif); font-style:italic; font-size:13px; color:var(--gray); }
+    .detail-text { font-size:13px; line-height:2.4; color:var(--mid); margin-bottom:16px; }
+    .detail-list { list-style:none; margin-top:12px; }
+    .detail-list li { font-size:13px; line-height:2.2; color:var(--mid); padding-left:18px; position:relative; }
+    .detail-list li::before { content:'—'; position:absolute; left:0; color:#ccc; }
+    .detail-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--border); margin-top:8px; }
+    .detail-card { background:#fff; padding:40px 36px; }
+    .detail-card-label { font-family:var(--serif); font-style:italic; font-size:11px; color:var(--gray); letter-spacing:0.15em; margin-bottom:12px; }
+    .detail-card-title { font-size:15px; font-weight:400; letter-spacing:0.1em; margin-bottom:10px; }
+    .detail-card-text { font-size:12.5px; line-height:2; color:var(--mid); }
+    .detail-cta { margin-top:80px; text-align:center; padding:64px; border:1px solid var(--border); }
+    .detail-cta h3 { font-family:var(--mincho); font-size:22px; margin-bottom:14px; }
+    .detail-cta p { font-size:13px; color:var(--mid); line-height:2; margin-bottom:32px; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; font-family:var(--serif); font-style:italic; font-size:12px; color:var(--gray); text-decoration:none; margin-bottom:56px; transition:opacity .2s; }
+    .back-link:hover { opacity:.5; }
+    .owner-banner {
+      border-left: 3px solid var(--black);
+      padding: 40px 48px; margin-bottom: 80px;
+      background: #fafafa;
+    }
+    .owner-banner-label { font-family:var(--serif); font-style:italic; font-size:11px; letter-spacing:0.25em; color:var(--gray); margin-bottom:16px; }
+    .owner-banner-title { font-family:var(--mincho); font-size:clamp(20px,2.5vw,28px); font-weight:400; letter-spacing:0.08em; color:var(--black); margin-bottom:20px; }
+    .owner-banner-text { font-size:13px; line-height:2.3; color:var(--mid); }
+    @media(max-width:860px){
+      .detail-wrap{padding:60px 24px 120px;}
+      .detail-grid{grid-template-columns:1fr;}
+      .detail-cta{padding:40px 24px;}
+      .owner-banner{padding:48px 24px;}
+    }
+    .btn-line-cta {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      background:#06C755; color:#fff;
+      padding:16px 48px; font-size:13px; letter-spacing:0.15em;
+      text-decoration:none; transition:opacity 0.2s;
+    }
+    .btn-line-cta:hover { opacity:0.8; }
+    /* 管理物件セクション */
+    .kanri-section { margin-bottom: 80px; }
+    .kanri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 8px;
+    }
+    .kanri-card { display: flex; flex-direction: column; }
+    .kanri-photo {
+      width: 100%; aspect-ratio: 4/3; overflow: hidden;
+      background: #f5f5f5;
+    }
+    .kanri-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.6s ease;
+    }
+    .kanri-card:hover .kanri-photo img { transform: scale(1.03); }
+    .kanri-name {
+      font-size: 13px; letter-spacing: 0.08em;
+      color: var(--black); padding: 16px 0 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    .kanri-type {
+      font-family: var(--serif); font-style: italic;
+      font-size: 11px; color: var(--gray); letter-spacing: 0.15em;
+      margin-top: 8px;
+    }
+    @media(max-width:860px){
+      .kanri-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-mark">LIFE</span><span class="nav-logo-sub">不動産</span></a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<div class="page-header">
+  <div class="page-header-bg" id="pageHeaderBg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="page-header-body">
+    <span class="page-header-en">Management</span>
+    <span class="page-header-ja">不動産管理</span>
+    <p class="page-header-msg">オーナー様の大切な資産を、誠実に・丁寧に管理します。</p>
+  </div>
+</div>
+
+<div class="detail-wrap">
+  <a class="back-link" href="service.html">← Service 一覧へ</a>
+
+  <div class="detail-section fade">
+    <h2 class="detail-title" data-num="01">LIFEの不動産管理サービスについて</h2>
+    <p class="detail-text">オーナー様にとって、不動産は大切な資産です。空室リスク・家賃滞納・建物の劣化・入居者トラブルなど、管理には多くの課題が伴います。LIFEは賃貸仲介で培ったノウハウをもとに、オーナー様が安心して資産を運用できる環境を整えるサポートをいたします。</p>
+    <p class="detail-text">「任せて安心」と言っていただけるよう、迅速な対応と丁寧なコミュニケーションを心がけています。まずはお気軽にご相談ください。</p>
+  </div>
+
+  <div class="owner-banner fade">
+    <p class="owner-banner-label">For Owner</p>
+    <p class="owner-banner-title">オーナー様の資産を、LIFEが守ります。</p>
+    <p class="owner-banner-text">空室が続いている・入居者とのやり取りが大変・修繕の手配が面倒——そんなお悩みをまるごとお引き受けします。煩わしい管理業務から解放され、本来の資産運用に集中していただけます。</p>
+  </div>
+
+  <div class="detail-section fade">
+    <h2 class="detail-title" data-num="02">サービス内容</h2>
+    <div class="detail-grid">
+      <div class="detail-card">
+        <p class="detail-card-label">Rent Management</p>
+        <p class="detail-card-title">賃貸管理・家賃集金</p>
+        <p class="detail-card-text">毎月の家賃集金・滞納管理・入退去時の手続きをすべて代行します。入居者の募集から退去精算まで、ワンストップで対応します。</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-card-label">Maintenance</p>
+        <p class="detail-card-title">建物メンテナンス・修繕対応</p>
+        <p class="detail-card-text">設備の不具合・経年劣化への対応、修繕業者の手配など、建物の維持管理をサポート。定期的な状態確認も行い、大きなトラブルを未然に防ぎます。</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-card-label">Tenant Support</p>
+        <p class="detail-card-title">入居者対応・クレーム対応</p>
+        <p class="detail-card-text">入居者からの問合せ・騒音や設備に関するクレームなど、オーナー様に代わって迅速に対応します。入居者との良好な関係構築もサポートします。</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-card-label">Vacancy Measures</p>
+        <p class="detail-card-title">空室対策・入居促進</p>
+        <p class="detail-card-text">空室が続く場合の原因分析・賃料見直しの提案・リフォームのご提案など、入居率を高めるための対策を一緒に考えます。SUUMO・HOMES等ポータルへの掲載も対応します。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-section kanri-section fade">
+    <h2 class="detail-title" data-num="03">管理物件</h2>
+    <div class="kanri-grid">
+      <div class="kanri-card">
+        <div class="kanri-photo">
+          <img src="kanri-1.jpg" alt="LIFE GRANDE HAKATA">
+        </div>
+        <p class="kanri-name">LIFE GRANDE HAKATA</p>
+        <p class="kanri-type">Residential</p>
+      </div>
+      <div class="kanri-card">
+        <div class="kanri-photo">
+          <img src="kanri-2.jpg" alt="androotsFOREST SQUARE">
+        </div>
+        <p class="kanri-name">androotsFOREST SQUARE</p>
+        <p class="kanri-type">Commercial</p>
+      </div>
+      <div class="kanri-card">
+        <div class="kanri-photo">
+          <img src="kanri-3.jpg" alt="清川プレイス">
+        </div>
+        <p class="kanri-name">清川プレイス</p>
+        <p class="kanri-type">Residential</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-cta fade">
+    <h3>まずはお気軽にご相談ください</h3>
+    <p>「うちの物件、管理してもらえる？」その一言から始められます。<br>LINEでのご相談は24時間365日受付中です。</p>
+    <a class="btn-line-cta" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+      LINEで相談する
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><span class="footer-logo">LIFE</span><p class="footer-tagline">センスある暮らしを、<br>福岡から。</p></div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+<script>
+  (function(){
+    var bg = document.getElementById('pageHeaderBg');
+    if(!bg) return;
+    if(window.innerWidth <= 860) return;
+    var leaving = false;
+    function update(){ if(leaving) return; bg.style.transform = 'translateY(' + (window.scrollY * 0.32) + 'px)'; }
+    window.addEventListener('scroll', update, {passive:true});
+    document.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', function(){ leaving = true; }); });
+  })();
+</script>
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

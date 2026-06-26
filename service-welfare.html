@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="会社も社員様も得をする不動産福利厚生サービス。仲介手数料最大70%OFFで従業員・ご家族まで利用可能。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不動産福利厚生サービス | LIFE株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .welfare-wrap { max-width: 1140px; margin: 0 auto; padding: 80px 52px 160px; }
+
+    /* ── LEAD ── */
+    .welfare-lead {
+      text-align: center;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 100px;
+    }
+    .welfare-lead-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gray);
+      border: 1px solid var(--border);
+      padding: 6px 18px;
+      margin-bottom: 28px;
+    }
+    .welfare-lead-title {
+      font-family: var(--mincho);
+      font-size: clamp(26px, 3.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .welfare-lead-sub {
+      font-size: 13px;
+      line-height: 2.2;
+      color: var(--mid);
+    }
+
+    /* ── FOR WHO ── */
+    .for-who {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .for-who-tag {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      color: var(--mid);
+    }
+
+    /* ── MERIT NUMBERS（フルブリード） ── */
+    .merit-nums-outer {
+      margin: 0 -52px 100px;  /* welfare-wrapのpaddingを打ち消して横幅いっぱいに */
+    }
+    .merit-nums {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .merit-num-card {
+      background: #fff;
+      padding: 60px 48px;
+      text-align: center;
+    }
+    .merit-num-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    .merit-num-val {
+      font-family: var(--mincho);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .merit-num-unit {
+      font-size: 13px;
+      color: var(--mid);
+      letter-spacing: 0.1em;
+    }
+    .merit-num-note {
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 12px;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+
+    /* ── SECTIONS ── */
+    .welfare-section { margin-bottom: 100px; }
+    .welfare-section-title {
+      font-family: var(--mincho);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .welfare-section-title::before {
+      content: attr(data-num);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* 従業員メリット */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .benefit-card {
+      background: #fff;
+      padding: 44px 40px;
+    }
+    .benefit-icon {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .benefit-title {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .benefit-num-big {
+      font-family: var(--mincho);
+      font-size: 40px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 16px 0 8px;
+    }
+    .benefit-text {
+      font-size: 12px;
+      line-height: 2;
+      color: var(--mid);
+    }
+
+    /* 会社メリット */
+    .company-merit {
+      background: #fff;
+      padding: 0;
+    }
+    .company-merit-title {
+      font-family: var(--mincho);
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-bottom: 48px;
+      color: var(--black);
+      line-height: 1.5;
+    }
+    .company-merit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .company-merit-item {
+      background: #fff;
+      padding: 40px 36px;
+    }
+    .company-merit-num {
+      font-family: var(--serif); font-style: italic;
+      font-size: 44px; line-height: 1;
+      color: #e8e8e8;
+      display: block; margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .company-merit-label {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--black);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .company-merit-text {
+      font-size: 12.5px;
+      line-height: 2.1;
+      color: var(--mid);
+    }
+    .company-merit-note {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--gray);
+      line-height: 2;
+    }
+
+    /* FLOW */
+    .welfare-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .welfare-flow::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: var(--border);
+    }
+    .flow-item { text-align: center; padding: 0 16px; }
+    .flow-num {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      background: #fff;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gray);
+      position: relative;
+      z-index: 1;
+    }
+    .flow-title { font-size: 13px; letter-spacing: 0.1em; margin-bottom: 10px; }
+    .flow-desc { font-size: 11px; line-height: 1.9; color: var(--gray); }
+
+    /* ── MECHANISM ── */
+    .mechanism-section { margin-bottom: 100px; }
+    .mechanism-section .welfare-section-title {
+      font-family: var(--mincho); font-size: clamp(20px,2.5vw,28px); font-weight:400;
+      letter-spacing:0.08em; margin-bottom:48px; padding-bottom:20px;
+      border-bottom:1px solid var(--border); display:flex; align-items:center; gap:16px;
+    }
+    .mechanism-section .welfare-section-title::before {
+      content: attr(data-num); font-family:var(--serif); font-style:italic; font-size:13px; color:var(--gray);
+    }
+
+    /* ── 比較バナー（新） ── */
+    .mech-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      margin-bottom: 56px;
+    }
+    .mech-col { padding: 52px 48px; position: relative; }
+    .mech-col.usual { background: #f7f7f7; }
+    .mech-col.life { background: var(--black); color: #fff; }
+    .mech-col-label {
+      font-family: var(--serif); font-style: italic;
+      font-size: 11px; letter-spacing: 0.2em; color: var(--gray);
+      margin-bottom: 24px; display: block;
+    }
+    .mech-col.life .mech-col-label { color: rgba(255,255,255,0.4); }
+    .mech-fee {
+      font-family: var(--mincho);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400; line-height: 1.1;
+      color: var(--black); margin-bottom: 12px;
+    }
+    .mech-col.life .mech-fee { color: #fff; }
+    .mech-fee-sub {
+      font-size: 12.5px; color: var(--mid); line-height: 1.8;
+      letter-spacing: 0.05em;
+    }
+    .mech-col.life .mech-fee-sub { color: rgba(255,255,255,0.5); }
+
+    /* ── 仕組み図（新） ── */
+    .mech-diagram {
+      display: grid;
+      grid-template-columns: 1fr 88px 1fr 88px 1fr;
+      align-items: center;
+      margin-bottom: 40px;
+      gap: 0;
+    }
+    .mech-box {
+      border: 1px solid var(--border);
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .mech-box.is-center {
+      background: #3a3a3a; border-color: #3a3a3a;
+    }
+    .mech-box-role {
+      font-family: var(--serif); font-style: italic;
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gray);
+      margin-bottom: 10px; display: block;
+    }
+    .mech-box.is-center .mech-box-role { color: rgba(255,255,255,0.35); }
+    .mech-box-name {
+      font-size: 15px; letter-spacing: 0.1em; font-weight: 400;
+      color: var(--black); line-height: 1.6;
+    }
+    .mech-box.is-center .mech-box-name { color: #fff; }
+    .mech-box-sub {
+      font-size: 11px; color: var(--mid); margin-top: 6px; line-height: 1.7;
+    }
+    .mech-box.is-center .mech-box-sub { color: rgba(255,255,255,0.45); }
+
+    .mech-conn {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 6px; padding: 0 4px;
+    }
+    .mech-conn-label {
+      font-size: 10px; color: var(--gray); letter-spacing: 0.1em; text-align: center;
+      line-height: 1.5;
+    }
+    .mech-conn-arrow {
+      width: 100%; height: 1px; background: #ccc; position: relative;
+    }
+    .mech-conn-arrow::after {
+      content: ''; position: absolute; right: -1px; top: -4px;
+      border: 4px solid transparent; border-left: 7px solid #ccc;
+    }
+    .mech-conn-value {
+      font-size: 11px; font-weight: 500; color: var(--black);
+      text-align: center; letter-spacing: 0.05em; line-height: 1.5;
+    }
+
+    .mech-note {
+      font-size: 11.5px; color: var(--mid); line-height: 2.1;
+      padding: 24px 28px; border-left: 3px solid var(--border);
+      background: #fafafa; letter-spacing: 0.04em;
+    }
+
+    @media(max-width:860px) {
+      .mech-compare { grid-template-columns: 1fr; }
+      .mech-vs-badge { top: auto; right: 50%; bottom: -20px; transform: translateX(50%); }
+      .mech-col { padding: 28px 20px; }
+      /* 仕組み図を縦並びフローに */
+      .mech-diagram {
+        display: flex; flex-direction: column; align-items: stretch; gap: 0;
+      }
+      .mech-box { padding: 20px 20px; }
+      .mech-conn {
+        flex-direction: column; align-items: center;
+        padding: 4px 0; gap: 4px; min-height: 56px;
+      }
+      .mech-conn-label { font-size: 10px; text-align: center; }
+      .mech-conn-arrow { width: 1px; height: 28px; background: #ccc; }
+      .mech-conn-arrow::after {
+        right: auto; left: -4px;
+        top: auto; bottom: -1px;
+        border: 4px solid transparent;
+        border-top: 7px solid #ccc;
+      }
+    }
+
+    /* CTA */
+    .welfare-cta {
+      margin-top: 100px;
+      text-align: center;
+      padding: 80px 60px;
+      border: 1px solid var(--border);
+    }
+    .welfare-cta-title {
+      font-family: var(--mincho);
+      font-size: clamp(18px, 2vw, 26px);
+      margin-bottom: 16px;
+    }
+    .welfare-cta-text { font-size: 13px; color: var(--mid); line-height: 2; margin-bottom: 36px; }
+
+    @media (max-width: 860px) {
+      .welfare-wrap { padding: 48px 20px 100px; }
+      .welfare-section { margin-bottom: 64px; }
+      .mechanism-section { margin-bottom: 64px; }
+      .sim-section { margin-bottom: 64px; }
+      .service-3 { margin-bottom: 64px; }
+      .welfare-lead { padding-bottom: 44px; margin-bottom: 64px; }
+      .welfare-lead-title { font-size: clamp(22px, 6vw, 30px); }
+      .welfare-lead-sub br { display: none; }
+      .welfare-section-title { font-size: 18px; margin-bottom: 28px; padding-bottom: 14px; }
+
+      /* merit-nums: 横スクロールで3枚並列表示 */
+      .merit-nums-outer { margin: 0 -20px 64px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .merit-nums-outer::-webkit-scrollbar { display: none; }
+      /* width:max-contentでgrid背景がカード外にはみ出すのを防ぐ */
+      .merit-nums { grid-template-columns: repeat(3, 210px); width: max-content; gap: 2px; }
+      .merit-num-card { padding: 28px 20px; }
+      .merit-num-val { font-size: clamp(28px, 7vw, 40px) !important; white-space: nowrap; }
+      .merit-num-note { font-size: 10px; margin-top: 8px; }
+
+      /* benefit-grid */
+      .benefit-grid { grid-template-columns: 1fr; }
+      .benefit-card { padding: 28px 20px; }
+      .benefit-num-big { font-size: 32px !important; }
+
+      /* company-merit */
+      .company-merit { padding: 0; }
+      .company-merit-title { font-size: 18px; margin-bottom: 28px; }
+      .company-merit-grid { grid-template-columns: 1fr; gap: 2px; }
+      .company-merit-item { padding: 28px 20px; }
+
+      /* flow */
+      .welfare-flow { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .welfare-flow::before { display: none; }
+
+      .welfare-cta { padding: 40px 20px; }
+    }
+
+    /* ── 横向きモバイル対応 ── */
+    @media (orientation: landscape) and (max-height: 560px) {
+      .welfare-wrap { padding: 32px 32px 80px; }
+      .mech-col { padding: 20px 28px; }
+      .mech-fee { font-size: clamp(18px, 4vh, 28px); margin-bottom: 6px; }
+      .mech-fee-sub { font-size: 11px; line-height: 1.6; }
+      .mech-col-label { margin-bottom: 10px; font-size: 10px; }
+      .mech-compare { margin-bottom: 28px; }
+      .mech-diagram { grid-template-columns: 1fr; gap: 8px; }
+      .mech-conn { flex-direction: row; }
+      .mech-conn-arrow { width: 28px; }
+      .merit-nums { grid-template-columns: repeat(3, 1fr); }
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+      .company-merit-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .welfare-flow { grid-template-columns: repeat(3, 1fr); }
+      .welfare-flow::before { display: none; }
+      .welfare-cta { padding: 32px 24px; }
+      .service-3-grid { grid-template-columns: repeat(3, 1fr); }
+      .service-3-card { padding: 24px 20px; }
+    }
+    .btn-line-cta {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      background:#06C755; color:#fff;
+      padding:16px 48px; font-size:13px; letter-spacing:0.15em;
+      text-decoration:none; transition:opacity 0.2s;
+    }
+    .btn-line-cta:hover { opacity:0.8; }
+
+    /* ── 3サービス ── */
+    .service-3 { margin-bottom: 100px; }
+    .service-3-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); }
+    .service-3-card { background:#fff; padding:44px 36px; }
+    .service-3-num { font-family:var(--serif); font-style:italic; font-size:32px; color:#e8e8e8; line-height:1; margin-bottom:20px; display:block; letter-spacing:-0.02em; }
+    .service-3-title { font-size:16px; letter-spacing:0.12em; font-weight:400; margin-bottom:10px; }
+    .service-3-sub { font-family:var(--serif); font-style:italic; font-size:11px; color:var(--gray); letter-spacing:0.15em; margin-bottom:16px; }
+    .service-3-text { font-size:12px; line-height:2.1; color:var(--mid); }
+    @media(max-width:860px){
+      .service-3-grid { grid-template-columns:1fr; }
+      .service-3-card { padding: 28px 20px; }
+    }
+
+    /* ── 数字バッジ ── */
+    .num-badge { display:inline-block; background:var(--black); color:#fff; font-family:var(--mincho); font-size:clamp(22px,3vw,34px); padding:8px 20px; line-height:1.2; margin:12px 0 6px; }
+    .num-badge-note { font-size:11px; color:var(--gray); line-height:1.8; margin-top:4px; }
+
+    /* ── 具体例シミュレーション ── */
+    .sim-section { margin-bottom: 100px; }
+    .sim-condition {
+      background: #f7f7f7;
+      padding: 20px 32px;
+      margin-bottom: 32px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .sim-condition-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      flex-shrink: 0;
+    }
+    .sim-condition-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sim-condition-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 50%;
+    }
+    .sim-cols {
+      display: grid;
+      grid-template-columns: 11fr 9fr; /* 社員様側を少し広く */
+      gap: 3px;
+      background: var(--border);
+    }
+    .sim-col {
+      background: #fff;
+      padding: 52px 52px 56px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sim-col:first-child {
+      background: #fff;
+    }
+    .sim-col:last-child {
+      background: #fafafa;
+    }
+    .sim-col-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sim-col-for {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #fff;
+      background: var(--black);
+      padding: 5px 14px;
+    }
+    .sim-col:last-child .sim-col-for {
+      background: var(--mid);
+    }
+    .sim-col-title {
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+    .sim-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 36px;
+    }
+    .sim-step {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 8px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .sim-step-label {
+      font-size: 12px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+    }
+    .sim-step-val {
+      font-family: var(--mincho);
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      white-space: nowrap;
+    }
+    .sim-result {
+      background: #fff;
+      border: 1px solid var(--black);
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: auto; /* ステップ数が違っても結果ボックスを下に揃える */
+    }
+    .sim-result-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+    }
+    .sim-result-val {
+      font-family: var(--mincho);
+      font-size: clamp(30px, 3.5vw, 44px);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--black);
+    }
+    .sim-result-sub {
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+    .sim-note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--gray);
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
+    /* モバイル専用：シミュレーション結果まとめカード */
+    .sim-summary-mobile { display: none; }
+    @media(max-width:860px){
+      .sim-summary-mobile {
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: 2px; background: var(--border);
+        margin-bottom: 20px;
+      }
+      .ssm-item {
+        background: #fff; color: var(--black);
+        border: 1px solid var(--black);
+        padding: 24px 16px; display: flex; flex-direction: column; gap: 4px;
+      }
+      .ssm-label { font-size: 10px; letter-spacing: 0.14em; color: var(--gray); }
+      .ssm-val { font-family: var(--mincho); font-size: 24px; line-height: 1.2; letter-spacing: -0.01em; color: var(--black); }
+      .ssm-val small { font-size: 12px; }
+      .ssm-sub { font-size: 10px; color: var(--gray); margin-top: 2px; }
+    }
+    @media(max-width:860px){
+      .sim-cols { grid-template-columns: 1fr; }
+      .sim-col { padding: 28px 20px 32px; }
+      .sim-result { padding: 28px 24px; }
+      .sim-result-val { font-size: clamp(34px, 9vw, 44px); }
+      .sim-steps { margin-bottom: 20px; }
+      .sim-note { margin-top: 12px; font-size: 10.5px; }
+      .sim-condition { padding: 14px 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
+      .sim-condition-label { margin-bottom: 4px; }
+      .sim-col-head { margin-bottom: 20px; padding-bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-mark">LIFE</span>
+    <span class="nav-logo-sub">不動産</span>
+  </a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<div class="page-header">
+  <div class="page-header-bg" id="pageHeaderBg" style="background-image:url('https://images.unsplash.com/photo-1561362681-a3585e07c8b0?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="page-header-body">
+    <span class="page-header-en">Employee Benefit</span>
+    <span class="page-header-ja">不動産福利厚生サービス</span>
+    <p class="page-header-msg">会社も社員様も、両方が得をする。<br>新しい福利厚生のかたち。</p>
+  </div>
+</div>
+
+<div class="welfare-wrap">
+
+  <!-- LEAD -->
+  <div class="welfare-lead fade">
+    <p class="welfare-lead-tag">導入費・月額費用ゼロ</p>
+    <h2 class="welfare-lead-title">会社も社員様も、<br>費用ゼロで得をする。</h2>
+    <p class="welfare-lead-sub">
+      仲介手数料の大幅割引と借り上げ社宅の導入支援を、企業にも社員様にも<br>
+      一切費用をかけずに提供する、新しい福利厚生のかたちです。
+    </p>
+    <div class="for-who">
+      <span class="for-who-tag">経営者の方</span>
+      <span class="for-who-tag">総務・人事担当者の方</span>
+      <span class="for-who-tag">採用強化を考えている方</span>
+    </div>
+  </div>
+
+  <!-- NUMBERS -->
+  <div class="merit-nums-outer">
+    <div class="merit-nums fade">
+      <div class="merit-num-card">
+        <p class="merit-num-label">AD物件 仲介手数料</p>
+        <p class="merit-num-val">無料</p>
+        <p class="merit-num-unit">最大 70% OFF</p>
+        <p class="merit-num-note">※AD対象外物件は家賃の30%（通常比70%OFF）</p>
+      </div>
+      <div class="merit-num-card">
+        <p class="merit-num-label">社員様へのメリット</p>
+        <p class="merit-num-val" style="font-size:clamp(28px,3.5vw,44px); letter-spacing:0.04em;">手取りUP</p>
+        <p class="merit-num-unit">給与変更ゼロで実現</p>
+        <p class="merit-num-note">振り込み方法を変えるだけ。詳細は具体例セクションへ。</p>
+      </div>
+      <div class="merit-num-card">
+        <p class="merit-num-label">会社へのメリット</p>
+        <p class="merit-num-val" style="font-size:clamp(28px,3.5vw,44px); letter-spacing:0.04em;">社保削減</p>
+        <p class="merit-num-unit">費用ゼロ・工数ゼロで実現</p>
+        <p class="merit-num-note">社員数が増えるほど削減効果が拡大します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3つのサービス -->
+  <div class="welfare-section service-3 fade">
+    <h2 class="welfare-section-title" data-num="01">3つのサービス</h2>
+    <div class="service-3-grid">
+      <div class="service-3-card">
+        <span class="service-3-num">01</span>
+        <p class="service-3-title">お部屋を探す</p>
+        <p class="service-3-sub">Room Search</p>
+        <p class="service-3-text">AD物件は仲介手数料無料、最大70%OFF。センスある物件の中から、社員様のライフスタイルに合ったお部屋をご提案します。</p>
+      </div>
+      <div class="service-3-card">
+        <span class="service-3-num">02</span>
+        <p class="service-3-title">借り上げ社宅制度を導入する</p>
+        <p class="service-3-sub">Company Housing</p>
+        <p class="service-3-text">管理規程の雛形を無料でご提供。制度を活用することで、会社の社会保険料負担が削減され、社員様の手取りが自然に増えます。</p>
+      </div>
+      <div class="service-3-card">
+        <span class="service-3-num">03</span>
+        <p class="service-3-title">契約手続きを代行する</p>
+        <p class="service-3-sub">Contract Support</p>
+        <p class="service-3-text">LINEで申し込みから入居まで一貫対応。社員様とLIFEが直接やり取りするので、担当者の工数はほぼゼロです。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 社員様メリット -->
+  <div class="welfare-section fade">
+    <h2 class="welfare-section-title" data-num="02">社員様へのメリット</h2>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <p class="benefit-icon">Rental</p>
+        <p class="benefit-title">賃貸のお部屋探し</p>
+        <p class="benefit-num-big">無料〜70%<span style="font-size:0.5em;">OFF</span></p>
+        <p class="benefit-text">AD物件は仲介手数料が完全無料。AD非対象の物件も最大70%OFFでご提供します。センスある物件を、よりお得に。</p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-icon">Company Housing</p>
+        <p class="benefit-title">手取りが実質増える</p>
+        <p class="benefit-num-big" style="font-size:24px; line-height:1.5;">給与ゼロ変更で<br>手取りUP</p>
+        <p class="benefit-text">借り上げ社宅制度を活用するだけで、課税対象の標準報酬月額が下がり、社会保険料と税負担が軽減されます。給与を一切変えずに実質的な待遇改善が実現します。</p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-icon">Purchase</p>
+        <p class="benefit-title">マイホーム購入も</p>
+        <p class="benefit-num-big">70%<span style="font-size:0.5em;">OFF</span></p>
+        <p class="benefit-text">賃貸だけでなく、将来のマイホーム購入・売却時も仲介手数料が最大70%OFF。人生の大きな決断を、ずっとサポートします。</p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-icon">LINE</p>
+        <p class="benefit-title">LINEだけで完結</p>
+        <p class="benefit-num-big" style="font-size:24px; margin:12px 0;">申し込みから<br>入居まで</p>
+        <p class="benefit-text">複雑な書類手続きはLIFEにおまかせ。LINEひとつで、物件探しから内見・契約・入居まで一貫して対応します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 会社メリット -->
+  <div class="welfare-section fade">
+    <h2 class="welfare-section-title" data-num="03">会社へのメリット</h2>
+    <div class="company-merit">
+      <p class="company-merit-title">費用ゼロ、工数ゼロ。<br>それでも会社に利益が残る。</p>
+      <div class="company-merit-grid">
+        <div class="company-merit-item">
+          <span class="company-merit-num">01</span>
+          <p class="company-merit-label">導入費・月額費用ゼロ</p>
+          <p class="company-merit-text">初期費用も月額料金も一切かかりません。LIFEの収益は不動産オーナーからの広告料（AD）のみ。企業・社員様への費用請求はゼロです。</p>
+        </div>
+        <div class="company-merit-item">
+          <span class="company-merit-num">02</span>
+          <p class="company-merit-label">担当者の工数ほぼゼロ</p>
+          <p class="company-merit-text">社員様とLIFEが直接やり取りするため、総務担当者の作業はほぼ発生しません。社内展開用の案内資料もご用意します。</p>
+        </div>
+        <div class="company-merit-item">
+          <span class="company-merit-num">03</span>
+          <p class="company-merit-label">社会保険料が削減される</p>
+          <p class="company-merit-text">借り上げ社宅制度の導入で、会社の社会保険料負担を削減できます。社員数が増えるほど削減効果も比例して拡大します。詳しくは具体例セクションをご確認ください。</p>
+        </div>
+      </div>
+      <p class="company-merit-note">
+        ※本サービスの収益モデルは不動産オーナーからの広告料（AD）のみです。企業・社員様への費用請求は一切ありません。<br>
+        ※社会保険料の削減効果は、企業規模・契約内容・各種条件により異なります。
+      </p>
+    </div>
+  </div>
+
+  <!-- 導入の流れ -->
+  <div class="welfare-section fade">
+    <h2 class="welfare-section-title" data-num="04">導入の流れ</h2>
+    <div class="welfare-flow">
+      <div class="flow-item">
+        <div class="flow-num">01</div>
+        <p class="flow-title">ご相談</p>
+        <p class="flow-desc">まずはLINEまたはお電話で気軽にお声がけください</p>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">02</div>
+        <p class="flow-title">サービスのご説明</p>
+        <p class="flow-desc">仕組み・効果・社宅規程の雛形をわかりやすくご説明します</p>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">03</div>
+        <p class="flow-title">導入支援</p>
+        <p class="flow-desc">費用ゼロで登録完了。社員様への案内資料もご用意します</p>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">04</div>
+        <p class="flow-title">サービス開始</p>
+        <p class="flow-desc">LINEでそのまま物件探しへ。入居まで一貫してLIFEが対応します</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 仕組みセクション -->
+  <div class="mechanism-section fade">
+    <h2 class="welfare-section-title" style="border-bottom:1px solid var(--border);padding-bottom:20px;display:flex;align-items:center;gap:16px;" data-num="05">なぜ費用ゼロで提供できるのか</h2>
+
+    <!-- 仕組み図（新） -->
+    <div class="mech-diagram">
+      <div class="mech-box">
+        <span class="mech-box-role">Property Owner</span>
+        <p class="mech-box-name">不動産オーナー<br>管理会社</p>
+        <p class="mech-box-sub">物件を提供</p>
+      </div>
+      <div class="mech-conn">
+        <p class="mech-conn-label">AD（広告費）<br>を支払う</p>
+        <div class="mech-conn-arrow"></div>
+      </div>
+      <div class="mech-box is-center">
+        <span class="mech-box-role">Agent</span>
+        <p class="mech-box-name">LIFE<br>株式会社</p>
+        <p class="mech-box-sub">ADを原資に<br>手数料を割引</p>
+      </div>
+      <div class="mech-conn">
+        <p class="mech-conn-label">仲介手数料<br>無料〜70%OFF</p>
+        <div class="mech-conn-arrow"></div>
+      </div>
+      <div class="mech-box">
+        <span class="mech-box-role">Client</span>
+        <p class="mech-box-name">御社・従業員様</p>
+        <p class="mech-box-sub">費用ゼロで<br>利用できる</p>
+      </div>
+    </div>
+
+    <p class="mech-note">
+      AD（Advertising Discount）とは、管理会社・オーナーが入居者を募集する際に不動産会社へ支払う広告費のことです。LIFEはこのADを原資として、入居者様（従業員様）の仲介手数料を無料〜70%OFFにすることが可能になります。<br>
+      ※ ADの有無・金額は物件ごとに異なります。AD非対象の物件は家賃の30%（通常比70%OFF）の手数料が発生します。
+    </p>
+  </div>
+
+  <!-- 具体例シミュレーション -->
+  <div class="sim-section fade">
+    <h2 class="welfare-section-title" data-num="06">具体例で見てみる</h2>
+
+    <div class="sim-condition">
+      <span class="sim-condition-label">Simulation</span>
+      <span class="sim-condition-item">月給 40万円の社員様</span>
+      <span class="sim-condition-item">家賃 10万円のお部屋</span>
+      <span class="sim-condition-item">借り上げ社宅制度を導入済み</span>
+    </div>
+
+    <!-- モバイル専用：結果サマリー（デスクトップでは非表示） -->
+    <div class="sim-summary-mobile">
+      <div class="ssm-item">
+        <span class="ssm-label">社員様の手取り増加</span>
+        <span class="ssm-val">+約12,500円<small>/月</small></span>
+        <span class="ssm-sub">年間 +約150,000円</span>
+      </div>
+      <div class="ssm-item ssm-item--co">
+        <span class="ssm-label">会社の社保削減</span>
+        <span class="ssm-val">▲約7,000円<small>/月</small></span>
+        <span class="ssm-sub">年間 ▲約84,000円</span>
+      </div>
+    </div>
+
+    <div class="sim-cols">
+
+      <!-- 社員様の手取りUP -->
+      <div class="sim-col">
+        <div class="sim-col-head">
+          <span class="sim-col-for">社員様</span>
+          <span class="sim-col-title">手取りが増える仕組み</span>
+        </div>
+        <p style="font-size:12px; color:var(--mid); line-height:2; margin-bottom:28px; padding:16px 20px; background:#f7f7f7; border-left:3px solid var(--border);">
+          家賃はご本人が全額ご負担のまま、うち半額（5万円）を給与とは切り離した形で振り込みます。課税対象となる標準報酬月額が家賃の半額分だけ下がるため、税・社保の負担が軽減されます。
+        </p>
+        <div class="sim-steps">
+          <div class="sim-step">
+            <span class="sim-step-label">家賃の半額（5万円）を転引した形で振り込み</span>
+            <span class="sim-step-val">課税対象 ▲5万</span>
+          </div>
+          <div class="sim-step">
+            <span class="sim-step-label">標準報酬月額がダウン</span>
+            <span class="sim-step-val">40万→35万</span>
+          </div>
+          <div class="sim-step">
+            <span class="sim-step-label">社会保険料（本人負担分）の軽減</span>
+            <span class="sim-step-val">▲約7,000円</span>
+          </div>
+          <div class="sim-step">
+            <span class="sim-step-label">所得税・住民税の軽減（概算）</span>
+            <span class="sim-step-val">▲約5,500円</span>
+          </div>
+        </div>
+        <p class="sim-note">※家賃は引き続きご本人が全額ご負担いただく形です。振り込み方法を変えるだけで手取りが実質的に増加します。</p>
+        <div class="sim-result">
+          <div>
+            <p class="sim-result-label">手取り増加額 / 月</p>
+            <p class="sim-result-val">+約12,500円</p>
+            <p class="sim-result-sub">年間 +約150,000円</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 会社の社保削減 -->
+      <div class="sim-col">
+        <div class="sim-col-head">
+          <span class="sim-col-for">会社</span>
+          <span class="sim-col-title">社保負担が減る仕組み</span>
+        </div>
+        <p style="font-size:12px; color:var(--mid); line-height:2; margin-bottom:28px; padding:16px 20px; background:#f7f7f7; border-left:3px solid var(--border);">
+          社員様の標準報酬月額が下がることで、会社が負担する社会保険料（健康保険・厚生年金）も同様に削減されます。追加コストは一切かかりません。
+        </p>
+        <div class="sim-steps">
+          <div class="sim-step">
+            <span class="sim-step-label">社員の標準報酬月額がダウン</span>
+            <span class="sim-step-val">40万→35万</span>
+          </div>
+          <div class="sim-step">
+            <span class="sim-step-label">健康保険料（会社負担分）の削減</span>
+            <span class="sim-step-val">▲約2,500円</span>
+          </div>
+          <div class="sim-step">
+            <span class="sim-step-label">厚生年金保険料（会社負担分）の削減</span>
+            <span class="sim-step-val">▲約4,500円</span>
+          </div>
+        </div>
+        <p class="sim-note">※社員数が増えるほど削減効果は比例して拡大します。<br>※数値はモデルケースです。詳細はお気軽にご相談ください。</p>
+        <div class="sim-result">
+          <div>
+            <p class="sim-result-label">社保削減額 / 月（社員1人あたり）</p>
+            <p class="sim-result-val">▲約7,000円</p>
+            <p class="sim-result-sub">年間 ▲約84,000円</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="welfare-cta fade">
+    <h3 class="welfare-cta-title">まずはLINEで、気軽にご相談ください</h3>
+    <p class="welfare-cta-text">
+      「うちの会社に合うか知りたい」「社宅制度の雛形だけほしい」<br>
+      ——そんな一言からで大丈夫です。費用は一切かかりません。
+    </p>
+    <a class="btn-line-cta" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+      LINEで相談する
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">LIFE</span>
+      <p class="footer-tagline">センスある暮らしを、<br>福岡から。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">
+        〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>
+        福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+<script>
+  (function(){
+    var bg = document.getElementById('pageHeaderBg');
+    if(!bg) return;
+    if(window.innerWidth <= 860) return;
+    var leaving = false;
+    function update(){ if(leaving) return; bg.style.transform = 'translateY(' + (window.scrollY * 0.32) + 'px)'; }
+    window.addEventListener('scroll', update, {passive:true});
+    document.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', function(){ leaving = true; }); });
+  })();
+</script>
+
+
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="LIFE株式会社 代表取締役・江口修一のプロフィール。思いや趣味・日常をご紹介します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>江口 修一 | LIFE株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ─ HERO ─ */
+    .profile-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+    }
+    .profile-hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .profile-hero-body {
+      padding: 140px 72px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .profile-back {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 64px;
+      transition: opacity 0.2s;
+    }
+    .profile-back:hover { opacity: 0.5; }
+    .profile-en {
+      font-family: var(--mincho);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .profile-ja {
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
+    .profile-role {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #bbb;
+      margin-bottom: 48px;
+    }
+    .profile-intro {
+      font-size: 13px;
+      line-height: 2.3;
+      color: var(--mid);
+      max-width: 400px;
+    }
+
+    /* ─ MESSAGE ─ */
+    .message-section {
+      padding: 120px 80px 140px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .message-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 300;
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+      border-left: 1px solid #ddd;
+      padding-left: 32px;
+      margin-bottom: 48px;
+    }
+    .message-text {
+      font-size: 13.5px;
+      line-height: 2.5;
+      color: var(--mid);
+    }
+
+    /* ─ HOBBY ─ */
+    .hobby-section {
+      padding: 0 80px 160px;
+    }
+    .hobby-section .sec-label { margin-bottom: 48px; }
+    .photo-editorial { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .pe-photo { overflow: hidden; }
+    .pe-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.7s ease; }
+    .pe-photo:hover img { transform: scale(1.03); }
+
+    /* ─ NAV BOTTOM ─ */
+    .profile-nav {
+      padding: 60px 80px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .profile-nav a {
+      font-family: var(--serif); font-style: italic;
+      font-size: 12px; letter-spacing: 0.15em;
+      color: var(--gray); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .profile-nav a:hover { color: var(--black); }
+
+    @media (max-width: 860px) {
+      .profile-hero { grid-template-columns: 1fr; min-height: auto; }
+      .profile-hero-img { width: 100%; height: 100vw; max-height: 620px; object-fit: cover; object-position: top center; }
+      .profile-hero-body { padding: 40px 24px 36px; }
+      .profile-back { margin-bottom: 24px; }
+      .message-section { padding: 56px 24px 72px; }
+      .message-quote { font-size: 20px; padding-left: 20px; }
+      .hobby-section { padding: 56px 24px 80px; }
+      .photo-editorial { gap: 4px; }
+      .profile-nav { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-mark">LIFE</span>
+    <span class="nav-logo-sub">不動産</span>
+  </a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<!-- HERO -->
+<div class="profile-hero">
+  <img class="profile-hero-img"
+    src="photo-eguchi_fixed.jpg"
+    onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=80'"
+    alt="江口 修一">
+  <div class="profile-hero-body fade">
+    <a class="profile-back" href="member.html">← Member</a>
+    <p class="profile-en">SHUICHI<br>EGUCHI</p>
+    <p class="profile-ja">江口 修一</p>
+    <p class="profile-role">代表取締役</p>
+    <p class="profile-intro">福岡生まれ。LIFE株式会社代表。1児の父として、家族が帰ってくる場所の大切さを日々実感しながら、お客様の暮らしに向き合っています。</p>
+  </div>
+</div>
+
+<!-- MESSAGE -->
+<div class="message-section fade">
+  <div class="sec-label">
+    <span class="sec-num">01</span>
+    <span class="sec-line"></span>
+    <span class="sec-name">思い</span>
+  </div>
+  <p class="message-quote">子どもが生まれた日、私は初めて、自分が住む家の意味を問い直した。</p>
+  <p class="message-text">「あの子がここで育つ」——そう思ったとき、部屋の広さや設備だけではない、もっと深いところで家を選ぶ眼差しに変わった気がした。光の入り方、隣人との距離感、帰ってきたときに感じる空気。それが心地よいかどうかが、毎日の暮らしの質をつくると思っています。<br><br>LIFEを立ち上げたのは、不動産の仕事をもっと「その人らしさ」に寄り添ったものにしたかったから。スペックを並べてマッチングするのではなく、どんな毎日を過ごしたいかを一緒に考え、その答えとなる空間を探す。それが私たちのスタンスです。<br><br>1児の父として、家族がほっとできる場所の大切さを誰よりも実感しています。お客様が「ここで暮らしたい」と感じる瞬間を、これからも一緒につくっていきたいと思っています。</p>
+</div>
+
+<!-- HOBBY -->
+<div class="hobby-section">
+  <div class="sec-label fade">
+    <span class="sec-num">02</span>
+    <span class="sec-line"></span>
+    <span class="sec-name">趣味・日常</span>
+  </div>
+  <div class="photo-editorial fade">
+    <div class="pe-photo"><img src="eguchi-photo-1.jpg" alt="江口 修一"></div>
+    <div class="pe-photo"><img src="eguchi-photo-2.jpg" alt="江口 修一" style="object-position:center bottom;"></div>
+    <div class="pe-photo"><img src="eguchi-photo-3.jpg" alt="江口 修一"></div>
+  </div>
+</div>
+
+<!-- DATA -->
+
+<!-- BOTTOM NAV -->
+<div class="profile-nav">
+  <a href="member.html">← Member 一覧へ戻る</a>
+  <a href="member-takagi.html">高木 枝惟奈 →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">LIFE</span>
+      <p class="footer-tagline">センスある暮らしを、<br>福岡から。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">
+        〒812-0018<br>
+        福岡県福岡市住吉二丁目16番36号<br>
+        
+        
+        TEL：070-8333-8023<br>
+        MAIL：keiri@life-ec.info<br><br>
+        福岡県知事(1)20655<br>
+        (公社) 福岡県宅地建物取引業協会
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

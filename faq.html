@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LIFE株式会社のよくあるご質問。賃貸・売買・初期費用・契約の流れなどについてお答えします。">
+  <title>よくあるご質問 | LIFE株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .faq-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 60px 160px;
+    }
+
+    /* カテゴリタブ */
+    .faq-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-tab {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      padding: 12px 28px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: -1px;
+    }
+    .faq-tab:hover { color: var(--black); }
+    .faq-tab.active {
+      color: var(--black);
+      border-bottom-color: var(--black);
+    }
+
+    /* FAQ アイテム */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    /* 質問 */
+    .faq-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 24px 0;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .faq-q-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--gray);
+      flex-shrink: 0;
+      padding-top: 1px;
+      transition: color 0.3s;
+    }
+    .faq-item.open .faq-q-label {
+      color: var(--black);
+    }
+    .faq-q-text {
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+      flex: 1;
+    }
+    .faq-q-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      margin-top: 2px;
+    }
+    .faq-q-icon::before,
+    .faq-q-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--gray);
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+    .faq-q-icon::before {
+      width: 18px; height: 1px;
+      top: 50%; left: 0;
+      transform: translateY(-50%);
+    }
+    .faq-q-icon::after {
+      width: 1px; height: 18px;
+      left: 50%; top: 0;
+      transform: translateX(-50%);
+    }
+    .faq-item.open .faq-q-icon::after {
+      transform: translateX(-50%) rotate(90deg);
+      opacity: 0;
+    }
+
+    /* 回答 */
+    .faq-a-wrap {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .faq-item.open .faq-a-wrap {
+      max-height: 600px;
+    }
+    .faq-a {
+      display: flex;
+      gap: 18px;
+      padding: 0 0 28px;
+    }
+    .faq-a-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--gray);
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+    .faq-a-text {
+      font-size: 13px;
+      line-height: 2.2;
+      color: var(--mid);
+    }
+
+    /* カテゴリグループ */
+    .faq-group { display: none; }
+    .faq-group.active { display: block; }
+
+    @media (max-width: 860px) {
+      .faq-wrap { padding: 56px 20px 120px; }
+      .faq-tabs { gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+      .faq-tab { padding: 10px 16px; white-space: nowrap; font-size: 11px; }
+      .faq-q { gap: 12px; padding: 20px 0; }
+      .faq-q-label { font-size: 14px; min-width: 20px; }
+      .faq-q-text { font-size: 13px; line-height: 1.7; }
+      .faq-a { padding: 0 0 20px 0; }
+      .faq-a-text { font-size: 13px; line-height: 2; }
+      .faq-q-icon { width: 18px; height: 18px; flex-shrink: 0; }
+    }
+  </style>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-mark">LIFE</span>
+    <span class="nav-logo-sub">不動産</span>
+  </a>
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<div class="page-header">
+  <div class="page-header-bg" id="pageHeaderBg" style="background-image:url('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="page-header-body">
+    <span class="page-header-en">FAQ</span>
+    <span class="page-header-ja">よくあるご質問</span>
+    <p class="page-header-msg">お客様からよくいただくご質問をまとめました。</p>
+  </div>
+</div>
+
+<div class="faq-wrap">
+
+  <!-- カテゴリタブ -->
+  <div class="faq-tabs fade">
+    <button class="faq-tab active" onclick="switchTab(this,'all')">All</button>
+    <button class="faq-tab" onclick="switchTab(this,'welfare')">福利厚生</button>
+    <button class="faq-tab" onclick="switchTab(this,'rental')">賃貸</button>
+    <button class="faq-tab" onclick="switchTab(this,'cost')">費用・手数料</button>
+    <button class="faq-tab" onclick="switchTab(this,'flow')">手続きの流れ</button>
+  </div>
+
+  <!-- All（全件） -->
+  <div class="faq-group active" data-group="all">
+    <div class="faq-list fade">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">不動産福利厚生サービスとは何ですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">LIFEに登録いただいた企業の社員様が、仲介手数料最大70%OFFでお部屋探しを利用できる福利厚生サービスです。さらに「借り上げ社宅制度」の導入支援も行っており、社員様の手取り増加と会社の社会保険料削減を同時に実現できます。導入費用・月額費用は一切かかりません。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">借り上げ社宅制度とはどのような仕組みですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">会社が賃貸物件を「社宅」として借り上げ、家賃の半額相当を給与とは別の形で社員様に支払う制度です。これにより課税対象の標準報酬月額が下がり、社員様の税・社会保険料の負担が軽減されます。引越しや物件変更は不要で、給与の振り込み方法を変えるだけで導入できます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">社員様の手取りはどのくらい増えますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">月給40万円・家賃10万円の社員様の場合、家賃の半額（5万円）を給与と切り離して支払うことで標準報酬月額が40万→35万円に下がります。結果として社会保険料（本人負担分）が月約7,000円、所得税・住民税が月約5,500円軽減され、手取りが月約12,500円（年間約15万円）増加します。給与額は変わらず、振り込み方法を変えるだけで実現できます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">会社の社会保険料はどのくらい削減できますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">社員様の標準報酬月額が下がることで、会社が負担する健康保険料・厚生年金保険料も同様に削減されます。月給40万円→35万円のケースでは、会社負担の社会保険料が社員1人あたり月約7,000円（年間約84,000円）削減されます。社員数が増えるほど削減効果は比例して拡大します。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">導入費用や月額費用はかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">会社側の導入費用・月額費用は一切かかりません。LIFEの収益は不動産オーナーからの広告料（AD）のみです。管理規程の雛形も無料でご提供します。社員様の仲介手数料も最大70%OFFでご提供しているため、社員様側にもご負担はほとんどありません。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">仲介手数料はいくらかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">法律上の上限は「家賃1ヶ月分＋消費税」です。LIFEでは賃貸の仲介手数料を一律50%OFFでご提供しています。たとえば家賃8万円の物件なら、通常8.8万円のところ4.4万円（＋消費税）に抑えられます。なお、法人福利厚生サービスをご利用の企業の社員様は、AD付き物件が無料になるなどさらにお得にご利用いただけます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">スーモやFRIENDSに載っている物件も紹介してもらえますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">はい、基本的にご紹介可能です。SUUMO・HOMES・FRIENDSなど各ポータルサイトに掲載されている物件を含め、福岡市内の多くの物件をお取り扱いしています。「あの物件、LIFEさんでも申し込めますか？」とお気軽にお問い合わせください。もちろん、当社独自の非公開物件もございます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">初期費用はどのぐらいかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">一般的に、家賃の4〜6ヶ月分が目安です。内訳は「敷金（1〜2ヶ月）・礼金（0〜1ヶ月）・前家賃（1ヶ月）・仲介手数料（最大1ヶ月）・火災保険料・保証会社料」などです。LIFEでは賃貸の仲介手数料を50%OFFでご提供しているため、初期費用を大幅に抑えることが可能です。詳しくはお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">審査に不安があります。審査に通りやすい方法はありますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">審査では主に「収入の安定性」「人柄・属性」が確認されます。月収が家賃の3倍以上あると通りやすい傾向にあります。基準に満たない場合でも、連帯保証人の設定や保証会社の利用で通過できるケースも多くあります。LIFEでは審査に詳しいスタッフが状況に合わせた物件選びをサポートします。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">契約の流れを教えてください。</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">①ご相談・条件ヒアリング → ②物件ご提案・内見 → ③お申込み → ④審査（3〜5営業日程度） → ⑤契約書類へのご署名 → ⑥初期費用のお支払い → ⑦鍵のお渡し・ご入居、という流れが一般的です。内見から入居まで最短1〜2週間で進むケースもあります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">どの企業でも福利厚生サービスを導入できますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">業種・規模を問わずご導入いただけます。社員数が数名の小規模企業から大企業まで対応しており、導入費用は一切かかりません。ご興味のある企業ご担当者様はLINEまたはお問い合わせフォームよりご連絡ください。ご提案資料をお送りいたします。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /all -->
+
+  <!-- 賃貸 -->
+  <div class="faq-group" data-group="rental">
+    <div class="faq-list fade">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">スーモやFRIENDSに載っている物件も紹介してもらえますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">はい、基本的にご紹介可能です。SUUMO・HOMES・FRIENDSなど各ポータルサイトに掲載されている物件を含め、福岡市内の多くの物件をお取り扱いしています。「あの物件、LIFEさんでも申し込めますか？」とお気軽にお問い合わせください。もちろん、当社独自の非公開物件もございます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">何ヶ月前から部屋探しを始めたら良いですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">入居申込からご入居まで、最短でも1週間程のお時間をいただいております。多くの賃貸物件は入居申込からお家賃発生日までの期間を最長で1ヶ月前後延ばすことができます。よって1ヶ月前には部屋探しを始めることをおすすめします。人気エリアや築浅物件は特に動きが早く、2〜3ヶ月前から情報収集を始めるとより安心です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">何を基準に部屋を選んだらいいですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">「譲れない条件」と「あると嬉しい条件」を分けて整理するのがコツです。まずは勤務先・学校へのアクセス、月々の予算、間取り（1K/1LDKなど）を固めましょう。その上で、宅配ボックス・オートロック・浴室乾燥機・ペット可などの追加条件を絞り込むとスムーズです。LIFEでは条件ヒアリングからご提案まで丁寧にサポートしています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">フリーレント物件って何ですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">フリーレントとは、入居後の一定期間（1〜3ヶ月が多い）の家賃が無料になる物件のことです。その期間分が実質的な初期費用の値引きになるため、引越し費用や家具購入費の負担を軽くすることができます。LIFEではフリーレント物件を多数ご紹介可能ですので、お申し付けください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">定期借家契約とは何ですか？普通借家とどう違いますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">定期借家契約は、契約期間が満了すると原則として更新なく契約が終了する形式です。一方、普通借家契約は借主側に更新する権利があり、貸主からの解約は制限されます。定期借家は家賃が抑えめな物件も多い一方で、再契約できないリスクもあります。ご不明な点はご内見の際にご説明いたします。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">ペット可の物件は探せますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">はい、ペット可物件の取り扱いも多数ございます。犬・猫の種類や大きさによって入居条件が異なるため、事前にご相談いただくとスムーズです。「ペット相談可」の物件は交渉次第で許可が出るケースもありますので、お気軽にお申し付けください。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /rental -->
+
+  <!-- 費用・手数料 -->
+  <div class="faq-group" data-group="cost">
+    <div class="faq-list fade">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">初期費用はどのぐらいかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">一般的に、家賃の4〜6ヶ月分が目安です。内訳は「敷金（1〜2ヶ月）・礼金（0〜1ヶ月）・前家賃（1ヶ月）・仲介手数料（最大1ヶ月）・火災保険料・保証会社料」などです。LIFEでは賃貸の仲介手数料を50%OFFでご提供しているため、初期費用を大幅に抑えることが可能です。詳しくはお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">仲介手数料はいくらかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">法律上の上限は「家賃1ヶ月分＋消費税」です。LIFEでは賃貸の仲介手数料を一律50%OFFでご提供しています。たとえば家賃8万円の物件なら、通常8.8万円のところ4.4万円（＋消費税）に抑えられます。なお、法人福利厚生サービスをご利用の企業の社員様は、AD付き物件が無料になるなどさらにお得にご利用いただけます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">仲介手数料が70%OFFになる条件は何ですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">LIFEの法人福利厚生サービスに登録済みの企業にお勤めの方が対象です。AD（広告費）付きの物件は仲介手数料が無料、AD非対象の物件は家賃の30%（通常比70%OFF）でご提供します。まだ登録されていない企業のご担当者様も、導入のご相談を承っておりますのでお気軽にご連絡ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">敷金は退去時に返ってきますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">原則として、通常使用の範囲での損耗（自然損耗）については敷金から差し引かれません。借主の故意・過失による傷や汚れについては修繕費が差し引かれます。返還額は退去立会いの後に確定します。ご不明な点はご退去前にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /cost -->
+
+  <!-- 手続きの流れ -->
+  <div class="faq-group" data-group="flow">
+    <div class="faq-list fade">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">契約の流れを教えてください。</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">①ご相談・条件ヒアリング → ②物件ご提案・内見 → ③お申込み → ④審査（3〜5営業日程度） → ⑤契約書類へのご署名 → ⑥初期費用のお支払い → ⑦鍵のお渡し・ご入居、という流れが一般的です。内見から入居まで最短1〜2週間で進むケースもあります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">入居時に必要な書類を教えてください。</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">一般的に必要な書類は「身分証明書（運転免許証・マイナンバーカードなど）」「収入証明（源泉徴収票・給与明細など）」「住民票」です。学生の方は在学証明書、個人事業主の方は確定申告書が必要になる場合もあります。申込時に必要書類リストをご案内しますのでご安心ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">審査にはどのくらいの期間がかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">保証会社審査は通常2〜5営業日、貸主審査は3〜7営業日が目安です。書類に不備がある場合や、年末年始・大型連休を挟む場合は時間がかかることがあります。入居希望日が決まっている場合は、余裕を持って早めにお申し込みいただくことをおすすめします。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /flow -->
+
+  <!-- 福利厚生 -->
+  <div class="faq-group" data-group="welfare">
+    <div class="faq-list fade">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">不動産福利厚生サービスとは何ですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">LIFEに登録いただいた企業の社員様が、仲介手数料最大70%OFFでお部屋探しを利用できる福利厚生サービスです。さらに「借り上げ社宅制度」の導入支援も行っており、社員様の手取り増加と会社の社会保険料削減を同時に実現できます。導入費用・月額費用は一切かかりません。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">借り上げ社宅制度とはどのような仕組みですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">会社が賃貸物件を「社宅」として借り上げ、家賃の半額相当を給与とは別の形で社員様に支払う制度です。これにより課税対象の標準報酬月額が下がり、社員様の税・社会保険料の負担が軽減されます。引越しや物件変更は不要で、給与の振り込み方法を変えるだけで導入できます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">社員様の手取りはどのくらい増えますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">月給40万円・家賃10万円の社員様の場合、家賃の半額（5万円）を給与と切り離して支払うことで標準報酬月額が40万→35万円に下がります。結果として社会保険料（本人負担分）が月約7,000円、所得税・住民税が月約5,500円軽減され、手取りが月約12,500円（年間約15万円）増加します。給与額は変わらず、振り込み方法を変えるだけで実現できます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">会社の社会保険料はどのくらい削減できますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">社員様の標準報酬月額が下がることで、会社が負担する健康保険料・厚生年金保険料も同様に削減されます。月給40万円→35万円のケースでは、会社負担の社会保険料が社員1人あたり月約7,000円（年間約84,000円）削減されます。社員数が増えるほど削減効果は比例して拡大します。上記はモデルケースです。詳細は報酬額・加入保険組合により異なりますのでお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">導入費用や月額費用はかかりますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">会社側の導入費用・月額費用は一切かかりません。LIFEの収益は不動産オーナーからの広告料（AD）のみです。管理規程の雛形も無料でご提供します。社員様の仲介手数料も最大70%OFFでご提供しているため、社員様側にもご負担はほとんどありません。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">導入までの流れを教えてください。</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">①ご相談（LINEまたはお電話） → ②サービスのご説明（仕組み・効果・社宅規程雛形のご提供） → ③導入支援（社員向け案内資料のご用意） → ④サービス開始（社員様がLINEで直接お部屋探し）、という流れです。担当者様の工数はほぼ発生せず、最短数日で導入できます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">仲介手数料が70%OFFになる条件を教えてください。</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">LIFEの法人福利厚生サービスに登録済みの企業にお勤めの方が対象です。AD（広告費）付きの物件は仲介手数料が無料、AD非対象の物件は家賃の30%（通常比70%OFF）でご提供します。まだ登録していない企業のご担当者様も、導入のご相談を承っておりますのでお気軽にご連絡ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">社員への案内は誰が行いますか？担当者の手間はどのくらいですか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">社員様への案内はLIFEが直接行います。社内展開用の案内チラシや資料をご用意しますので、担当者様はそれを配布するだけです。その後の物件探し・内見・契約手続きはLIFEと社員様が直接LINEでやり取りするため、人事・総務担当者様の継続的な工数はほぼゼロです。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <p class="faq-q-text">どの企業でも福利厚生サービスを導入できますか？</p>
+          <span class="faq-q-icon"></span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a">
+            <span class="faq-a-label">A.</span>
+            <p class="faq-a-text">業種・規模を問わずご導入いただけます。社員数が数名の小規模企業から大企業まで対応しており、導入費用は一切かかりません。ご興味のある企業ご担当者様はLINEまたはお問い合わせフォームよりご連絡ください。ご提案資料をお送りいたします。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /welfare -->
+
+  <!-- CTA -->
+  <div class="detail-cta fade" style="margin-top: 80px; text-align:center; padding:64px; border:1px solid var(--border);">
+    <p style="font-family:var(--serif); font-size:22px; margin-bottom:14px;">解決しないご質問はお気軽に</p>
+    <p style="font-size:13px; color:var(--mid); line-height:2; margin-bottom:32px;">LINEでのご相談は24時間365日受付中です。</p>
+    <a class="btn" href="contact.html">お問い合わせ</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">LIFE</span>
+      <p class="footer-tagline">センスある暮らしを、<br>福岡から。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">
+        〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>
+        福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+<script>
+  // faq-group内のfadeはdisplay:noneで観測できないため即時表示。
+  // それ以外（タブ行・CTAなど）はIntersectionObserverで処理。
+  document.querySelectorAll('.faq-group .fade').forEach(el => el.classList.add('in'));
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade:not(.faq-group .fade)').forEach(el => obs.observe(el));
+</script>
+<script>
+  (function(){
+    var bg = document.getElementById('pageHeaderBg');
+    if(!bg) return;
+    if(window.innerWidth <= 860) return;
+    var leaving = false;
+    function update(){ if(leaving) return; bg.style.transform = 'translateY(' + (window.scrollY * 0.32) + 'px)'; }
+    window.addEventListener('scroll', update, {passive:true});
+    document.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', function(){ leaving = true; }); });
+  })();
+</script>
+
+<script>
+function toggleFaq(qEl) {
+  var item = qEl.parentElement;
+  item.classList.toggle('open');
+}
+
+function switchTab(btn, group) {
+  document.querySelectorAll('.faq-tab').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-group').forEach(function(g) { g.classList.remove('active'); });
+  document.querySelectorAll('.faq-group[data-group="' + group + '"]').forEach(function(g) { g.classList.add('active'); });
+  // 開いているアイテムをリセット
+  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+}
+</script>
+
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
