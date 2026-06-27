@@ -93,7 +93,9 @@ nav.on-hero .nav-links a:hover { color: #fff; border-bottom-color: rgba(255,255,
 nav.solid .nav-links a:hover,
 nav.page-nav .nav-links a:hover { color: var(--mid); border-bottom-color: var(--border); }
 .nav-links a.active { border-bottom: 2px solid var(--black); padding-bottom: 3px; }
-nav.on-hero .nav-links a.active { border-bottom-color: #fff; }
+nav.on-hero .nav-links a.active { border-bottom-color: rgba(255,255,255,0.9); }
+nav.solid .nav-links a.active,
+nav.page-nav .nav-links a.active { border-bottom-color: var(--black); }
 
 /* ─── PAGE HEADER ─── */
 .page-header {
