@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" style="scrollbar-gutter:stable">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="LIFE株式会社 早永 海槻のプロフィール。">
@@ -22,41 +22,41 @@
     .message-section{padding:120px 80px 140px;max-width:800px;margin:0 auto}
     .message-quote{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:300;line-height:1.8;letter-spacing:.05em;border-left:1px solid #ddd;padding-left:32px;margin-bottom:48px}
     .message-text{font-size:13.5px;line-height:2.5;color:var(--mid)}
-    .hobby-section{padding:0 80px 160px}
+    .hobby-section{padding:80px 140px 160px}
     .hobby-section .sec-label{margin-bottom:48px}
-    .hobby-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-    .hobby-item{position:relative;overflow:hidden}
-    .hobby-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:transform .6s ease}
-    .hobby-item:hover .hobby-img{transform:scale(1.05)}
-    .hobby-caption{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.45));color:#fff;font-size:11px;letter-spacing:.15em;opacity:0;transition:opacity .3s}
-    .hobby-item:hover .hobby-caption{opacity:1}
+    .photo-editorial{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .pe-photo{overflow:hidden}
+    .pe-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .7s ease}
+    .pe-photo:hover img{transform:scale(1.03)}
     .profile-nav{padding:60px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
     .profile-nav a{font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.15em;color:var(--gray);text-decoration:none;transition:color .2s}
     .profile-nav a:hover{color:var(--black)}
     @media(max-width:860px){
       .profile-hero{grid-template-columns:1fr;min-height:auto}
-      .profile-hero-img{height:auto;min-height:unset;object-fit:fill;}
-      .profile-hero-body{padding:80px 24px 48px}
-      .message-section{padding:80px 24px 100px}
-      .hobby-section{padding:0 24px 100px}
-      .hobby-grid{grid-template-columns:repeat(2,1fr)}
-      .profile-nav{padding:40px 24px}
+      .profile-hero-img{width:100%;height:90vw;max-height:580px;object-fit:cover;object-position:center 30%}
+      .profile-hero-body{padding:40px 24px 36px}
+      .profile-back{margin-bottom:24px}
+      .message-section{padding:56px 24px 72px}
+      .message-quote{font-size:20px;padding-left:20px}
+      .hobby-section{padding:56px 16px 80px}
+      .photo-editorial{grid-template-columns:repeat(3,1fr);gap:4px}
+      .profile-nav{padding:36px 24px}
     }
   </style>
 </head>
 <body>
 <nav id="nav" class="page-nav">
   <a class="nav-logo" href="index.html"><span class="nav-logo-mark">LIFE</span><span class="nav-logo-sub">不動産</span></a>
-  <ul class="nav-links">
+    <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="service.html">Service</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="member.html" class="active">Member</a></li>
+    <li><a href="member.html">Member</a></li>
     <li><a href="company.html">Company</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+<button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -82,7 +82,7 @@
     <p class="profile-en">MIZUKI<br>HAYANAGA</p>
     <p class="profile-ja">早永 海槻</p>
     <p class="profile-role">ルームアシスタント</p>
-    <p class="profile-intro">プロフィール文がここに入ります。</p>
+    <p class="profile-intro">宮崎出身。幼い頃の経験から、家が人にとっていかに大切な場所かを知り、不動産の世界へ。「売る」より「一緒に探す」スタンスで、お客様一人ひとりの「還れる場所」を見つけるお手伝いをしています。趣味は異国を旅して知らない土地や文化を肌で感じること、自然に触れること。</p>
   </div>
 </div>
 
@@ -90,21 +90,24 @@
   <div class="sec-label">
     <span class="sec-num">01</span><span class="sec-line"></span><span class="sec-name">思い</span>
   </div>
-  <p class="message-quote">メッセージがここに入ります。</p>
-  <p class="message-text">詳しいメッセージ文がここに入ります。</p>
+  <p class="message-quote">家は、あなたが還る場所。</p>
+  <p class="message-text">幼い頃、父と母が必死に働いてつくり上げた家がありました。母が内装の一つひとつにこだわり、愛情を注いだその家は、道路拡張のため、ある日取り壊されることになりました。重機が壁を崩していくその瞬間、母は涙を流しながら見つめていました。私もその隣に立ちながら、家というものが単なる「建物」ではないことを、身をもって知りました。<br><br>もともと対人恐怖症だった私にとって、家は特別な場所でした。誰の目も声も気にしなくていい、ありのままの自分に還れる、唯一の場所。それを失ったとき、自分の「帰り場所」そのものを失った気がしました。<br><br>だから私は不動産の仕事を選びました。家を売るためではなく、あなたの「還れる場所」を一緒に探すために。内覧のとき、あなたがふっと肩の力を抜いた瞬間、「ここかもしれない」と感じる瞬間を、私は大切にしたいと思っています。家は住む人の数だけ、意味があります。あなたにとっての家が何なのかを、誰よりも真剣に考えられる仲介業者でありたい。それが、あの日涙を流した母への、私なりの答えです。</p>
 </div>
 
 <div class="hobby-section">
   <div class="sec-label fade">
     <span class="sec-num">02</span><span class="sec-line"></span><span class="sec-name">趣味・日常</span>
   </div>
-  <div class="hobby-grid">
-    <div class="hobby-item fade"><img class="hobby-img" src="hayanaga/IMG_1918_Original.jpg" alt="旅行"><p class="hobby-caption">旅行</p></div>
-    <div class="hobby-item fade d1"><img class="hobby-img" src="hayanaga/IMG_4236_Original.jpg" alt="旅行"><p class="hobby-caption">旅行</p></div>
-    <div class="hobby-item fade d2"><img class="hobby-img" src="hayanaga/IMG_5423_Original.jpg" alt="旅行"><p class="hobby-caption">旅行</p></div>
-    <div class="hobby-item fade d1"><img class="hobby-img" src="hayanaga/IMG_5907_Original.jpg" alt="旅行"><p class="hobby-caption">旅行</p></div>
-    <div class="hobby-item fade d2"><img class="hobby-img" src="hayanaga/IMG_8709_preview.jpg" alt="旅行"><p class="hobby-caption">旅行</p></div>
-    <div class="hobby-item fade"><img class="hobby-img" src="hayanaga/IMG_9132_preview.jpg" alt="旅行"><p class="hobby-caption">旅行</p></div>
+  <div class="photo-editorial fade">
+    <div class="pe-photo"><img src="hayanaga/IMG_5907_Original.jpg" alt="タイ メークロン線路市場"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_4236_Original.jpg" alt="上海外灘夜景"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_1918_Original.jpg" alt="伏見稲荷 鳥居"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_5423_Original.jpg" alt="タイ水上マーケット"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_9132_preview.jpg" alt="モネの池"></div>
+    <div class="pe-photo"><img src="hayanaga/3F3DBE9D-87AA-4974-AF4F-6C1690992C34.JPG" alt="カヌー競技"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_8709_preview.jpg" alt="夕日と海"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_9499_preview.jpg" alt="機内から空と雲"></div>
+    <div class="pe-photo"><img src="hayanaga/IMG_2176.JPG" alt="光と影のインテリア"></div>
   </div>
 </div>
 
@@ -127,7 +130,8 @@
     </div>
     <div>
       <p class="footer-col-title">INFORMATION</p>
-      <p class="footer-info">〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>androotsFOREST SQUARE 2F<br><br>TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会</p>
+      <p class="footer-info">〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -147,18 +151,29 @@
 
 
 <script>
-function toggleNav(){
-  var ov = document.getElementById('navOverlay');
-  ov.classList.toggle('open');
-  document.body.classList.toggle('nav-open');
-}
-window.addEventListener('pageshow', function(e) {
-  if (e.persisted) {
-    var ov = document.getElementById('navOverlay');
-    if (ov) { ov.classList.remove('open'); }
-    document.body.classList.remove('nav-open');
-  }
-});
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
 </script>
 </body>
 </html>
