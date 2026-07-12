@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJD5KN0MG6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZJD5KN0MG6');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="借上社宅の物件探し・契約事務・給与連携・トラブル対応まで一括代行。宅建業免許を保有するLIFE株式会社が、福岡・九州エリアの借上社宅運用をまるごとサポート。">
+<title>借上社宅 導入・運用代行サービス | LIFE株式会社 | 福岡・九州</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .shakujo-wrap { max-width: 1140px; margin: 0 auto; padding: 80px 52px 160px; }
+
+  /* LEAD */
+  .shakujo-lead {
+    text-align: center;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 100px;
+  }
+  .shakujo-lead-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 6px 18px;
+    margin-bottom: 28px;
+  }
+  .shakujo-lead-title {
+    font-family: var(--mincho);
+    font-size: clamp(26px, 3.5vw, 44px);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .shakujo-lead-catch {
+    font-size: 13px;
+    color: var(--gray);
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .shakujo-lead-sub {
+    font-size: 13px;
+    line-height: 2.2;
+    color: var(--black);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* SECTION */
+  .shakujo-section { margin-bottom: 100px; }
+  .shakujo-section-title {
+    font-family: var(--mincho);
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .shakujo-section-title span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* 課題カード */
+  .issue-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    margin-bottom: 40px;
+  }
+  .issue-card {
+    background: #fff;
+    padding: 40px 32px;
+  }
+  .issue-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    color: #e8e8e8;
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .issue-title {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .issue-text {
+    font-size: 12px;
+    line-height: 2.1;
+    color: var(--black);
+  }
+
+  /* 代行方式の説明 */
+  .proxy-note {
+    background: #f7f7f7;
+    border-left: 3px solid var(--black);
+    padding: 28px 36px;
+    margin-bottom: 56px;
+    font-size: 13px;
+    line-height: 2.2;
+    color: var(--black);
+  }
+  .proxy-note strong {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  /* サービス内容 */
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+    margin-bottom: 40px;
+  }
+  .service-item {
+    background: #fff;
+    padding: 40px 36px;
+  }
+  .service-item-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .service-item-title {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    margin-bottom: 12px;
+  }
+  .service-item-text {
+    font-size: 12px;
+    line-height: 2.1;
+    color: var(--black);
+  }
+  .service-note {
+    font-size: 12px;
+    color: var(--black);
+    line-height: 2.1;
+    padding: 20px 28px;
+    border: 1px solid var(--border);
+    background: #fafafa;
+  }
+
+  /* 選ばれる理由 */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+  .reason-card {
+    background: #fff;
+    padding: 40px 36px;
+  }
+  .reason-icon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .reason-title {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--black);
+    margin-bottom: 12px;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  .reason-text {
+    font-size: 12px;
+    line-height: 2.1;
+    color: var(--black);
+  }
+
+  /* 業種別メリット */
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+  .industry-card {
+    background: #fff;
+    padding: 40px 36px;
+  }
+  .industry-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+  .industry-title {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    margin-bottom: 14px;
+  }
+  .industry-text {
+    font-size: 12px;
+    line-height: 2.2;
+    color: var(--black);
+  }
+
+  /* 料金 */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+  }
+  .price-table th {
+    background: var(--black);
+    color: #fff;
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .price-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--black);
+    line-height: 1.8;
+    vertical-align: top;
+  }
+  .price-table td:first-child {
+    font-weight: 500;
+    width: 42%;
+    color: var(--black);
+  }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-note {
+    font-size: 12px;
+    color: var(--black);
+    line-height: 2;
+    padding: 16px 20px;
+    background: #f7f7f7;
+  }
+
+  /* FAQ */
+  .faq-list { border-top: 1px solid var(--border); }
+  .faq-row {
+    border-bottom: 1px solid var(--border);
+    padding: 32px 0;
+  }
+  .faq-q {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+    padding-left: 28px;
+    position: relative;
+  }
+  .faq-q::before {
+    content: 'Q';
+    font-family: var(--serif);
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    color: var(--gray);
+    font-size: 16px;
+  }
+  .faq-a {
+    font-size: 13px;
+    line-height: 2.2;
+    color: var(--black);
+    padding-left: 28px;
+    position: relative;
+  }
+  .faq-a::before {
+    content: 'A';
+    font-family: var(--serif);
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    color: var(--gray);
+    font-size: 16px;
+  }
+
+  /* CTA */
+  .shakujo-cta {
+    margin-top: 100px;
+    text-align: center;
+    padding: 80px 60px;
+    border: 1px solid var(--border);
+  }
+  .shakujo-cta-title {
+    font-family: var(--mincho);
+    font-size: clamp(18px, 2vw, 26px);
+    margin-bottom: 16px;
+  }
+  .shakujo-cta-text {
+    font-size: 13px;
+    color: var(--black);
+    line-height: 2;
+    margin-bottom: 36px;
+  }
+  .btn-line-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #06C755;
+    color: #fff;
+    padding: 16px 48px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    margin-right: 16px;
+    margin-bottom: 12px;
+  }
+  .btn-line-cta:hover { opacity: 0.8; }
+
+  @media (max-width: 860px) {
+    .shakujo-wrap { padding: 48px 20px 100px; }
+    .shakujo-section { margin-bottom: 64px; }
+    .shakujo-lead { padding-bottom: 48px; margin-bottom: 64px; }
+    .issue-grid { grid-template-columns: 1fr; }
+    .service-list { grid-template-columns: 1fr; }
+    .reason-grid { grid-template-columns: 1fr; }
+    .industry-grid { grid-template-columns: 1fr; }
+    .issue-card, .service-item, .reason-card, .industry-card { padding: 28px 20px; }
+    .proxy-note { padding: 20px 20px; }
+    .price-table td:first-child { width: auto; }
+    .shakujo-cta { padding: 40px 20px; }
+    .shakujo-section-title { font-size: 18px; margin-bottom: 28px; padding-bottom: 14px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "借上社宅 導入・運用代行サービス",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "LIFE株式会社",
+    "url": "https://life-fudosan.com"
+  },
+  "description": "借上社宅の物件探し・契約事務・給与連携・トラブル対応まで一括代行。宅建業免許を保有するLIFE株式会社が、福岡・九州エリアの借上社宅運用をまるごとサポート。",
+  "areaServed": { "@type": "Place", "name": "福岡・九州" }
+}
+</script>
+</head>
+<body>
+<nav id="nav" class="page-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-mark">LIFE</span>
+    <span class="nav-logo-sub">不動産</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-ham" onclick="toggleNav()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="member.html">Member</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div id="page-content">
+
+<div class="page-header">
+  <div class="page-header-bg" id="pageHeaderBg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="page-header-body">
+    <span class="page-header-en">Lease Management</span>
+    <span class="page-header-ja">借上社宅 運用代行</span>
+    <p class="page-header-msg">契約はそのまま、手間とリスクだけをまるごとおまかせ。</p>
+  </div>
+</div>
+
+<div class="shakujo-wrap">
+
+  <!-- LEAD -->
+  <div class="shakujo-lead fade">
+    <span class="shakujo-lead-tag">Corporate Housing Service</span>
+    <h1 class="shakujo-lead-title">借上社宅 導入・運用代行サービス</h1>
+    <p class="shakujo-lead-catch">契約はそのまま、手間とリスクだけをまるごとおまかせ。</p>
+    <p class="shakujo-lead-sub">物件探しから契約事務、給与連携、退去時のトラブル対応まで。宅建業免許を保有する専門チームが、借上社宅の「面倒な運用」を代行します。</p>
+  </div>
+
+  <!-- 課題提起 -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>Pain Point</span>
+      こんなお悩みはありませんか
+    </h2>
+    <p style="font-size:13px;line-height:2.2;color:var(--black);margin-bottom:40px;">借上社宅の運用、総務・人事のご担当者が一人で抱えていませんか。制度としては便利な借上社宅も、実際に運用するとなると法務・労務・不動産実務が絡み合い、専任担当者でも対応しきれないのが実情です。</p>
+    <div class="issue-grid">
+      <div class="issue-card">
+        <span class="issue-num">01</span>
+        <p class="issue-title">税務・社会保険の判定が複雑</p>
+        <p class="issue-text">所得税の「賃貸料相当額」と社会保険の「現物給与」は別基準。2026年10月の算定方法変更にも対応が必要で、判断を誤ると課税・追徴のリスクがあります。</p>
+      </div>
+      <div class="issue-card">
+        <span class="issue-num">02</span>
+        <p class="issue-title">契約・書類手続きが煩雑</p>
+        <p class="issue-text">物件ごとの重要事項説明、名義変更、保証会社対応など、件数が増えるほど事務負荷が積み上がります。各物件で保証会社が異なるため管理も複雑です。</p>
+      </div>
+      <div class="issue-card">
+        <span class="issue-num">03</span>
+        <p class="issue-title">入居後のトラブル対応先がない</p>
+        <p class="issue-text">近隣トラブルや退去時の原状回復費用の交渉など、不動産の専門知識なしに対応するのは負担が大きく、担当者の疲弊につながります。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 代行方式の説明 -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>Our Approach</span>
+      「代行方式」だから、契約主体は貴社のまま
+    </h2>
+    <div class="proxy-note">
+      <strong>安心して任せられる理由</strong>
+      賃貸借契約は家主・管理会社と貴社の間で締結される「代行方式」を採用。弊社は契約の当事者にならず、事務手続きとトラブル対応に専念します。家賃の支払いは貴社から管理会社へ直接、口座振替で行います。弊社が入居者・貴社の資金をお預かりすることはありません。
+    </div>
+
+    <div class="service-list">
+      <div class="service-item">
+        <span class="service-item-num">Service 01</span>
+        <p class="service-item-title">物件の斡旋・契約代理</p>
+        <p class="service-item-text">物件探し・内見対応から契約締結の代理、重要事項説明（IT重説）・契約書面の交付まで対応。宅建業免許を保有しているため、物件斡旋から一貫して対応可能です。</p>
+      </div>
+      <div class="service-item">
+        <span class="service-item-num">Service 02</span>
+        <p class="service-item-title">契約管理・データ連携</p>
+        <p class="service-item-text">入居者ごとの契約状況（期間・賃料・名義）を一元管理。給与・会計システムへのデータ連携もサポートします。</p>
+      </div>
+      <div class="service-item">
+        <span class="service-item-num">Service 03</span>
+        <p class="service-item-title">税務・社会保険の計算支援</p>
+        <p class="service-item-text">賃貸料相当額・現物給与価額の算出ツールを提供。最終的な判断は貴社顧問の社労士・税理士と連携して行います。2026年10月の算定方法変更にも対応済みです。</p>
+      </div>
+      <div class="service-item">
+        <span class="service-item-num">Service 04</span>
+        <p class="service-item-title">更新・退去・トラブル対応</p>
+        <p class="service-item-text">名義変更・更新・退去の事務進行、管理会社との窓口対応、近隣トラブルの取次ぎまで一次対応。担当者の負担を大幅に軽減します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 選ばれる理由 -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>Why LIFE</span>
+      選ばれる理由
+    </h2>
+    <div class="reason-grid">
+      <div class="reason-card">
+        <span class="reason-icon">Point 01</span>
+        <p class="reason-title">物件探しから退去まで、ワンストップ</p>
+        <p class="reason-text">クラウド型の借上社宅サービスの多くは「契約の代行」までが対象で、物件探しや内見案内、家賃交渉は対象外とされています。弊社は宅建業免許を保有しているため、物件の斡旋から契約後の運用まで一貫して対応可能です。</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-icon">Point 02</span>
+        <p class="reason-title">入居後のトラブルも、明確な対応範囲で安心</p>
+        <p class="reason-text">近隣トラブルの取次ぎ、更新時の条件確認、原状回復費用の通常交渉（国交省ガイドライン範囲内）は月額費用に含む一次対応。緊急トラブルは管理会社の24時間窓口へ直接対応いただく形で、対応範囲を明確化しています。</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-icon">Point 03</span>
+        <p class="reason-title">2026年10月の制度変更にも対応済み</p>
+        <p class="reason-text">社会保険の現物給与価額の算定方法が2026年10月に変更されます（畳単価→㎡単価）。既存入居者の再計算・随時改定の要否確認まで、システムで一括対応します。</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-icon">Point 04</span>
+        <p class="reason-title">法務・労務の境界を守った、安全な運用設計</p>
+        <p class="reason-text">労使協定の締結や社会保険の届出等、社会保険労務士・税理士の専権業務には立ち入りません。計算支援ツールと雛形のご提供、貴社の顧問専門家との連携という役割分担で、安心してご利用いただけます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 業種別導入メリット -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>Industry</span>
+      業種別の導入メリット
+    </h2>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <span class="industry-tag">保育園・こども園</span>
+        <p class="industry-title">採用・定着の決め手に</p>
+        <p class="industry-text">保育士確保が難しい中、住宅費の負担軽減は採用・定着の決め手になります。自治体の「保育士宿舎借り上げ支援事業」等の補助制度と組み合わせることで、法人負担を抑えた制度設計が可能です。採用5年以内の保育士等を対象とした国の補助基準あり（金額・要件は自治体により異なります）。</p>
+      </div>
+      <div class="industry-card">
+        <span class="industry-tag">病院・医療機関</span>
+        <p class="industry-title">夜勤・交代制勤務者の職住近接を実現</p>
+        <p class="industry-text">看護職員向けの宿舎借り上げ支援に関する補助制度は自治体により有無・内容が異なります。対象となる地域・制度の有無を確認した上で、貴院の状況に合わせた制度設計をご提案します。夜勤・交代制勤務者の職住近接ニーズにも対応します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 料金 -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>Pricing</span>
+      ご利用料金
+    </h2>
+    <p style="font-size:13px;line-height:2.2;color:var(--black);margin-bottom:32px;">貴社の規模に合わせた料金プランをご提案します。月額の契約管理費用は、従業員数・対象物件数に応じて個別にお見積りいたします。</p>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>内容・費用</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>契約管理業務（月額）</td>
+          <td>入居者ごとの契約管理、給与・会計データ連携、税務・社会保険の算定支援、更新・退去・トラブル一次対応<br><span style="color:var(--gray);font-size:11px;">※ 従業員規模・対象物件数に応じて個別お見積り</span></td>
+        </tr>
+        <tr>
+          <td>仲介手数料（新規入居時のみ）</td>
+          <td>広告料（AD）のある物件：無料<br>ADのない物件：家賃1ヶ月分の30%</td>
+        </tr>
+        <tr>
+          <td>名義変更のみのケース</td>
+          <td>仲介手数料は発生せず、名義変更手数料の代行対応のみ</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="price-note">まずは無料相談にてお気軽にお問い合わせください。規模・現状をお伺いした上で、具体的なお見積りをご提示します。</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>FAQ</span>
+      よくある質問
+    </h2>
+    <div class="faq-list">
+      <div class="faq-row">
+        <p class="faq-q">契約の名義は誰になりますか？</p>
+        <p class="faq-a">「代行方式」を採用しているため、賃貸借契約は家主・管理会社と貴社の間で締結されます。弊社が契約の当事者（貸主）になることはありません。</p>
+      </div>
+      <div class="faq-row">
+        <p class="faq-q">社会保険料や税金の計算まで代行してもらえますか？</p>
+        <p class="faq-a">賃貸料相当額・現物給与価額の算定支援ツールはご提供しますが、労使協定の締結や社会保険の届出、最終的な税務判断は社会保険労務士法・税理士法の規定により、貴社の顧問社労士・税理士にご対応いただきます。専門家がいらっしゃらない場合は提携先のご紹介も可能です。</p>
+      </div>
+      <div class="faq-row">
+        <p class="faq-q">すでに導入している物件（名義変更ケース）にも対応できますか？</p>
+        <p class="faq-a">対応可能です。個人契約から法人契約への名義変更を代行し、以降の契約管理業務を月額費用の中でサポートします。</p>
+      </div>
+      <div class="faq-row">
+        <p class="faq-q">対応エリアはどこですか？</p>
+        <p class="faq-a">福岡・九州エリアを中心に対応しています。エリア拡大にも順次対応予定です。</p>
+      </div>
+      <div class="faq-row">
+        <p class="faq-q">既存の住宅手当は廃止する必要がありますか？</p>
+        <p class="faq-a">必須ではありません。住宅手当を継続するかどうかは各社のご判断に委ねており、弊社は手当を残す場合・廃止する場合それぞれの試算をご提供し、意思決定をサポートします。</p>
+      </div>
+      <div class="faq-row">
+        <p class="faq-q">料金の詳細を教えてください。</p>
+        <p class="faq-a">月額の契約管理費用は、貴社の従業員規模・対象物件数に応じて個別にお見積りいたします。まずは無料相談にてお気軽にお問い合わせください。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="shakujo-cta fade">
+    <p class="shakujo-cta-title">まずは無料相談から</p>
+    <p class="shakujo-cta-text">導入規模・現状の運用課題をお伺いした上で、<br>具体的なプランとお見積りをご提示します。</p>
+    <a class="btn-line-cta" href="https://lin.ee/xNyg5u7" onclick="gtag('event','line_click',{'event_category':'contact','event_label':'line'})" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+      LINE で無料相談
+    </a>
+    <a class="btn" href="contact.html" onclick="gtag('event','form_click',{'event_category':'contact','event_label':'contact_form'})">お問い合わせフォーム</a>
+  </div>
+
+</div><!-- /.shakujo-wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">LIFE</span>
+      <p class="footer-tagline">センスある暮らしを、<br>福岡から。</p>
+    </div>
+    <div>
+      <p class="footer-col-title">NAVIGATION</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="member.html">Member</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">INFORMATION</p>
+      <p class="footer-info">
+        〒812-0018<br>福岡県福岡市住吉二丁目16番36号<br>
+        TEL：070-8333-8023<br>MAIL：keiri@life-ec.info<br><br>
+        福岡県知事(1)20655<br>(公社) 福岡県宅地建物取引業協会
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">プライバシーポリシー</a></p>
+    <div class="footer-sns"><a href="#">Instagram</a><a href="https://lin.ee/xNyg5u7" onclick="gtag('event','line_click',{'event_category':'contact','event_label':'line'})" target="_blank" rel="noopener">LINE</a></div>
+  </div>
+</footer>
+
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" onclick="gtag('event','line_click',{'event_category':'contact','event_label':'line'})" target="_blank" rel="noopener">
+  <svg class="line-fixed-icon" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+  LINE で相談
+</a>
+
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+<script>
+(function(){
+  var bg = document.getElementById('pageHeaderBg');
+  if(!bg) return;
+  if(window.innerWidth <= 860) return;
+  var leaving = false;
+  function update(){ if(leaving) return; bg.style.transform = 'translateY(' + (window.scrollY * 0.32) + 'px)'; }
+  window.addEventListener('scroll', update, {passive:true});
+  document.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', function(){ leaving = true; }); });
+})();
+</script>
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
