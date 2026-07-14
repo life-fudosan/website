@@ -18,6 +18,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;family=Noto+Sans+JP:wght@300;400&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
+<link rel="preload" as="image" href="office.jpg"/>
 <style>
     /* ── Hero ── */
     #hero { position: relative; height: 100vh; overflow: hidden; }
@@ -302,7 +303,7 @@
 <div id="page-content">
 <!-- HERO -->
 <section id="hero">
-<img alt="LIFE不動産" class="hero-img" src="office.jpg" style="object-position: center bottom;"/>
+<img alt="LIFE不動産" class="hero-img" src="office.jpg" style="object-position: center bottom;" fetchpriority="high"/>
 <div class="hero-text">
 <span class="hero-tag">Fukuoka Real Estate</span>
 <p class="hero-name">住む場所に、</p>
