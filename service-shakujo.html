@@ -45,12 +45,92 @@
     margin-bottom: 20px;
   }
   .shakujo-lead-catch {
-    font-size: 13px;
+    font-size: 15px;
+    color: var(--black);
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    font-family: var(--mincho);
+    font-weight: 400;
+  }
+
+  /* フロー図 */
+  .flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .flow-node {
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    text-align: center;
+    min-width: 140px;
+    background: #fafafa;
+  }
+  .flow-node--main {
+    border-color: var(--black);
+    background: #fff;
+  }
+  .flow-node--life {
+    background: var(--black);
+  }
+  .flow-node--life .flow-label { color: #fff; }
+  .flow-node--life .flow-sub { color: #aaa; }
+  .flow-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    margin-bottom: 6px;
+  }
+  .flow-sub {
+    display: block;
+    font-size: 11px;
     color: var(--gray);
-    letter-spacing: 0.15em;
-    margin-bottom: 24px;
-    font-family: var(--serif);
-    font-style: italic;
+    letter-spacing: 0.05em;
+  }
+  .flow-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    min-width: 80px;
+  }
+  .flow-arrow-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .flow-arrow-line::after {
+    content: '▶';
+    position: absolute;
+    right: -6px;
+    top: -8px;
+    font-size: 10px;
+    color: var(--gray);
+  }
+  .flow-arrow-text {
+    font-size: 11px;
+    color: var(--gray);
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+  }
+  .flow-note {
+    font-size: 12px;
+    color: var(--gray);
+    text-align: center;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: #fafafa;
+    letter-spacing: 0.05em;
   }
   .shakujo-lead-sub {
     font-size: 13px;
@@ -403,16 +483,78 @@
   <div class="shakujo-lead fade">
     <span class="shakujo-lead-tag">Corporate Housing Service</span>
     <h1 class="shakujo-lead-title">借上社宅 導入・運用代行サービス</h1>
-    <p class="shakujo-lead-sub">物件探しから契約事務・給与連携・退去対応まで、宅建業免許を持つ専門チームが一括代行。総務・人事担当者の負担をまるごと引き受けます。</p>
+    <p class="shakujo-lead-catch">総務・人事担当者の負担をまるごと引き受けます。</p>
+    <p class="shakujo-lead-sub">物件探しから契約事務・給与連携・退去対応まで、宅建業免許を持つ専門チームが一括代行します。</p>
   </div>
 
-  <!-- 課題 + サービス内容（統合） -->
+  <!-- 仕組み -->
   <div class="shakujo-section fade">
     <h2 class="shakujo-section-title">
-      <span>Why it's hard</span>
-      借上社宅の運用が大変な理由
+      <span>How it works</span>
+      どんな仕組みですか？
     </h2>
+    <p style="font-size:13px;line-height:2.2;color:var(--black);margin-bottom:40px;">「代行方式」を採用しています。賃貸借契約は<strong>家主・管理会社と貴社の間</strong>で締結され、弊社は契約の当事者になりません。家賃の支払いも貴社から管理会社へ直接行われるため、弊社が資金をお預かりすることはありません。弊社が担うのは、契約事務・交渉・トラブル対応などの「面倒な実務」だけです。</p>
+    <div class="flow-diagram">
+      <div class="flow-node">
+        <span class="flow-label">家主・管理会社</span>
+        <span class="flow-sub">物件のオーナー側</span>
+      </div>
+      <div class="flow-arrow">
+        <span class="flow-arrow-line"></span>
+        <span class="flow-arrow-text">賃貸借契約<br>（直接締結）</span>
+      </div>
+      <div class="flow-node flow-node--main">
+        <span class="flow-label">貴社</span>
+        <span class="flow-sub">契約の主体はここ</span>
+      </div>
+      <div class="flow-arrow">
+        <span class="flow-arrow-line"></span>
+        <span class="flow-arrow-text">実務を委託</span>
+      </div>
+      <div class="flow-node flow-node--life">
+        <span class="flow-label">LIFE（弊社）</span>
+        <span class="flow-sub">事務・交渉・対応を代行</span>
+      </div>
+    </div>
+    <p class="flow-note">家賃は貴社 → 管理会社へ直接振込。弊社を経由しません。</p>
+  </div>
 
+  <!-- サービス内容 -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>What we do</span>
+      何をしてくれますか？
+    </h2>
+    <div class="service-list">
+      <div class="service-item">
+        <span class="service-item-num">01</span>
+        <p class="service-item-title">物件の斡旋・契約代理</p>
+        <p class="service-item-text">物件探し・内見・契約締結の代理・IT重説・書面交付まで一貫対応。宅建業免許を保有するため、物件斡旋から契約後の管理まで一社で完結します。</p>
+      </div>
+      <div class="service-item">
+        <span class="service-item-num">02</span>
+        <p class="service-item-title">契約管理・データ連携</p>
+        <p class="service-item-text">入居者ごとの契約状況（期間・賃料・名義）を一元管理。給与・会計システムへのデータ連携もサポートします。</p>
+      </div>
+      <div class="service-item">
+        <span class="service-item-num">03</span>
+        <p class="service-item-title">税務・社保の計算支援</p>
+        <p class="service-item-text">賃貸料相当額・現物給与価額の算出ツールを提供。顧問社労士・税理士との連携体制で最終判断をサポートします。</p>
+      </div>
+      <div class="service-item">
+        <span class="service-item-num">04</span>
+        <p class="service-item-title">更新・退去・トラブル対応</p>
+        <p class="service-item-text">名義変更・更新・退去の事務進行、管理会社窓口の対応、近隣トラブルの取次まで一次対応します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 課題 -->
+  <div class="shakujo-section fade">
+    <h2 class="shakujo-section-title">
+      <span>Common issues</span>
+      こんなお悩みを解決します
+    </h2>
     <div class="issue-grid">
       <div class="issue-card">
         <span class="issue-num">01</span>
@@ -422,46 +564,12 @@
       <div class="issue-card">
         <span class="issue-num">02</span>
         <p class="issue-title">契約・書類手続きが積み上がる</p>
-        <p class="issue-text">重要事項説明・名義変更・保証会社対応など、件数が増えるほど事務負荷が増大。物件ごとに条件が異なります。</p>
+        <p class="issue-text">重要事項説明・名義変更・保証会社対応など、件数が増えるほど事務負荷が増大します。</p>
       </div>
       <div class="issue-card">
         <span class="issue-num">03</span>
         <p class="issue-title">入居後のトラブル対応先がない</p>
-        <p class="issue-text">近隣トラブル・退去時の原状回復交渉など、不動産の専門知識なしに対応するのは担当者にとって大きな負担です。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- サービス内容 -->
-  <div class="shakujo-section fade">
-    <h2 class="shakujo-section-title">
-      <span>What we do</span>
-      代行サービスの内容
-    </h2>
-    <div class="proxy-note">
-      <strong>「代行方式」— 契約の主体は貴社のまま</strong>
-      賃貸借契約は家主・管理会社と貴社の間で締結。弊社は契約当事者にならず、事務とトラブル対応に専念します。家賃は貴社から管理会社へ直接振替。弊社が資金をお預かりすることはありません。
-    </div>
-    <div class="service-list">
-      <div class="service-item">
-        <span class="service-item-num">01</span>
-        <p class="service-item-title">物件の斡旋・契約代理</p>
-        <p class="service-item-text">物件探し・内見・契約締結代理・IT重説・書面交付まで一貫対応。</p>
-      </div>
-      <div class="service-item">
-        <span class="service-item-num">02</span>
-        <p class="service-item-title">契約管理・データ連携</p>
-        <p class="service-item-text">入居者ごとの契約状況を一元管理。給与・会計システムへのデータ連携もサポート。</p>
-      </div>
-      <div class="service-item">
-        <span class="service-item-num">03</span>
-        <p class="service-item-title">税務・社保の計算支援</p>
-        <p class="service-item-text">賃貸料相当額・現物給与価額の算出ツールを提供。顧問社労士・税理士との連携体制で最終判断をサポート。</p>
-      </div>
-      <div class="service-item">
-        <span class="service-item-num">04</span>
-        <p class="service-item-title">更新・退去・トラブル対応</p>
-        <p class="service-item-text">名義変更・更新・退去の事務進行、管理会社窓口対応、近隣トラブルの取次まで一次対応。</p>
+        <p class="issue-text">近隣トラブル・退去時の原状回復交渉など、不動産の専門知識なしに対応するのは大きな負担です。</p>
       </div>
     </div>
   </div>
