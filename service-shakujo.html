@@ -18,405 +18,235 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .shakujo-wrap { max-width: 1140px; margin: 0 auto; padding: 80px 52px 160px; }
-
-  /* LEAD */
-  .shakujo-lead {
-    text-align: center;
-    padding-bottom: 80px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 100px;
+  /* ─── Wrap ─── */
+  .sk { max-width: 1100px; margin: 0 auto; padding: 80px 52px 160px; }
+  .sk-sec { margin-bottom: 96px; }
+  .sk-label {
+    font-family: var(--serif); font-style: italic;
+    font-size: 10px; letter-spacing: 0.3em; color: var(--gray);
+    display: block; margin-bottom: 12px;
   }
-  .shakujo-lead-tag {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--gray);
-    border: 1px solid var(--border);
-    padding: 6px 18px;
-    margin-bottom: 28px;
-  }
-  .shakujo-lead-title {
-    font-family: var(--mincho);
-    font-size: clamp(26px, 3.5vw, 44px);
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.08em;
-    margin-bottom: 20px;
-  }
-  .shakujo-lead-catch {
-    font-size: 15px;
-    color: var(--black);
-    letter-spacing: 0.08em;
-    margin-bottom: 20px;
-    font-family: var(--mincho);
-    font-weight: 400;
+  .sk-h2 {
+    font-family: var(--mincho); font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 400; letter-spacing: 0.08em;
+    padding-bottom: 18px; border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
   }
 
-  /* フロー図 */
-  .flow-diagram {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-  .flow-node {
-    border: 1px solid var(--border);
-    padding: 24px 28px;
+  /* ─── Lead ─── */
+  .sk-lead {
     text-align: center;
-    min-width: 140px;
-    background: #fafafa;
+    padding-bottom: 80px; border-bottom: 1px solid var(--border); margin-bottom: 80px;
   }
-  .flow-node--main {
-    border-color: var(--black);
-    background: #fff;
+  .sk-lead-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 0.3em; color: var(--gray);
+    border: 1px solid var(--border); padding: 5px 16px; margin-bottom: 28px;
   }
-  .flow-node--life {
+  .sk-lead-h1 {
+    font-family: var(--mincho); font-size: clamp(24px, 3.2vw, 40px);
+    font-weight: 400; letter-spacing: 0.08em; margin-bottom: 18px; line-height: 1.5;
+  }
+  .sk-lead-catch {
+    font-family: var(--mincho); font-size: 15px; color: var(--black);
+    letter-spacing: 0.08em; margin-bottom: 20px;
+  }
+  .sk-lead-sub {
+    font-size: 13px; line-height: 2.2; color: var(--black);
+    max-width: 600px; margin: 0 auto;
+  }
+
+  /* ─── Pain strip ─── */
+  .sk-pain-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+  }
+  .sk-pain-item { background: #fff; padding: 36px 28px; }
+  .sk-pain-q {
+    font-size: 11px; letter-spacing: 0.15em; color: var(--gray);
+    margin-bottom: 16px; display: block;
+  }
+  .sk-pain-title {
+    font-size: 14px; font-weight: 500; letter-spacing: 0.06em;
+    color: var(--black); line-height: 1.7; margin-bottom: 10px;
+  }
+  .sk-pain-text { font-size: 12px; line-height: 2; color: var(--black); }
+
+  /* ─── Mechanism diagram ─── */
+  .sk-mech-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .sk-mech-text p {
+    font-size: 13px; line-height: 2.3; color: var(--black); margin-bottom: 20px;
+  }
+  .sk-mech-point {
+    background: #f7f7f7; border-left: 3px solid var(--black);
+    padding: 16px 20px; font-size: 12px; line-height: 2; color: var(--black);
+  }
+  .sk-diagram {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .sk-diag-row {
+    display: flex; align-items: stretch; gap: 0;
+  }
+  .sk-diag-box {
+    flex: 1; border: 1px solid var(--border);
+    padding: 22px 20px; text-align: center; background: #fafafa;
+  }
+  .sk-diag-box--you {
+    background: #fff; border-color: var(--black); border-width: 2px;
+  }
+  .sk-diag-box--life {
     background: var(--black);
   }
-  .flow-node--life .flow-label { color: #fff; }
-  .flow-node--life .flow-sub { color: #aaa; }
-  .flow-label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: var(--black);
-    margin-bottom: 6px;
+  .sk-diag-name {
+    font-size: 14px; font-weight: 500; letter-spacing: 0.05em; color: var(--black);
+    display: block; margin-bottom: 4px;
   }
-  .flow-sub {
-    display: block;
-    font-size: 11px;
-    color: var(--gray);
-    letter-spacing: 0.05em;
+  .sk-diag-box--life .sk-diag-name { color: #fff; }
+  .sk-diag-role { font-size: 11px; color: var(--gray); letter-spacing: 0.05em; }
+  .sk-diag-box--life .sk-diag-role { color: #888; }
+  .sk-diag-arrow {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 12px; color: var(--gray); font-size: 11px; white-space: nowrap;
+    flex-direction: column; gap: 4px;
   }
-  .flow-arrow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 8px;
-    min-width: 80px;
-  }
-  .flow-arrow-line {
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: var(--border);
-    position: relative;
-    margin-bottom: 8px;
-  }
-  .flow-arrow-line::after {
-    content: '▶';
-    position: absolute;
-    right: -6px;
-    top: -8px;
-    font-size: 10px;
-    color: var(--gray);
-  }
-  .flow-arrow-text {
-    font-size: 11px;
-    color: var(--gray);
-    text-align: center;
-    line-height: 1.6;
-    letter-spacing: 0.03em;
-  }
-  .flow-note {
-    font-size: 12px;
-    color: var(--gray);
-    text-align: center;
-    padding: 12px;
-    border: 1px solid var(--border);
-    background: #fafafa;
-    letter-spacing: 0.05em;
-  }
-  .shakujo-lead-sub {
-    font-size: 13px;
-    line-height: 2.2;
-    color: var(--black);
-    max-width: 640px;
+  .sk-diag-arrow-line {
+    width: 1px; height: 32px; background: var(--border); position: relative;
     margin: 0 auto;
   }
-
-  /* SECTION */
-  .shakujo-section { margin-bottom: 100px; }
-  .shakujo-section-title {
-    font-family: var(--mincho);
-    font-size: clamp(20px, 2.5vw, 28px);
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
+  .sk-diag-arrow-line::after {
+    content: '↓'; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+    font-size: 12px; color: var(--gray);
   }
-  .shakujo-section-title span {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gray);
-    display: block;
-    margin-bottom: 10px;
+  .sk-diag-arrow-h {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 0;
+  }
+  .sk-diag-sep {
+    display: flex; flex-direction: column; align-items: center; padding: 8px 0;
+  }
+  .sk-diag-note {
+    font-size: 11px; color: var(--gray); text-align: center; letter-spacing: 0.05em;
+    padding: 12px 16px; border: 1px solid var(--border); background: #fafafa; margin-top: 1px;
   }
 
-  /* 課題カード */
-  .issue-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--border);
-    margin-bottom: 40px;
+  /* ─── Services ─── */
+  .sk-svc-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--border);
   }
-  .issue-card {
-    background: #fff;
-    padding: 40px 32px;
+  .sk-svc-item { background: #fff; padding: 40px 36px; }
+  .sk-svc-num {
+    font-family: var(--serif); font-style: italic;
+    font-size: 11px; letter-spacing: 0.2em; color: var(--gray);
+    margin-bottom: 14px; display: block;
   }
-  .issue-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 28px;
-    color: #e8e8e8;
-    line-height: 1;
-    margin-bottom: 16px;
-    display: block;
+  .sk-svc-title {
+    font-size: 15px; font-weight: 500; letter-spacing: 0.06em;
+    color: var(--black); margin-bottom: 12px; line-height: 1.5;
   }
-  .issue-title {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--black);
-    margin-bottom: 12px;
-    line-height: 1.6;
-  }
-  .issue-text {
-    font-size: 12px;
-    line-height: 2.1;
-    color: var(--black);
+  .sk-svc-text { font-size: 12px; line-height: 2.1; color: var(--black); }
+  .sk-svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .sk-svc-tag {
+    font-size: 10px; letter-spacing: 0.08em; color: var(--gray);
+    border: 1px solid var(--border); padding: 3px 10px;
   }
 
-  /* 代行方式の説明 */
-  .proxy-note {
-    background: #f7f7f7;
-    border-left: 3px solid var(--black);
-    padding: 28px 36px;
-    margin-bottom: 56px;
-    font-size: 13px;
-    line-height: 2.2;
-    color: var(--black);
+  /* ─── Pricing (2 cards) ─── */
+  .sk-price-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
   }
-  .proxy-note strong {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 8px;
-    letter-spacing: 0.05em;
+  .sk-price-card {
+    border: 1px solid var(--border); padding: 52px 44px;
   }
-
-  /* サービス内容 */
-  .service-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--border);
-    margin-bottom: 40px;
+  .sk-price-card--main {
+    background: var(--black); border-color: var(--black);
   }
-  .service-item {
-    background: #fff;
-    padding: 40px 36px;
+  .sk-price-card-en {
+    font-family: var(--serif); font-style: italic; font-size: 10px;
+    letter-spacing: 0.25em; color: var(--gray); display: block; margin-bottom: 14px;
   }
-  .service-item-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gray);
-    margin-bottom: 12px;
-    display: block;
+  .sk-price-card--main .sk-price-card-en { color: #666; }
+  .sk-price-card-title {
+    font-size: 16px; font-weight: 500; letter-spacing: 0.06em; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+    line-height: 1.5;
   }
-  .service-item-title {
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    color: var(--black);
-    margin-bottom: 12px;
+  .sk-price-card--main .sk-price-card-title { color: #fff; border-color: #333; }
+  .sk-price-body { margin-bottom: 24px; }
+  .sk-price-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px;
   }
-  .service-item-text {
-    font-size: 12px;
-    line-height: 2.1;
-    color: var(--black);
+  .sk-price-card--main .sk-price-row { border-color: #333; }
+  .sk-price-row-label { color: var(--gray); font-size: 12px; }
+  .sk-price-card--main .sk-price-row-label { color: #888; }
+  .sk-price-row-val { color: var(--black); font-weight: 500; }
+  .sk-price-card--main .sk-price-row-val { color: #fff; }
+  .sk-price-amount {
+    font-family: var(--mincho); font-size: clamp(20px, 2.5vw, 28px);
+    color: var(--black); margin-bottom: 8px; display: block;
   }
-  .service-note {
-    font-size: 12px;
-    color: var(--black);
-    line-height: 2.1;
-    padding: 20px 28px;
-    border: 1px solid var(--border);
-    background: #fafafa;
+  .sk-price-card--main .sk-price-amount { color: #fff; }
+  .sk-price-note-small {
+    font-size: 11px; color: var(--gray); line-height: 1.8;
+  }
+  .sk-price-card--main .sk-price-note-small { color: #777; }
+  .sk-price-footnote {
+    font-size: 12px; color: var(--gray); line-height: 2; margin-top: 20px;
+    padding-top: 16px; border-top: 1px solid var(--border);
   }
 
-  /* 選ばれる理由 */
-  .reason-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--border);
-    margin-bottom: 24px;
+  /* ─── FAQ ─── */
+  .sk-faq-list { border-top: 1px solid var(--border); }
+  .sk-faq-row { border-bottom: 1px solid var(--border); padding: 28px 0; }
+  .sk-faq-q {
+    font-size: 14px; font-weight: 500; color: var(--black); letter-spacing: 0.05em;
+    margin-bottom: 12px; padding-left: 28px; position: relative; line-height: 1.7;
   }
-  .reason-card {
-    background: #fff;
-    padding: 40px 36px;
+  .sk-faq-q::before {
+    content: 'Q'; font-family: var(--serif); font-style: italic;
+    position: absolute; left: 0; color: var(--gray); font-size: 16px;
   }
-  .reason-icon {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gray);
-    margin-bottom: 14px;
-    display: block;
+  .sk-faq-a {
+    font-size: 13px; line-height: 2.2; color: var(--black);
+    padding-left: 28px; position: relative;
   }
-  .reason-title {
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: var(--black);
-    margin-bottom: 12px;
-    line-height: 1.6;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-  }
-  .reason-text {
-    font-size: 12px;
-    line-height: 2.1;
-    color: var(--black);
+  .sk-faq-a::before {
+    content: 'A'; font-family: var(--serif); font-style: italic;
+    position: absolute; left: 0; color: var(--gray); font-size: 16px;
   }
 
-  /* 料金 */
-  .price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 24px;
+  /* ─── CTA ─── */
+  .sk-cta {
+    margin-top: 96px; text-align: center;
+    padding: 80px 60px; border: 1px solid var(--border);
   }
-  .price-table th {
-    background: var(--black);
-    color: #fff;
-    padding: 14px 20px;
-    text-align: left;
-    font-weight: 400;
-    font-size: 13px;
-    letter-spacing: 0.05em;
+  .sk-cta-title {
+    font-family: var(--mincho); font-size: clamp(18px, 2vw, 26px); margin-bottom: 14px;
   }
-  .price-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    color: var(--black);
-    line-height: 1.8;
-    vertical-align: top;
-  }
-  .price-table td:first-child {
-    font-weight: 500;
-    width: 42%;
-    color: var(--black);
-  }
-  .price-table tr:last-child td { border-bottom: none; }
-  .price-note {
-    font-size: 12px;
-    color: var(--black);
-    line-height: 2;
-    padding: 16px 20px;
-    background: #f7f7f7;
-  }
-
-  /* FAQ */
-  .faq-list { border-top: 1px solid var(--border); }
-  .faq-row {
-    border-bottom: 1px solid var(--border);
-    padding: 32px 0;
-  }
-  .faq-q {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--black);
-    letter-spacing: 0.05em;
-    margin-bottom: 14px;
-    padding-left: 28px;
-    position: relative;
-  }
-  .faq-q::before {
-    content: 'Q';
-    font-family: var(--serif);
-    font-style: italic;
-    position: absolute;
-    left: 0;
-    color: var(--gray);
-    font-size: 16px;
-  }
-  .faq-a {
-    font-size: 13px;
-    line-height: 2.2;
-    color: var(--black);
-    padding-left: 28px;
-    position: relative;
-  }
-  .faq-a::before {
-    content: 'A';
-    font-family: var(--serif);
-    font-style: italic;
-    position: absolute;
-    left: 0;
-    color: var(--gray);
-    font-size: 16px;
-  }
-
-  /* CTA */
-  .shakujo-cta {
-    margin-top: 100px;
-    text-align: center;
-    padding: 80px 60px;
-    border: 1px solid var(--border);
-  }
-  .shakujo-cta-title {
-    font-family: var(--mincho);
-    font-size: clamp(18px, 2vw, 26px);
-    margin-bottom: 16px;
-  }
-  .shakujo-cta-text {
-    font-size: 13px;
-    color: var(--black);
-    line-height: 2;
-    margin-bottom: 36px;
-  }
+  .sk-cta-text { font-size: 13px; color: var(--black); line-height: 2; margin-bottom: 36px; }
   .btn-line-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #06C755;
-    color: #fff;
-    padding: 16px 48px;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    transition: opacity 0.2s;
-    margin-right: 16px;
-    margin-bottom: 12px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: #06C755; color: #fff; padding: 16px 48px;
+    font-size: 13px; letter-spacing: 0.15em; text-decoration: none;
+    transition: opacity 0.2s; margin-right: 16px; margin-bottom: 12px;
   }
   .btn-line-cta:hover { opacity: 0.8; }
 
+  /* ─── Mobile ─── */
   @media (max-width: 860px) {
-    .shakujo-wrap { padding: 48px 20px 100px; }
-    .shakujo-section { margin-bottom: 64px; }
-    .shakujo-lead { padding-bottom: 48px; margin-bottom: 64px; }
-    .issue-grid { grid-template-columns: 1fr; }
-    .service-list { grid-template-columns: 1fr; }
-    .reason-grid { grid-template-columns: 1fr; }
-    .issue-card, .service-item, .reason-card { padding: 28px 20px; }
-    .proxy-note { padding: 20px 20px; }
-    .price-table td:first-child { width: auto; }
-    .shakujo-cta { padding: 40px 20px; }
-    .shakujo-section-title { font-size: 18px; margin-bottom: 28px; padding-bottom: 14px; }
+    .sk { padding: 48px 20px 100px; }
+    .sk-sec { margin-bottom: 64px; }
+    .sk-lead { padding-bottom: 48px; margin-bottom: 64px; }
+    .sk-pain-grid { grid-template-columns: 1fr; }
+    .sk-mech-layout { grid-template-columns: 1fr; gap: 32px; }
+    .sk-svc-grid { grid-template-columns: 1fr; }
+    .sk-price-grid { grid-template-columns: 1fr; }
+    .sk-price-card { padding: 36px 24px; }
+    .sk-svc-item { padding: 28px 20px; }
+    .sk-cta { padding: 40px 20px; }
+    .sk-h2 { font-size: 18px; }
   }
 </style>
 <script type="application/ld+json">
@@ -477,161 +307,199 @@
   </div>
 </div>
 
-<div class="shakujo-wrap">
+<div class="sk">
 
   <!-- LEAD -->
-  <div class="shakujo-lead fade">
-    <span class="shakujo-lead-tag">Corporate Housing Service</span>
-    <h1 class="shakujo-lead-title">借上社宅 導入・運用代行サービス</h1>
-    <p class="shakujo-lead-catch">総務・人事担当者の負担をまるごと引き受けます。</p>
-    <p class="shakujo-lead-sub">物件探しから契約事務・給与連携・退去対応まで、宅建業免許を持つ専門チームが一括代行します。</p>
+  <div class="sk-lead fade">
+    <span class="sk-lead-tag">Corporate Housing Service</span>
+    <h1 class="sk-lead-h1">借上社宅 導入・運用代行サービス</h1>
+    <p class="sk-lead-catch">総務・人事担当者の負担をまるごと引き受けます。</p>
+    <p class="sk-lead-sub">物件探しから契約事務・給与連携・退去対応まで、宅建業免許を持つ専門チームが一括代行します。</p>
+  </div>
+
+  <!-- こんなお悩みありませんか -->
+  <div class="sk-sec fade">
+    <span class="sk-label">Common Issues</span>
+    <h2 class="sk-h2">こんなお悩みはありませんか</h2>
+    <div class="sk-pain-grid">
+      <div class="sk-pain-item">
+        <span class="sk-pain-q">お悩み 01</span>
+        <p class="sk-pain-title">税務・社保の判定が複雑で、<br>ミスが怖い</p>
+        <p class="sk-pain-text">所得税と社会保険で基準が異なり、2026年10月には算定方法も変更。誤ると課税・追徴のリスクがあります。</p>
+      </div>
+      <div class="sk-pain-item">
+        <span class="sk-pain-q">お悩み 02</span>
+        <p class="sk-pain-title">契約・書類の手続きが<br>どんどん積み上がる</p>
+        <p class="sk-pain-text">重要事項説明・名義変更・保証会社対応など、件数が増えるほど総務の負担が増大します。</p>
+      </div>
+      <div class="sk-pain-item">
+        <span class="sk-pain-q">お悩み 03</span>
+        <p class="sk-pain-title">入居後のトラブルを<br>誰に相談すればいいか分からない</p>
+        <p class="sk-pain-text">近隣トラブルや退去時の原状回復交渉は、不動産の専門知識がないと対応が困難です。</p>
+      </div>
+    </div>
   </div>
 
   <!-- 仕組み -->
-  <div class="shakujo-section fade">
-    <h2 class="shakujo-section-title">
-      <span>How it works</span>
-      どんな仕組みですか？
-    </h2>
-    <p style="font-size:13px;line-height:2.2;color:var(--black);margin-bottom:40px;">「代行方式」を採用しています。賃貸借契約は<strong>家主・管理会社と貴社の間</strong>で締結され、弊社は契約の当事者になりません。家賃の支払いも貴社から管理会社へ直接行われるため、弊社が資金をお預かりすることはありません。弊社が担うのは、契約事務・交渉・トラブル対応などの「面倒な実務」だけです。</p>
-    <div class="flow-diagram">
-      <div class="flow-node">
-        <span class="flow-label">家主・管理会社</span>
-        <span class="flow-sub">物件のオーナー側</span>
+  <div class="sk-sec fade">
+    <span class="sk-label">How It Works</span>
+    <h2 class="sk-h2">どんな仕組みですか？</h2>
+    <div class="sk-mech-layout">
+      <div class="sk-mech-text">
+        <p>「<strong>代行方式</strong>」を採用しています。賃貸借契約は<strong>家主・管理会社と貴社の間</strong>で直接締結され、弊社は契約の当事者になりません。</p>
+        <p>家賃の支払いも貴社から管理会社へ直接行われます。弊社が資金をお預かりすることは一切ありません。</p>
+        <div class="sk-mech-point">
+          弊社が担うのは<strong>「面倒な実務」だけ</strong>。<br>
+          契約の主体は常に貴社です。
+        </div>
       </div>
-      <div class="flow-arrow">
-        <span class="flow-arrow-line"></span>
-        <span class="flow-arrow-text">賃貸借契約<br>（直接締結）</span>
-      </div>
-      <div class="flow-node flow-node--main">
-        <span class="flow-label">貴社</span>
-        <span class="flow-sub">契約の主体はここ</span>
-      </div>
-      <div class="flow-arrow">
-        <span class="flow-arrow-line"></span>
-        <span class="flow-arrow-text">実務を委託</span>
-      </div>
-      <div class="flow-node flow-node--life">
-        <span class="flow-label">LIFE（弊社）</span>
-        <span class="flow-sub">事務・交渉・対応を代行</span>
+      <div>
+        <div class="sk-diagram">
+          <div class="sk-diag-row">
+            <div class="sk-diag-box">
+              <span class="sk-diag-name">家主・管理会社</span>
+              <span class="sk-diag-role">物件のオーナー側</span>
+            </div>
+            <div class="sk-diag-arrow" style="font-size:18px;color:var(--border);">↔</div>
+            <div class="sk-diag-box sk-diag-box--you">
+              <span class="sk-diag-name">貴社</span>
+              <span class="sk-diag-role">契約の主体</span>
+            </div>
+          </div>
+          <div style="text-align:right;padding-right:0;display:flex;justify-content:flex-end;">
+            <div style="width:50%;text-align:center;padding:8px 0;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:1px;height:28px;background:var(--border);position:relative;">
+                <span style="position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gray);">↓</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;">
+            <div class="sk-diag-box sk-diag-box--life" style="width:50%;">
+              <span class="sk-diag-name">LIFE（弊社）</span>
+              <span class="sk-diag-role">事務・交渉・対応を代行</span>
+            </div>
+          </div>
+        </div>
+        <div class="sk-diag-note">家賃の支払いは 貴社 → 管理会社 へ直接。弊社を経由しません。</div>
       </div>
     </div>
-    <p class="flow-note">家賃は貴社 → 管理会社へ直接振込。弊社を経由しません。</p>
   </div>
 
   <!-- サービス内容 -->
-  <div class="shakujo-section fade">
-    <h2 class="shakujo-section-title">
-      <span>What we do</span>
-      何をしてくれますか？
-    </h2>
-    <div class="service-list">
-      <div class="service-item">
-        <span class="service-item-num">01</span>
-        <p class="service-item-title">物件の斡旋・契約代理</p>
-        <p class="service-item-text">物件探し・内見・契約締結の代理・IT重説・書面交付まで一貫対応。宅建業免許を保有するため、物件斡旋から契約後の管理まで一社で完結します。</p>
+  <div class="sk-sec fade">
+    <span class="sk-label">What We Do</span>
+    <h2 class="sk-h2">具体的に何をしてくれますか？</h2>
+    <div class="sk-svc-grid">
+      <div class="sk-svc-item">
+        <span class="sk-svc-num">01</span>
+        <p class="sk-svc-title">物件の斡旋・契約代理</p>
+        <p class="sk-svc-text">物件探し・内見・契約締結代理・IT重説・書面交付まで一貫対応。宅建業免許を保有しているため、物件紹介から契約後の管理まで一社で完結します。</p>
+        <div class="sk-svc-tags">
+          <span class="sk-svc-tag">物件探し</span><span class="sk-svc-tag">内見同行</span><span class="sk-svc-tag">重要事項説明</span><span class="sk-svc-tag">契約代理</span>
+        </div>
       </div>
-      <div class="service-item">
-        <span class="service-item-num">02</span>
-        <p class="service-item-title">契約管理・データ連携</p>
-        <p class="service-item-text">入居者ごとの契約状況（期間・賃料・名義）を一元管理。給与・会計システムへのデータ連携もサポートします。</p>
+      <div class="sk-svc-item">
+        <span class="sk-svc-num">02</span>
+        <p class="sk-svc-title">契約管理・データ連携</p>
+        <p class="sk-svc-text">入居者ごとの契約状況（期間・賃料・名義）を一元管理。給与・会計システムへのデータ連携もサポートします。</p>
+        <div class="sk-svc-tags">
+          <span class="sk-svc-tag">一元管理</span><span class="sk-svc-tag">給与連携</span><span class="sk-svc-tag">会計連携</span>
+        </div>
       </div>
-      <div class="service-item">
-        <span class="service-item-num">03</span>
-        <p class="service-item-title">税務・社保の計算支援</p>
-        <p class="service-item-text">賃貸料相当額・現物給与価額の算出ツールを提供。顧問社労士・税理士との連携体制で最終判断をサポートします。</p>
+      <div class="sk-svc-item">
+        <span class="sk-svc-num">03</span>
+        <p class="sk-svc-title">税務・社保の計算支援</p>
+        <p class="sk-svc-text">賃貸料相当額・現物給与価額の算出ツールを提供。顧問社労士・税理士との連携体制で最終判断をサポートします。</p>
+        <div class="sk-svc-tags">
+          <span class="sk-svc-tag">算定ツール提供</span><span class="sk-svc-tag">社労士連携</span>
+        </div>
       </div>
-      <div class="service-item">
-        <span class="service-item-num">04</span>
-        <p class="service-item-title">更新・退去・トラブル対応</p>
-        <p class="service-item-text">名義変更・更新・退去の事務進行、管理会社窓口の対応、近隣トラブルの取次まで一次対応します。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 課題 -->
-  <div class="shakujo-section fade">
-    <h2 class="shakujo-section-title">
-      <span>Common issues</span>
-      こんなお悩みを解決します
-    </h2>
-    <div class="issue-grid">
-      <div class="issue-card">
-        <span class="issue-num">01</span>
-        <p class="issue-title">税務・社保の判定が複雑</p>
-        <p class="issue-text">所得税と社会保険で基準が異なり、2026年10月には算定方法も変更。誤ると課税・追徴リスクがあります。</p>
-      </div>
-      <div class="issue-card">
-        <span class="issue-num">02</span>
-        <p class="issue-title">契約・書類手続きが積み上がる</p>
-        <p class="issue-text">重要事項説明・名義変更・保証会社対応など、件数が増えるほど事務負荷が増大します。</p>
-      </div>
-      <div class="issue-card">
-        <span class="issue-num">03</span>
-        <p class="issue-title">入居後のトラブル対応先がない</p>
-        <p class="issue-text">近隣トラブル・退去時の原状回復交渉など、不動産の専門知識なしに対応するのは大きな負担です。</p>
+      <div class="sk-svc-item">
+        <span class="sk-svc-num">04</span>
+        <p class="sk-svc-title">更新・退去・トラブル対応</p>
+        <p class="sk-svc-text">名義変更・更新・退去の事務進行、管理会社窓口対応、近隣トラブルの取次まで一次対応します。</p>
+        <div class="sk-svc-tags">
+          <span class="sk-svc-tag">更新手続き</span><span class="sk-svc-tag">退去対応</span><span class="sk-svc-tag">トラブル取次</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- 料金 -->
-  <div class="shakujo-section fade">
-    <h2 class="shakujo-section-title">
-      <span>Pricing</span>
-      ご利用料金
-    </h2>
-    <table class="price-table">
-      <thead>
-        <tr><th>項目</th><th>費用</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>契約管理業務（月額）</td>
-          <td>従業員規模・対象物件数に応じて個別お見積り<br><span style="font-size:11px;color:var(--gray);">契約管理・データ連携・算定支援・トラブル一次対応を含む</span></td>
-        </tr>
-        <tr>
-          <td>仲介手数料（新規入居時）</td>
-          <td>AD物件：無料　／　AD対象外：家賃1ヶ月分の30%</td>
-        </tr>
-        <tr>
-          <td>名義変更のみ</td>
-          <td>仲介手数料なし。名義変更手数料のみ</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="price-note">まずは無料相談にてお問い合わせください。規模・現状をお伺いした上で具体的な金額をご提示します。</p>
+  <div class="sk-sec fade">
+    <span class="sk-label">Pricing</span>
+    <h2 class="sk-h2">ご利用料金</h2>
+    <div class="sk-price-grid">
+      <div class="sk-price-card sk-price-card--main">
+        <span class="sk-price-card-en">Monthly Fee</span>
+        <p class="sk-price-card-title">契約管理業務<br>（月額）</p>
+        <div class="sk-price-body">
+          <div class="sk-price-row">
+            <span class="sk-price-row-label">対象</span>
+            <span class="sk-price-row-val">全入居物件の管理</span>
+          </div>
+          <div class="sk-price-row">
+            <span class="sk-price-row-label">含まれるもの</span>
+            <span class="sk-price-row-val">契約管理・データ連携・<br>算定支援・トラブル一次対応</span>
+          </div>
+          <div class="sk-price-row">
+            <span class="sk-price-row-label">料金</span>
+            <span class="sk-price-row-val">規模に応じて個別お見積り</span>
+          </div>
+        </div>
+        <p class="sk-price-note-small">物件数・従業員規模をお伺いした上で、具体的な金額をご提示します。</p>
+      </div>
+      <div class="sk-price-card">
+        <span class="sk-price-card-en">Brokerage Fee</span>
+        <p class="sk-price-card-title">仲介手数料<br>（新規入居時のみ）</p>
+        <div class="sk-price-body">
+          <div class="sk-price-row">
+            <span class="sk-price-row-label">AD物件</span>
+            <span class="sk-price-row-val">無料</span>
+          </div>
+          <div class="sk-price-row">
+            <span class="sk-price-row-label">一般物件</span>
+            <span class="sk-price-row-val">家賃の30%</span>
+          </div>
+          <div class="sk-price-row">
+            <span class="sk-price-row-label">名義変更のみ</span>
+            <span class="sk-price-row-val">仲介手数料なし</span>
+          </div>
+        </div>
+        <p class="sk-price-note-small">仲介手数料は新規入居のタイミングのみ発生します。月額費用とは別です。</p>
+      </div>
+    </div>
+    <p class="sk-price-footnote">※ まずは無料相談にてお問い合わせください。現状の物件数・課題をお伺いした上で具体的な金額をご提示します。</p>
   </div>
 
   <!-- FAQ -->
-  <div class="shakujo-section fade">
-    <h2 class="shakujo-section-title">
-      <span>FAQ</span>
-      よくある質問
-    </h2>
-    <div class="faq-list">
-      <div class="faq-row">
-        <p class="faq-q">契約の名義は誰になりますか？</p>
-        <p class="faq-a">賃貸借契約は家主・管理会社と貴社の間で締結される「代行方式」です。弊社が契約当事者になることはありません。</p>
+  <div class="sk-sec fade">
+    <span class="sk-label">FAQ</span>
+    <h2 class="sk-h2">よくある質問</h2>
+    <div class="sk-faq-list">
+      <div class="sk-faq-row">
+        <p class="sk-faq-q">契約の名義は誰になりますか？</p>
+        <p class="sk-faq-a">賃貸借契約は家主・管理会社と貴社の間で締結される「代行方式」です。弊社が契約当事者になることはありません。</p>
       </div>
-      <div class="faq-row">
-        <p class="faq-q">税金・社会保険の計算まで代行してもらえますか？</p>
-        <p class="faq-a">算定支援ツールと雛形をご提供します。最終的な届出・判断は貴社顧問の社労士・税理士にご対応いただきます。専門家がいない場合は提携先をご紹介します。</p>
+      <div class="sk-faq-row">
+        <p class="sk-faq-q">税金・社会保険の計算まで代行してもらえますか？</p>
+        <p class="sk-faq-a">算定支援ツールと雛形をご提供します。最終的な届出・判断は貴社顧問の社労士・税理士にご対応いただきます。専門家がいない場合は提携先をご紹介します。</p>
       </div>
-      <div class="faq-row">
-        <p class="faq-q">既存の物件（名義変更ケース）も対応できますか？</p>
-        <p class="faq-a">対応可能です。個人契約から法人契約への名義変更を代行し、以降の運用管理を月額費用内でサポートします。</p>
+      <div class="sk-faq-row">
+        <p class="sk-faq-q">既存の物件（名義変更ケース）も対応できますか？</p>
+        <p class="sk-faq-a">対応可能です。個人契約から法人契約への名義変更を代行し、以降の運用管理を月額費用内でサポートします。</p>
       </div>
-      <div class="faq-row">
-        <p class="faq-q">対応エリアはどこですか？</p>
-        <p class="faq-a">福岡・九州エリアを中心に対応しています。順次エリア拡大予定です。</p>
+      <div class="sk-faq-row">
+        <p class="sk-faq-q">対応エリアはどこですか？</p>
+        <p class="sk-faq-a">福岡・九州エリアを中心に対応しています。順次エリア拡大予定です。</p>
       </div>
     </div>
   </div>
 
   <!-- CTA -->
-  <div class="shakujo-cta fade">
-    <p class="shakujo-cta-title">まずは無料相談から</p>
-    <p class="shakujo-cta-text">規模・現状の課題をお伺いした上で、具体的なプランと費用をご提示します。</p>
+  <div class="sk-cta fade">
+    <p class="sk-cta-title">まずは無料相談から</p>
+    <p class="sk-cta-text">規模・現状の課題をお伺いした上で、具体的なプランと費用をご提示します。</p>
     <a class="btn-line-cta" href="https://lin.ee/xNyg5u7" onclick="gtag('event','line_click',{'event_category':'contact','event_label':'line'})" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
       LINE で無料相談
@@ -639,7 +507,7 @@
     <a class="btn" href="contact.html" onclick="gtag('event','form_click',{'event_category':'contact','event_label':'contact_form'})">お問い合わせフォーム</a>
   </div>
 
-</div><!-- /.shakujo-wrap -->
+</div><!-- /.sk -->
 
 <footer>
   <div class="footer-inner">
