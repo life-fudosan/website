@@ -202,6 +202,102 @@
     }
     .btn-line-cta:hover { opacity:0.8; }
 
+    /* ── Simulator ── */
+    .sim-section {
+      padding: 100px 80px;
+      border-bottom: 1px solid var(--border);
+      max-width: 100%;
+    }
+    .sim-en {
+      font-family: var(--serif); font-style: italic;
+      font-size: 10.5px; letter-spacing: 0.3em; color: var(--gray);
+      display: block; margin-bottom: 16px;
+    }
+    .sim-title {
+      font-family: var(--mincho); font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 400; letter-spacing: 0.08em; margin-bottom: 12px;
+    }
+    .sim-lead {
+      font-size: 12px; color: var(--gray); letter-spacing: 0.1em;
+      line-height: 2; margin-bottom: 52px;
+    }
+    .sim-body {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .sim-inputs { display: flex; flex-direction: column; gap: 32px; }
+    .sim-input-label {
+      font-size: 11px; letter-spacing: 0.15em; color: var(--gray);
+      display: block; margin-bottom: 10px;
+    }
+    .sim-rent-display {
+      font-family: var(--mincho);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 400; letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .sim-rent-display span { font-size: 14px; color: var(--gray); margin-left: 4px; }
+    input[type="range"].sim-slider {
+      -webkit-appearance: none; width: 100%; height: 1px;
+      background: var(--border); outline: none; cursor: pointer;
+    }
+    input[type="range"].sim-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 16px; height: 16px;
+      border-radius: 50%; background: var(--black); cursor: pointer;
+    }
+    .sim-selects {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .sim-select-wrap select {
+      width: 100%; padding: 10px 12px;
+      border: 1px solid var(--border); background: #fff;
+      font-size: 12px; letter-spacing: 0.05em; color: var(--black);
+      appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+    }
+    /* Result table */
+    .sim-table { width: 100%; border-collapse: collapse; margin-bottom: 0; }
+    .sim-table th {
+      padding: 12px 16px; font-size: 11px; font-weight: 400;
+      letter-spacing: 0.1em; text-align: right; border-bottom: 1px solid var(--border);
+      color: var(--gray);
+    }
+    .sim-table th:first-child { text-align: left; }
+    .sim-table th.sim-th-life {
+      background: var(--black); color: #fff;
+    }
+    .sim-table td {
+      padding: 14px 16px; font-size: 13px; text-align: right;
+      border-bottom: 1px solid var(--border); color: var(--black);
+    }
+    .sim-table td:first-child { text-align: left; font-size: 12px; color: var(--gray); letter-spacing: 0.05em; }
+    .sim-table tr.sim-total-row td {
+      font-weight: 500; font-size: 14px; border-top: 2px solid var(--black);
+      border-bottom: none; padding-top: 20px;
+    }
+    .sim-life-col { background: #fafafa; }
+    .sim-life-col.sim-fee { color: var(--black); font-weight: 500; }
+    .sim-saving {
+      margin-top: 28px; padding: 28px 24px;
+      background: var(--black); text-align: center;
+    }
+    .sim-saving-label {
+      font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.5);
+      display: block; margin-bottom: 8px;
+    }
+    .sim-saving-num {
+      font-family: var(--mincho); font-size: clamp(32px, 4vw, 48px);
+      color: #fff; letter-spacing: -0.01em;
+    }
+    .sim-saving-unit { font-size: 14px; color: rgba(255,255,255,0.7); margin-left: 4px; }
+    .sim-note {
+      font-size: 11px; color: var(--gray); line-height: 2;
+      margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border);
+    }
+
     @media (max-width: 960px) {
       .hero-text { left: 32px; bottom: 60px; }
       .about-section { padding: 64px 0; }
@@ -214,11 +310,15 @@
       .sli-sub { display: none; }
       .fee-section { padding: 64px 24px; }
       .cta-strip { flex-direction: column; gap: 28px; padding: 64px 32px; text-align: center; }
+      .sim-section { padding: 72px 32px; }
+      .sim-body { grid-template-columns: 1fr; gap: 40px; }
     }
     @media (max-width: 560px) {
       .hero-text { left: 24px; bottom: 48px; }
       .service-section { padding: 0 24px; }
       .fee-section { padding: 56px 24px; }
+      .sim-section { padding: 56px 24px; }
+      .sim-selects { grid-template-columns: 1fr 1fr; }
     }
   </style>
 <script type="application/ld+json">
@@ -370,6 +470,104 @@
 <span class="fee-off">O F F</span>
 <p class="fee-text">賃貸の仲介手数料を50%OFFでご提供しています。<br/>少しでも余裕のある暮らしを届けたい、その想いから。</p>
 </div>
+
+<!-- SIMULATOR -->
+<div class="sim-section fade">
+  <span class="sim-en">Cost Simulator</span>
+  <h2 class="sim-title">初期費用シミュレーター</h2>
+  <p class="sim-lead">家賃・敷金・礼金を設定するだけで、一般的な会社とLIFEの初期費用を比較できます。</p>
+  <div class="sim-body">
+    <!-- 入力 -->
+    <div class="sim-inputs">
+      <div>
+        <span class="sim-input-label">月 額 家 賃</span>
+        <div class="sim-rent-display"><span id="simRentVal">80,000</span><span>円</span></div>
+        <input class="sim-slider" id="simRent" max="200000" min="30000" step="1000" type="range" value="80000"/>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;">
+          <span style="font-size:10px;color:var(--gray);">3万円</span>
+          <span style="font-size:10px;color:var(--gray);">20万円</span>
+        </div>
+      </div>
+      <div>
+        <span class="sim-input-label">敷 金</span>
+        <div class="sim-select-wrap">
+          <select id="simShikikin">
+            <option value="0">なし（0ヶ月）</option>
+            <option value="1" selected>1ヶ月</option>
+            <option value="2">2ヶ月</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <span class="sim-input-label">礼 金</span>
+        <div class="sim-select-wrap">
+          <select id="simReikin">
+            <option value="0">なし（0ヶ月）</option>
+            <option value="1" selected>1ヶ月</option>
+            <option value="2">2ヶ月</option>
+          </select>
+        </div>
+      </div>
+      <div class="sim-note">※ 目安の試算です。保証会社費用・鍵交換費用等は含みません。AD物件の場合、仲介手数料がさらに安くなるケースがあります。</div>
+    </div>
+    <!-- 結果 -->
+    <div>
+      <table class="sim-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>一般的な会社</th>
+            <th class="sim-th-life">LIFE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>敷金</td>
+            <td id="r-shikikin-g">—</td>
+            <td class="sim-life-col" id="r-shikikin-l">—</td>
+          </tr>
+          <tr>
+            <td>礼金</td>
+            <td id="r-reikin-g">—</td>
+            <td class="sim-life-col" id="r-reikin-l">—</td>
+          </tr>
+          <tr>
+            <td>前家賃（1ヶ月）</td>
+            <td id="r-mae-g">—</td>
+            <td class="sim-life-col" id="r-mae-l">—</td>
+          </tr>
+          <tr>
+            <td>仲介手数料（税込）</td>
+            <td id="r-fee-g">—</td>
+            <td class="sim-life-col sim-fee" id="r-fee-l">—</td>
+          </tr>
+          <tr>
+            <td>火災保険（目安）</td>
+            <td>約15,000円</td>
+            <td class="sim-life-col">約15,000円</td>
+          </tr>
+          <tr class="sim-total-row">
+            <td>合計（目安）</td>
+            <td id="r-total-g">—</td>
+            <td class="sim-life-col" id="r-total-l">—</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="sim-saving">
+        <span class="sim-saving-label">L I F E な ら</span>
+        <span class="sim-saving-num" id="r-saving">—</span>
+        <span class="sim-saving-unit">円お得</span>
+      </div>
+      <div style="margin-top:24px;text-align:center;">
+        <a class="btn-line-cta" href="https://lin.ee/xNyg5u7" onclick="gtag('event','line_click',{'event_category':'contact','event_label':'simulator_line'})" rel="noopener" target="_blank">
+          <svg height="18" viewbox="0 0 24 24" width="18"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
+          この金額でLINE相談する
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
 <div class="footer-inner">
 <div>
@@ -455,6 +653,41 @@
     });
   }, { threshold: 0.4 });
   if (feeEl) feeObs.observe(feeEl.closest('.fee-section'));
+
+  // Simulator
+  function fmt(n) { return Math.round(n).toLocaleString('ja-JP'); }
+  function calcSim() {
+    const rent     = parseInt(document.getElementById('simRent').value);
+    const shikikin = parseInt(document.getElementById('simShikikin').value);
+    const reikin   = parseInt(document.getElementById('simReikin').value);
+
+    const shikikinAmt = rent * shikikin;
+    const reikinAmt   = rent * reikin;
+    const mae         = rent;
+    const insurance   = 15000;
+    const feeG        = Math.round(rent * 1.1);   // 一般: 1ヶ月+税
+    const feeL        = Math.round(rent * 0.55);  // LIFE: 0.5ヶ月+税
+    const totalG      = shikikinAmt + reikinAmt + mae + feeG + insurance;
+    const totalL      = shikikinAmt + reikinAmt + mae + feeL + insurance;
+    const saving      = totalG - totalL;
+
+    document.getElementById('simRentVal').textContent = rent.toLocaleString('ja-JP');
+    document.getElementById('r-shikikin-g').textContent = shikikinAmt ? fmt(shikikinAmt)+'円' : 'なし';
+    document.getElementById('r-shikikin-l').textContent = shikikinAmt ? fmt(shikikinAmt)+'円' : 'なし';
+    document.getElementById('r-reikin-g').textContent   = reikinAmt   ? fmt(reikinAmt)+'円'   : 'なし';
+    document.getElementById('r-reikin-l').textContent   = reikinAmt   ? fmt(reikinAmt)+'円'   : 'なし';
+    document.getElementById('r-mae-g').textContent      = fmt(mae)+'円';
+    document.getElementById('r-mae-l').textContent      = fmt(mae)+'円';
+    document.getElementById('r-fee-g').textContent      = fmt(feeG)+'円';
+    document.getElementById('r-fee-l').textContent      = fmt(feeL)+'円';
+    document.getElementById('r-total-g').textContent    = fmt(totalG)+'円';
+    document.getElementById('r-total-l').textContent    = fmt(totalL)+'円';
+    document.getElementById('r-saving').textContent     = fmt(saving);
+  }
+  calcSim();
+  document.getElementById('simRent').addEventListener('input', calcSim);
+  document.getElementById('simShikikin').addEventListener('change', calcSim);
+  document.getElementById('simReikin').addEventListener('change', calcSim);
 </script>
 </div>
 <a class="line-fixed" href="https://lin.ee/xNyg5u7" onclick="gtag(\'event\',\'line_click\',{\'event_category\':\'contact\',\'event_label\':\'line\'})" rel="noopener" target="_blank">
