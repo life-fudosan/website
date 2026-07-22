@@ -23,227 +23,222 @@
   .sk-sec { margin-bottom: 96px; }
   .sk-label {
     font-family: var(--serif); font-style: italic;
-    font-size: 10px; letter-spacing: 0.3em; color: var(--gray);
+    font-size: 10px; letter-spacing: 0.3em; color: #aaa;
     display: block; margin-bottom: 12px;
   }
   .sk-h2 {
     font-family: var(--mincho); font-size: clamp(18px, 2.2vw, 26px);
-    font-weight: 400; letter-spacing: 0.08em;
-    padding-bottom: 18px; border-bottom: 1px solid var(--border);
+    font-weight: 400; letter-spacing: 0.08em; color: #2a2a2a;
+    padding-bottom: 18px; border-bottom: 2px solid #e8e3dc;
     margin-bottom: 40px;
   }
 
   /* ─── Lead ─── */
   .sk-lead {
     text-align: center;
-    padding-bottom: 80px; border-bottom: 1px solid var(--border); margin-bottom: 80px;
+    padding-bottom: 72px; border-bottom: 1px solid #ece8e2; margin-bottom: 80px;
   }
   .sk-lead-tag {
-    display: inline-block; font-size: 10px; letter-spacing: 0.3em; color: var(--gray);
-    border: 1px solid var(--border); padding: 5px 16px; margin-bottom: 28px;
+    display: inline-block; font-size: 10px; letter-spacing: 0.3em; color: #aaa;
+    border: 1px solid #ddd; padding: 5px 16px; margin-bottom: 28px;
   }
   .sk-lead-h1 {
     font-family: var(--mincho); font-size: clamp(24px, 3.2vw, 40px);
-    font-weight: 400; letter-spacing: 0.08em; margin-bottom: 18px; line-height: 1.5;
+    font-weight: 400; letter-spacing: 0.08em; color: #2a2a2a;
+    margin-bottom: 18px; line-height: 1.5;
   }
   .sk-lead-catch {
-    font-family: var(--mincho); font-size: 15px; color: var(--black);
+    font-family: var(--mincho); font-size: 16px; color: #3a3a3a;
     letter-spacing: 0.08em; margin-bottom: 20px;
   }
   .sk-lead-sub {
-    font-size: 13px; line-height: 2.2; color: var(--black);
+    font-size: 13px; line-height: 2.3; color: #555;
     max-width: 600px; margin: 0 auto;
   }
 
-  /* ─── Pain strip ─── */
+  /* ─── Pain cards ─── */
   .sk-pain-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--border);
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   }
-  .sk-pain-item { background: #fff; padding: 36px 28px; }
+  .sk-pain-item {
+    background: #f8f6f2; border-radius: 2px;
+    padding: 36px 28px; border-top: 3px solid #d4c9b8;
+  }
   .sk-pain-q {
-    font-size: 11px; letter-spacing: 0.15em; color: var(--gray);
-    margin-bottom: 16px; display: block;
+    font-size: 11px; letter-spacing: 0.15em; color: #b0a090;
+    margin-bottom: 14px; display: block;
   }
   .sk-pain-title {
-    font-size: 14px; font-weight: 500; letter-spacing: 0.06em;
-    color: var(--black); line-height: 1.7; margin-bottom: 10px;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
+    color: #2a2a2a; line-height: 1.8; margin-bottom: 12px;
   }
-  .sk-pain-text { font-size: 12px; line-height: 2; color: var(--black); }
+  .sk-pain-text { font-size: 12px; line-height: 2.1; color: #666; }
 
-  /* ─── Mechanism diagram ─── */
+  /* ─── Mechanism ─── */
   .sk-mech-layout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
   }
   .sk-mech-text p {
-    font-size: 13px; line-height: 2.3; color: var(--black); margin-bottom: 20px;
+    font-size: 13px; line-height: 2.4; color: #555; margin-bottom: 20px;
   }
+  .sk-mech-text strong { color: #2a2a2a; }
   .sk-mech-point {
-    background: #f7f7f7; border-left: 3px solid var(--black);
-    padding: 16px 20px; font-size: 12px; line-height: 2; color: var(--black);
+    background: #f3f0eb; border-left: 3px solid #c8bfb0;
+    padding: 18px 22px; font-size: 13px; line-height: 2; color: #3a3a3a;
   }
-  .sk-diagram {
-    display: flex; flex-direction: column; gap: 0;
-  }
-  .sk-diag-row {
-    display: flex; align-items: stretch; gap: 0;
-  }
+  /* diagram */
+  .sk-diagram { display: flex; flex-direction: column; gap: 0; }
+  .sk-diag-row { display: flex; align-items: center; gap: 0; }
   .sk-diag-box {
-    flex: 1; border: 1px solid var(--border);
-    padding: 22px 20px; text-align: center; background: #fafafa;
+    flex: 1; border: 1px solid #ddd; padding: 20px 16px;
+    text-align: center; background: #f9f8f5;
   }
   .sk-diag-box--you {
-    background: #fff; border-color: var(--black); border-width: 2px;
+    background: #fff; border: 2px solid #8a7f72;
   }
   .sk-diag-box--life {
-    background: var(--black);
+    background: #3d3530; border-color: #3d3530;
   }
   .sk-diag-name {
-    font-size: 14px; font-weight: 500; letter-spacing: 0.05em; color: var(--black);
+    font-size: 13px; font-weight: 500; letter-spacing: 0.05em; color: #2a2a2a;
     display: block; margin-bottom: 4px;
   }
-  .sk-diag-box--life .sk-diag-name { color: #fff; }
-  .sk-diag-role { font-size: 11px; color: var(--gray); letter-spacing: 0.05em; }
-  .sk-diag-box--life .sk-diag-role { color: #888; }
-  .sk-diag-arrow {
-    display: flex; align-items: center; justify-content: center;
-    padding: 0 12px; color: var(--gray); font-size: 11px; white-space: nowrap;
-    flex-direction: column; gap: 4px;
-  }
-  .sk-diag-arrow-line {
-    width: 1px; height: 32px; background: var(--border); position: relative;
-    margin: 0 auto;
-  }
-  .sk-diag-arrow-line::after {
-    content: '↓'; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
-    font-size: 12px; color: var(--gray);
-  }
+  .sk-diag-box--life .sk-diag-name { color: #f0ece6; }
+  .sk-diag-role { font-size: 11px; color: #aaa; letter-spacing: 0.03em; }
+  .sk-diag-box--life .sk-diag-role { color: #907e72; }
   .sk-diag-arrow-h {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 8px 0;
+    font-size: 16px; color: #ccc; padding: 0 10px; flex-shrink: 0;
   }
-  .sk-diag-sep {
-    display: flex; flex-direction: column; align-items: center; padding: 8px 0;
+  .sk-diag-down {
+    display: flex; justify-content: flex-end; padding-right: 0;
+  }
+  .sk-diag-down-line {
+    width: 50%; display: flex; flex-direction: column;
+    align-items: center; padding: 10px 0;
+  }
+  .sk-diag-down-line span {
+    display: block; width: 1px; height: 28px; background: #d0cac2; position: relative;
+  }
+  .sk-diag-down-line span::after {
+    content: '↓'; position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
+    font-size: 13px; color: #bbb;
   }
   .sk-diag-note {
-    font-size: 11px; color: var(--gray); text-align: center; letter-spacing: 0.05em;
-    padding: 12px 16px; border: 1px solid var(--border); background: #fafafa; margin-top: 1px;
+    font-size: 11px; color: #999; text-align: center;
+    padding: 12px; background: #f5f3ef; border: 1px solid #e8e3dc; margin-top: 1px;
+    letter-spacing: 0.05em;
   }
 
   /* ─── Services ─── */
   .sk-svc-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1px; background: var(--border);
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
   }
-  .sk-svc-item { background: #fff; padding: 40px 36px; }
+  .sk-svc-item {
+    background: #fff; border: 1px solid #e8e3dc; padding: 40px 36px;
+  }
   .sk-svc-num {
     font-family: var(--serif); font-style: italic;
-    font-size: 11px; letter-spacing: 0.2em; color: var(--gray);
-    margin-bottom: 14px; display: block;
+    font-size: 11px; letter-spacing: 0.2em; color: #c8bfb0;
+    margin-bottom: 12px; display: block;
   }
   .sk-svc-title {
-    font-size: 15px; font-weight: 500; letter-spacing: 0.06em;
-    color: var(--black); margin-bottom: 12px; line-height: 1.5;
+    font-size: 15px; font-weight: 500; letter-spacing: 0.05em;
+    color: #2a2a2a; margin-bottom: 12px; line-height: 1.5;
+    padding-bottom: 12px; border-bottom: 1px solid #eee;
   }
-  .sk-svc-text { font-size: 12px; line-height: 2.1; color: var(--black); }
+  .sk-svc-text { font-size: 12px; line-height: 2.2; color: #666; }
   .sk-svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
   .sk-svc-tag {
-    font-size: 10px; letter-spacing: 0.08em; color: var(--gray);
-    border: 1px solid var(--border); padding: 3px 10px;
+    font-size: 10px; letter-spacing: 0.06em; color: #999;
+    background: #f5f3ef; padding: 4px 10px; border-radius: 2px;
   }
 
-  /* ─── Pricing (2 cards) ─── */
+  /* ─── Pricing ─── */
   .sk-price-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
   }
   .sk-price-card {
-    border: 1px solid var(--border); padding: 52px 44px;
+    border: 1px solid #e8e3dc; padding: 48px 40px; background: #fff;
   }
   .sk-price-card--main {
-    background: var(--black); border-color: var(--black);
+    background: #f3f0eb; border-color: #d4c9b8;
   }
   .sk-price-card-en {
     font-family: var(--serif); font-style: italic; font-size: 10px;
-    letter-spacing: 0.25em; color: var(--gray); display: block; margin-bottom: 14px;
+    letter-spacing: 0.25em; color: #bbb; display: block; margin-bottom: 12px;
   }
-  .sk-price-card--main .sk-price-card-en { color: #666; }
   .sk-price-card-title {
-    font-size: 16px; font-weight: 500; letter-spacing: 0.06em; color: var(--black);
-    margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
-    line-height: 1.5;
+    font-family: var(--mincho); font-size: 18px; font-weight: 400;
+    letter-spacing: 0.06em; color: #2a2a2a;
+    margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #ddd;
+    line-height: 1.6;
   }
-  .sk-price-card--main .sk-price-card-title { color: #fff; border-color: #333; }
-  .sk-price-body { margin-bottom: 24px; }
+  .sk-price-card--main .sk-price-card-title { border-color: #c8bfb0; }
+  .sk-price-body { margin-bottom: 20px; }
   .sk-price-row {
     display: flex; justify-content: space-between; align-items: baseline;
-    padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+    padding: 12px 0; border-bottom: 1px solid #eee; font-size: 13px;
+    gap: 16px;
   }
-  .sk-price-card--main .sk-price-row { border-color: #333; }
-  .sk-price-row-label { color: var(--gray); font-size: 12px; }
-  .sk-price-card--main .sk-price-row-label { color: #888; }
-  .sk-price-row-val { color: var(--black); font-weight: 500; }
-  .sk-price-card--main .sk-price-row-val { color: #fff; }
-  .sk-price-amount {
-    font-family: var(--mincho); font-size: clamp(20px, 2.5vw, 28px);
-    color: var(--black); margin-bottom: 8px; display: block;
-  }
-  .sk-price-card--main .sk-price-amount { color: #fff; }
+  .sk-price-card--main .sk-price-row { border-color: #d4c9b8; }
+  .sk-price-row-label { color: #999; font-size: 12px; flex-shrink: 0; }
+  .sk-price-row-val { color: #2a2a2a; font-weight: 500; text-align: right; }
   .sk-price-note-small {
-    font-size: 11px; color: var(--gray); line-height: 1.8;
+    font-size: 11px; color: #aaa; line-height: 1.9;
   }
-  .sk-price-card--main .sk-price-note-small { color: #777; }
   .sk-price-footnote {
-    font-size: 12px; color: var(--gray); line-height: 2; margin-top: 20px;
-    padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: #aaa; line-height: 2; margin-top: 24px;
+    padding: 16px 20px; background: #f8f6f2; border: 1px solid #e8e3dc;
   }
 
   /* ─── FAQ ─── */
-  .sk-faq-list { border-top: 1px solid var(--border); }
-  .sk-faq-row { border-bottom: 1px solid var(--border); padding: 28px 0; }
+  .sk-faq-list { border-top: 1px solid #ece8e2; }
+  .sk-faq-row { border-bottom: 1px solid #ece8e2; padding: 28px 0; }
   .sk-faq-q {
-    font-size: 14px; font-weight: 500; color: var(--black); letter-spacing: 0.05em;
-    margin-bottom: 12px; padding-left: 28px; position: relative; line-height: 1.7;
+    font-size: 14px; font-weight: 500; color: #2a2a2a; letter-spacing: 0.04em;
+    margin-bottom: 12px; padding-left: 30px; position: relative; line-height: 1.7;
   }
   .sk-faq-q::before {
     content: 'Q'; font-family: var(--serif); font-style: italic;
-    position: absolute; left: 0; color: var(--gray); font-size: 16px;
+    position: absolute; left: 0; color: #c8bfb0; font-size: 17px; font-weight: 400;
   }
   .sk-faq-a {
-    font-size: 13px; line-height: 2.2; color: var(--black);
-    padding-left: 28px; position: relative;
+    font-size: 13px; line-height: 2.3; color: #555;
+    padding-left: 30px; position: relative;
   }
   .sk-faq-a::before {
     content: 'A'; font-family: var(--serif); font-style: italic;
-    position: absolute; left: 0; color: var(--gray); font-size: 16px;
+    position: absolute; left: 0; color: #c8bfb0; font-size: 17px; font-weight: 400;
   }
 
   /* ─── CTA ─── */
   .sk-cta {
     margin-top: 96px; text-align: center;
-    padding: 80px 60px; border: 1px solid var(--border);
+    padding: 80px 60px; background: #f8f6f2; border: 1px solid #e8e3dc;
   }
   .sk-cta-title {
-    font-family: var(--mincho); font-size: clamp(18px, 2vw, 26px); margin-bottom: 14px;
+    font-family: var(--mincho); font-size: clamp(18px, 2vw, 26px);
+    margin-bottom: 14px; color: #2a2a2a;
   }
-  .sk-cta-text { font-size: 13px; color: var(--black); line-height: 2; margin-bottom: 36px; }
+  .sk-cta-text { font-size: 13px; color: #666; line-height: 2.2; margin-bottom: 36px; }
   .btn-line-cta {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     background: #06C755; color: #fff; padding: 16px 48px;
     font-size: 13px; letter-spacing: 0.15em; text-decoration: none;
     transition: opacity 0.2s; margin-right: 16px; margin-bottom: 12px;
   }
-  .btn-line-cta:hover { opacity: 0.8; }
+  .btn-line-cta:hover { opacity: 0.85; }
 
   /* ─── Mobile ─── */
   @media (max-width: 860px) {
     .sk { padding: 48px 20px 100px; }
     .sk-sec { margin-bottom: 64px; }
     .sk-lead { padding-bottom: 48px; margin-bottom: 64px; }
-    .sk-pain-grid { grid-template-columns: 1fr; }
+    .sk-pain-grid { grid-template-columns: 1fr; gap: 10px; }
     .sk-mech-layout { grid-template-columns: 1fr; gap: 32px; }
-    .sk-svc-grid { grid-template-columns: 1fr; }
-    .sk-price-grid { grid-template-columns: 1fr; }
-    .sk-price-card { padding: 36px 24px; }
+    .sk-svc-grid { grid-template-columns: 1fr; gap: 10px; }
+    .sk-price-grid { grid-template-columns: 1fr; gap: 12px; }
+    .sk-price-card { padding: 32px 24px; }
     .sk-svc-item { padding: 28px 20px; }
     .sk-cta { padding: 40px 20px; }
     .sk-h2 { font-size: 18px; }
@@ -360,23 +355,19 @@
               <span class="sk-diag-name">家主・管理会社</span>
               <span class="sk-diag-role">物件のオーナー側</span>
             </div>
-            <div class="sk-diag-arrow" style="font-size:18px;color:var(--border);">↔</div>
+            <div class="sk-diag-arrow-h">↔</div>
             <div class="sk-diag-box sk-diag-box--you">
               <span class="sk-diag-name">貴社</span>
               <span class="sk-diag-role">契約の主体</span>
             </div>
           </div>
-          <div style="text-align:right;padding-right:0;display:flex;justify-content:flex-end;">
-            <div style="width:50%;text-align:center;padding:8px 0;display:flex;flex-direction:column;align-items:center;">
-              <div style="width:1px;height:28px;background:var(--border);position:relative;">
-                <span style="position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gray);">↓</span>
-              </div>
-            </div>
+          <div class="sk-diag-down">
+            <div class="sk-diag-down-line"><span></span></div>
           </div>
           <div style="display:flex;justify-content:flex-end;">
             <div class="sk-diag-box sk-diag-box--life" style="width:50%;">
               <span class="sk-diag-name">LIFE（弊社）</span>
-              <span class="sk-diag-role">事務・交渉・対応を代行</span>
+              <span class="sk-diag-role">実務を代行</span>
             </div>
           </div>
         </div>
