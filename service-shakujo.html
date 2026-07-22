@@ -18,230 +18,178 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* ─── Wrap ─── */
-  .sk { max-width: 1100px; margin: 0 auto; padding: 80px 52px 160px; }
-  .sk-sec { margin-bottom: 96px; }
-  .sk-label {
-    font-family: var(--serif); font-style: italic;
-    font-size: 10px; letter-spacing: 0.3em; color: #aaa;
-    display: block; margin-bottom: 12px;
-  }
-  .sk-h2 {
-    font-family: var(--mincho); font-size: clamp(18px, 2.2vw, 26px);
-    font-weight: 400; letter-spacing: 0.08em; color: #2a2a2a;
-    padding-bottom: 18px; border-bottom: 2px solid #e8e3dc;
-    margin-bottom: 40px;
-  }
+  /* ── ページ全体 ── */
+  .sk-page { max-width: 800px; margin: 0 auto; padding: 80px 40px 160px; }
 
-  /* ─── Lead ─── */
-  .sk-lead {
-    text-align: center;
-    padding-bottom: 72px; border-bottom: 1px solid #ece8e2; margin-bottom: 80px;
+  /* ── セクション共通 ── */
+  .sk-sec { margin-bottom: 80px; }
+  .sk-sec-en {
+    font-family: var(--serif); font-style: italic;
+    font-size: 10px; letter-spacing: 0.3em; color: #bbb;
+    display: block; margin-bottom: 10px;
   }
+  .sk-sec-title {
+    font-family: var(--mincho); font-size: 22px; font-weight: 400;
+    color: #222; letter-spacing: 0.06em; line-height: 1.5;
+    margin-bottom: 32px;
+  }
+  .sk-divider { width: 32px; height: 1px; background: #ccc; margin-bottom: 32px; }
+
+  /* ── リード ── */
+  .sk-lead { text-align: center; padding: 64px 0 72px; border-bottom: 1px solid #e8e8e8; margin-bottom: 80px; }
   .sk-lead-tag {
-    display: inline-block; font-size: 10px; letter-spacing: 0.3em; color: #aaa;
-    border: 1px solid #ddd; padding: 5px 16px; margin-bottom: 28px;
+    font-size: 10px; letter-spacing: 0.3em; color: #bbb;
+    display: block; margin-bottom: 24px;
   }
   .sk-lead-h1 {
-    font-family: var(--mincho); font-size: clamp(24px, 3.2vw, 40px);
-    font-weight: 400; letter-spacing: 0.08em; color: #2a2a2a;
-    margin-bottom: 18px; line-height: 1.5;
+    font-family: var(--mincho); font-size: clamp(22px, 3vw, 36px);
+    font-weight: 400; color: #222; letter-spacing: 0.08em; margin-bottom: 20px;
   }
   .sk-lead-catch {
-    font-family: var(--mincho); font-size: 16px; color: #3a3a3a;
+    font-family: var(--mincho); font-size: 15px; color: #444;
     letter-spacing: 0.08em; margin-bottom: 20px;
   }
   .sk-lead-sub {
-    font-size: 13px; line-height: 2.3; color: #555;
-    max-width: 600px; margin: 0 auto;
+    font-size: 13px; line-height: 2.4; color: #666; max-width: 520px; margin: 0 auto;
   }
 
-  /* ─── Pain cards ─── */
-  .sk-pain-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  /* ── 課題（番号リスト） ── */
+  .sk-issues { display: flex; flex-direction: column; gap: 0; }
+  .sk-issue {
+    display: grid; grid-template-columns: 40px 1fr;
+    gap: 0 24px; padding: 28px 0;
+    border-bottom: 1px solid #ebebeb;
   }
-  .sk-pain-item {
-    background: #f8f6f2; border-radius: 2px;
-    padding: 36px 28px; border-top: 3px solid #d4c9b8;
+  .sk-issue:first-child { border-top: 1px solid #ebebeb; }
+  .sk-issue-num {
+    font-family: var(--serif); font-style: italic;
+    font-size: 20px; color: #ddd; line-height: 1; padding-top: 2px;
   }
-  .sk-pain-q {
-    font-size: 11px; letter-spacing: 0.15em; color: #b0a090;
-    margin-bottom: 14px; display: block;
+  .sk-issue-title {
+    font-size: 14px; font-weight: 500; color: #222;
+    line-height: 1.7; margin-bottom: 6px;
   }
-  .sk-pain-title {
-    font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
-    color: #2a2a2a; line-height: 1.8; margin-bottom: 12px;
-  }
-  .sk-pain-text { font-size: 12px; line-height: 2.1; color: #666; }
+  .sk-issue-text { font-size: 12px; line-height: 2.1; color: #777; }
 
-  /* ─── Mechanism ─── */
-  .sk-mech-layout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+  /* ── 仕組み ── */
+  .sk-mech-summary {
+    font-size: 14px; line-height: 2.4; color: #555; margin-bottom: 36px;
   }
-  .sk-mech-text p {
-    font-size: 13px; line-height: 2.4; color: #555; margin-bottom: 20px;
+  .sk-mech-summary strong { color: #222; font-weight: 500; }
+  .sk-flow {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid #e8e8e8; background: #fafafa;
   }
-  .sk-mech-text strong { color: #2a2a2a; }
-  .sk-mech-point {
-    background: #f3f0eb; border-left: 3px solid #c8bfb0;
-    padding: 18px 22px; font-size: 13px; line-height: 2; color: #3a3a3a;
+  .sk-flow-row {
+    display: grid; grid-template-columns: 1fr 32px 1fr;
+    align-items: center; padding: 20px 28px; gap: 0;
+    border-bottom: 1px solid #ebebeb;
   }
-  /* diagram */
-  .sk-diagram { display: flex; flex-direction: column; gap: 0; }
-  .sk-diag-row { display: flex; align-items: center; gap: 0; }
-  .sk-diag-box {
-    flex: 1; border: 1px solid #ddd; padding: 20px 16px;
-    text-align: center; background: #f9f8f5;
-  }
-  .sk-diag-box--you {
-    background: #fff; border: 2px solid #8a7f72;
-  }
-  .sk-diag-box--life {
-    background: #3d3530; border-color: #3d3530;
-  }
-  .sk-diag-name {
-    font-size: 13px; font-weight: 500; letter-spacing: 0.05em; color: #2a2a2a;
+  .sk-flow-row:last-child { border-bottom: none; }
+  .sk-flow-row-label {
+    font-size: 10px; letter-spacing: 0.15em; color: #bbb;
     display: block; margin-bottom: 4px;
   }
-  .sk-diag-box--life .sk-diag-name { color: #f0ece6; }
-  .sk-diag-role { font-size: 11px; color: #aaa; letter-spacing: 0.03em; }
-  .sk-diag-box--life .sk-diag-role { color: #907e72; }
-  .sk-diag-arrow-h {
-    font-size: 16px; color: #ccc; padding: 0 10px; flex-shrink: 0;
-  }
-  .sk-diag-down {
-    display: flex; justify-content: flex-end; padding-right: 0;
-  }
-  .sk-diag-down-line {
-    width: 50%; display: flex; flex-direction: column;
-    align-items: center; padding: 10px 0;
-  }
-  .sk-diag-down-line span {
-    display: block; width: 1px; height: 28px; background: #d0cac2; position: relative;
-  }
-  .sk-diag-down-line span::after {
-    content: '↓'; position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
-    font-size: 13px; color: #bbb;
-  }
-  .sk-diag-note {
-    font-size: 11px; color: #999; text-align: center;
-    padding: 12px; background: #f5f3ef; border: 1px solid #e8e3dc; margin-top: 1px;
-    letter-spacing: 0.05em;
+  .sk-flow-row-name { font-size: 14px; font-weight: 500; color: #222; }
+  .sk-flow-arrow { text-align: center; color: #ccc; font-size: 16px; }
+  .sk-flow-role { font-size: 12px; color: #888; line-height: 1.8; }
+  .sk-flow-note {
+    font-size: 12px; color: #999; padding: 14px 28px;
+    border-top: 1px solid #ebebeb; background: #f5f5f5; line-height: 1.9;
   }
 
-  /* ─── Services ─── */
-  .sk-svc-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  /* ── サービス内容 ── */
+  .sk-svcs { display: flex; flex-direction: column; gap: 0; }
+  .sk-svc {
+    display: grid; grid-template-columns: 40px 1fr;
+    gap: 0 24px; padding: 28px 0; border-bottom: 1px solid #ebebeb;
   }
-  .sk-svc-item {
-    background: #fff; border: 1px solid #e8e3dc; padding: 40px 36px;
-  }
+  .sk-svc:first-child { border-top: 1px solid #ebebeb; }
   .sk-svc-num {
     font-family: var(--serif); font-style: italic;
-    font-size: 11px; letter-spacing: 0.2em; color: #c8bfb0;
-    margin-bottom: 12px; display: block;
+    font-size: 20px; color: #ddd; line-height: 1; padding-top: 2px;
   }
   .sk-svc-title {
-    font-size: 15px; font-weight: 500; letter-spacing: 0.05em;
-    color: #2a2a2a; margin-bottom: 12px; line-height: 1.5;
-    padding-bottom: 12px; border-bottom: 1px solid #eee;
+    font-size: 14px; font-weight: 500; color: #222;
+    line-height: 1.7; margin-bottom: 6px;
   }
-  .sk-svc-text { font-size: 12px; line-height: 2.2; color: #666; }
-  .sk-svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-  .sk-svc-tag {
-    font-size: 10px; letter-spacing: 0.06em; color: #999;
-    background: #f5f3ef; padding: 4px 10px; border-radius: 2px;
-  }
+  .sk-svc-text { font-size: 12px; line-height: 2.1; color: #777; }
 
-  /* ─── Pricing ─── */
-  .sk-price-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  /* ── 料金 ── */
+  .sk-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .sk-price {
+    padding: 36px 32px; border: 1px solid #e8e8e8; background: #fff;
   }
-  .sk-price-card {
-    border: 1px solid #e8e3dc; padding: 48px 40px; background: #fff;
+  .sk-price--accent { background: #f7f5f2; border-color: #ddd; }
+  .sk-price-label {
+    font-size: 10px; letter-spacing: 0.2em; color: #bbb;
+    display: block; margin-bottom: 12px;
   }
-  .sk-price-card--main {
-    background: #f3f0eb; border-color: #d4c9b8;
+  .sk-price-name {
+    font-family: var(--mincho); font-size: 16px; font-weight: 400; color: #222;
+    line-height: 1.6; margin-bottom: 20px; padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
   }
-  .sk-price-card-en {
-    font-family: var(--serif); font-style: italic; font-size: 10px;
-    letter-spacing: 0.25em; color: #bbb; display: block; margin-bottom: 12px;
-  }
-  .sk-price-card-title {
-    font-family: var(--mincho); font-size: 18px; font-weight: 400;
-    letter-spacing: 0.06em; color: #2a2a2a;
-    margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #ddd;
-    line-height: 1.6;
-  }
-  .sk-price-card--main .sk-price-card-title { border-color: #c8bfb0; }
-  .sk-price-body { margin-bottom: 20px; }
+  .sk-price-rows { display: flex; flex-direction: column; gap: 0; }
   .sk-price-row {
     display: flex; justify-content: space-between; align-items: baseline;
-    padding: 12px 0; border-bottom: 1px solid #eee; font-size: 13px;
-    gap: 16px;
+    padding: 10px 0; border-bottom: 1px solid #ebebeb; gap: 12px;
   }
-  .sk-price-card--main .sk-price-row { border-color: #d4c9b8; }
-  .sk-price-row-label { color: #999; font-size: 12px; flex-shrink: 0; }
-  .sk-price-row-val { color: #2a2a2a; font-weight: 500; text-align: right; }
-  .sk-price-note-small {
-    font-size: 11px; color: #aaa; line-height: 1.9;
-  }
-  .sk-price-footnote {
-    font-size: 12px; color: #aaa; line-height: 2; margin-top: 24px;
-    padding: 16px 20px; background: #f8f6f2; border: 1px solid #e8e3dc;
+  .sk-price-row:last-child { border-bottom: none; }
+  .sk-price-row-k { font-size: 12px; color: #999; flex-shrink: 0; }
+  .sk-price-row-v { font-size: 13px; color: #333; font-weight: 500; text-align: right; }
+  .sk-price-sub { font-size: 11px; color: #bbb; margin-top: 14px; line-height: 1.9; }
+  .sk-price-note {
+    font-size: 12px; color: #999; margin-top: 20px; padding: 14px 18px;
+    background: #f7f5f2; border: 1px solid #e8e8e8; line-height: 2;
   }
 
-  /* ─── FAQ ─── */
-  .sk-faq-list { border-top: 1px solid #ece8e2; }
-  .sk-faq-row { border-bottom: 1px solid #ece8e2; padding: 28px 0; }
+  /* ── FAQ ── */
+  .sk-faqs { display: flex; flex-direction: column; gap: 0; }
+  .sk-faq { padding: 26px 0; border-bottom: 1px solid #ebebeb; }
+  .sk-faq:first-child { border-top: 1px solid #ebebeb; }
   .sk-faq-q {
-    font-size: 14px; font-weight: 500; color: #2a2a2a; letter-spacing: 0.04em;
-    margin-bottom: 12px; padding-left: 30px; position: relative; line-height: 1.7;
+    font-size: 14px; font-weight: 500; color: #222;
+    padding-left: 26px; position: relative; line-height: 1.7; margin-bottom: 10px;
   }
   .sk-faq-q::before {
-    content: 'Q'; font-family: var(--serif); font-style: italic;
-    position: absolute; left: 0; color: #c8bfb0; font-size: 17px; font-weight: 400;
+    content: 'Q'; font-family: var(--serif); font-style: italic; font-size: 15px;
+    color: #ccc; position: absolute; left: 0; top: 1px;
   }
   .sk-faq-a {
-    font-size: 13px; line-height: 2.3; color: #555;
-    padding-left: 30px; position: relative;
+    font-size: 13px; color: #666; line-height: 2.2;
+    padding-left: 26px; position: relative;
   }
   .sk-faq-a::before {
-    content: 'A'; font-family: var(--serif); font-style: italic;
-    position: absolute; left: 0; color: #c8bfb0; font-size: 17px; font-weight: 400;
+    content: 'A'; font-family: var(--serif); font-style: italic; font-size: 15px;
+    color: #ccc; position: absolute; left: 0; top: 1px;
   }
 
-  /* ─── CTA ─── */
+  /* ── CTA ── */
   .sk-cta {
-    margin-top: 96px; text-align: center;
-    padding: 80px 60px; background: #f8f6f2; border: 1px solid #e8e3dc;
+    margin-top: 80px; text-align: center;
+    padding: 64px 40px; background: #f7f5f2; border: 1px solid #e0dbd4;
   }
   .sk-cta-title {
-    font-family: var(--mincho); font-size: clamp(18px, 2vw, 26px);
-    margin-bottom: 14px; color: #2a2a2a;
+    font-family: var(--mincho); font-size: 22px; font-weight: 400;
+    color: #222; margin-bottom: 12px;
   }
-  .sk-cta-text { font-size: 13px; color: #666; line-height: 2.2; margin-bottom: 36px; }
+  .sk-cta-text { font-size: 13px; color: #777; line-height: 2.2; margin-bottom: 32px; }
   .btn-line-cta {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    background: #06C755; color: #fff; padding: 16px 48px;
-    font-size: 13px; letter-spacing: 0.15em; text-decoration: none;
-    transition: opacity 0.2s; margin-right: 16px; margin-bottom: 12px;
+    background: #06C755; color: #fff; padding: 14px 44px;
+    font-size: 13px; letter-spacing: 0.12em; text-decoration: none;
+    transition: opacity 0.2s; margin-right: 12px; margin-bottom: 10px;
   }
   .btn-line-cta:hover { opacity: 0.85; }
 
-  /* ─── Mobile ─── */
-  @media (max-width: 860px) {
-    .sk { padding: 48px 20px 100px; }
-    .sk-sec { margin-bottom: 64px; }
-    .sk-lead { padding-bottom: 48px; margin-bottom: 64px; }
-    .sk-pain-grid { grid-template-columns: 1fr; gap: 10px; }
-    .sk-mech-layout { grid-template-columns: 1fr; gap: 32px; }
-    .sk-svc-grid { grid-template-columns: 1fr; gap: 10px; }
-    .sk-price-grid { grid-template-columns: 1fr; gap: 12px; }
-    .sk-price-card { padding: 32px 24px; }
-    .sk-svc-item { padding: 28px 20px; }
+  @media (max-width: 720px) {
+    .sk-page { padding: 48px 20px 100px; }
+    .sk-sec { margin-bottom: 56px; }
+    .sk-lead { padding: 40px 0 52px; margin-bottom: 56px; }
+    .sk-prices { grid-template-columns: 1fr; }
+    .sk-sec-title { font-size: 18px; }
     .sk-cta { padding: 40px 20px; }
-    .sk-h2 { font-size: 18px; }
   }
 </style>
 <script type="application/ld+json">
@@ -302,9 +250,9 @@
   </div>
 </div>
 
-<div class="sk">
+<div class="sk-page">
 
-  <!-- LEAD -->
+  <!-- リード -->
   <div class="sk-lead fade">
     <span class="sk-lead-tag">Corporate Housing Service</span>
     <h1 class="sk-lead-h1">借上社宅 導入・運用代行サービス</h1>
@@ -312,105 +260,99 @@
     <p class="sk-lead-sub">物件探しから契約事務・給与連携・退去対応まで、宅建業免許を持つ専門チームが一括代行します。</p>
   </div>
 
-  <!-- こんなお悩みありませんか -->
+  <!-- こんなお悩みを解決 -->
   <div class="sk-sec fade">
-    <span class="sk-label">Common Issues</span>
-    <h2 class="sk-h2">こんなお悩みはありませんか</h2>
-    <div class="sk-pain-grid">
-      <div class="sk-pain-item">
-        <span class="sk-pain-q">お悩み 01</span>
-        <p class="sk-pain-title">税務・社保の判定が複雑で、<br>ミスが怖い</p>
-        <p class="sk-pain-text">所得税と社会保険で基準が異なり、2026年10月には算定方法も変更。誤ると課税・追徴のリスクがあります。</p>
+    <span class="sk-sec-en">Common Issues</span>
+    <h2 class="sk-sec-title">こんなお悩みはありませんか</h2>
+    <div class="sk-issues">
+      <div class="sk-issue">
+        <span class="sk-issue-num">01</span>
+        <div>
+          <p class="sk-issue-title">税務・社保の判定が複雑で、ミスが怖い</p>
+          <p class="sk-issue-text">所得税と社会保険で基準が異なり、2026年10月には算定方法も変更。誤ると課税・追徴リスクが生じます。</p>
+        </div>
       </div>
-      <div class="sk-pain-item">
-        <span class="sk-pain-q">お悩み 02</span>
-        <p class="sk-pain-title">契約・書類の手続きが<br>どんどん積み上がる</p>
-        <p class="sk-pain-text">重要事項説明・名義変更・保証会社対応など、件数が増えるほど総務の負担が増大します。</p>
+      <div class="sk-issue">
+        <span class="sk-issue-num">02</span>
+        <div>
+          <p class="sk-issue-title">契約・書類の手続きが積み上がる一方</p>
+          <p class="sk-issue-text">重要事項説明・名義変更・保証会社対応など、件数が増えるほど総務担当者の事務負荷が増大します。</p>
+        </div>
       </div>
-      <div class="sk-pain-item">
-        <span class="sk-pain-q">お悩み 03</span>
-        <p class="sk-pain-title">入居後のトラブルを<br>誰に相談すればいいか分からない</p>
-        <p class="sk-pain-text">近隣トラブルや退去時の原状回復交渉は、不動産の専門知識がないと対応が困難です。</p>
+      <div class="sk-issue">
+        <span class="sk-issue-num">03</span>
+        <div>
+          <p class="sk-issue-title">入居後のトラブルをどこに相談すればよいかわからない</p>
+          <p class="sk-issue-text">近隣トラブルや退去時の原状回復交渉は、不動産の専門知識がないと適切な対応が難しい領域です。</p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- 仕組み -->
   <div class="sk-sec fade">
-    <span class="sk-label">How It Works</span>
-    <h2 class="sk-h2">どんな仕組みですか？</h2>
-    <div class="sk-mech-layout">
-      <div class="sk-mech-text">
-        <p>「<strong>代行方式</strong>」を採用しています。賃貸借契約は<strong>家主・管理会社と貴社の間</strong>で直接締結され、弊社は契約の当事者になりません。</p>
-        <p>家賃の支払いも貴社から管理会社へ直接行われます。弊社が資金をお預かりすることは一切ありません。</p>
-        <div class="sk-mech-point">
-          弊社が担うのは<strong>「面倒な実務」だけ</strong>。<br>
-          契約の主体は常に貴社です。
+    <span class="sk-sec-en">How It Works</span>
+    <h2 class="sk-sec-title">どんな仕組みですか？</h2>
+    <p class="sk-mech-summary">
+      <strong>「代行方式」</strong>を採用しています。賃貸借契約は<strong>家主・管理会社と貴社の間</strong>で直接締結され、弊社は契約の当事者になりません。家賃の支払いも貴社から管理会社へ直接行われます。弊社が担うのは契約事務・交渉・トラブル対応などの実務だけです。
+    </p>
+    <div class="sk-flow">
+      <div class="sk-flow-row">
+        <div>
+          <span class="sk-flow-row-label">オーナー側</span>
+          <span class="sk-flow-row-name">家主・管理会社</span>
+        </div>
+        <div class="sk-flow-arrow">↔</div>
+        <div>
+          <span class="sk-flow-row-label">契約の主体</span>
+          <span class="sk-flow-row-name">貴社</span>
         </div>
       </div>
-      <div>
-        <div class="sk-diagram">
-          <div class="sk-diag-row">
-            <div class="sk-diag-box">
-              <span class="sk-diag-name">家主・管理会社</span>
-              <span class="sk-diag-role">物件のオーナー側</span>
-            </div>
-            <div class="sk-diag-arrow-h">↔</div>
-            <div class="sk-diag-box sk-diag-box--you">
-              <span class="sk-diag-name">貴社</span>
-              <span class="sk-diag-role">契約の主体</span>
-            </div>
-          </div>
-          <div class="sk-diag-down">
-            <div class="sk-diag-down-line"><span></span></div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;">
-            <div class="sk-diag-box sk-diag-box--life" style="width:50%;">
-              <span class="sk-diag-name">LIFE（弊社）</span>
-              <span class="sk-diag-role">実務を代行</span>
-            </div>
-          </div>
+      <div class="sk-flow-row">
+        <div>
+          <span class="sk-flow-row-label">実務を委託</span>
+          <span class="sk-flow-row-name">LIFE（弊社）</span>
         </div>
-        <div class="sk-diag-note">家賃の支払いは 貴社 → 管理会社 へ直接。弊社を経由しません。</div>
+        <div class="sk-flow-arrow">←</div>
+        <div>
+          <span class="sk-flow-role">物件探し・契約代理・<br>管理・トラブル対応</span>
+        </div>
       </div>
+      <div class="sk-flow-note">家賃の支払いは 貴社 → 管理会社 へ直接振込。弊社を資金が経由することはありません。</div>
     </div>
   </div>
 
   <!-- サービス内容 -->
   <div class="sk-sec fade">
-    <span class="sk-label">What We Do</span>
-    <h2 class="sk-h2">具体的に何をしてくれますか？</h2>
-    <div class="sk-svc-grid">
-      <div class="sk-svc-item">
+    <span class="sk-sec-en">What We Do</span>
+    <h2 class="sk-sec-title">具体的に何をしてくれますか？</h2>
+    <div class="sk-svcs">
+      <div class="sk-svc">
         <span class="sk-svc-num">01</span>
-        <p class="sk-svc-title">物件の斡旋・契約代理</p>
-        <p class="sk-svc-text">物件探し・内見・契約締結代理・IT重説・書面交付まで一貫対応。宅建業免許を保有しているため、物件紹介から契約後の管理まで一社で完結します。</p>
-        <div class="sk-svc-tags">
-          <span class="sk-svc-tag">物件探し</span><span class="sk-svc-tag">内見同行</span><span class="sk-svc-tag">重要事項説明</span><span class="sk-svc-tag">契約代理</span>
+        <div>
+          <p class="sk-svc-title">物件の斡旋・契約代理</p>
+          <p class="sk-svc-text">物件探し・内見・契約締結代理・IT重説・書面交付まで一貫対応。宅建業免許を保有しているため、物件紹介から契約後の管理まで一社で完結します。</p>
         </div>
       </div>
-      <div class="sk-svc-item">
+      <div class="sk-svc">
         <span class="sk-svc-num">02</span>
-        <p class="sk-svc-title">契約管理・データ連携</p>
-        <p class="sk-svc-text">入居者ごとの契約状況（期間・賃料・名義）を一元管理。給与・会計システムへのデータ連携もサポートします。</p>
-        <div class="sk-svc-tags">
-          <span class="sk-svc-tag">一元管理</span><span class="sk-svc-tag">給与連携</span><span class="sk-svc-tag">会計連携</span>
+        <div>
+          <p class="sk-svc-title">契約管理・データ連携</p>
+          <p class="sk-svc-text">入居者ごとの契約状況（期間・賃料・名義）を一元管理。給与・会計システムへのデータ連携もサポートします。</p>
         </div>
       </div>
-      <div class="sk-svc-item">
+      <div class="sk-svc">
         <span class="sk-svc-num">03</span>
-        <p class="sk-svc-title">税務・社保の計算支援</p>
-        <p class="sk-svc-text">賃貸料相当額・現物給与価額の算出ツールを提供。顧問社労士・税理士との連携体制で最終判断をサポートします。</p>
-        <div class="sk-svc-tags">
-          <span class="sk-svc-tag">算定ツール提供</span><span class="sk-svc-tag">社労士連携</span>
+        <div>
+          <p class="sk-svc-title">税務・社保の計算支援</p>
+          <p class="sk-svc-text">賃貸料相当額・現物給与価額の算出ツールを提供。顧問社労士・税理士との連携体制で最終判断をサポートします。</p>
         </div>
       </div>
-      <div class="sk-svc-item">
+      <div class="sk-svc">
         <span class="sk-svc-num">04</span>
-        <p class="sk-svc-title">更新・退去・トラブル対応</p>
-        <p class="sk-svc-text">名義変更・更新・退去の事務進行、管理会社窓口対応、近隣トラブルの取次まで一次対応します。</p>
-        <div class="sk-svc-tags">
-          <span class="sk-svc-tag">更新手続き</span><span class="sk-svc-tag">退去対応</span><span class="sk-svc-tag">トラブル取次</span>
+        <div>
+          <p class="sk-svc-title">更新・退去・トラブル対応</p>
+          <p class="sk-svc-text">名義変更・更新・退去の事務進行、管理会社窓口対応、近隣トラブルの取次まで一次対応します。</p>
         </div>
       </div>
     </div>
@@ -418,69 +360,69 @@
 
   <!-- 料金 -->
   <div class="sk-sec fade">
-    <span class="sk-label">Pricing</span>
-    <h2 class="sk-h2">ご利用料金</h2>
-    <div class="sk-price-grid">
-      <div class="sk-price-card sk-price-card--main">
-        <span class="sk-price-card-en">Monthly Fee</span>
-        <p class="sk-price-card-title">契約管理業務<br>（月額）</p>
-        <div class="sk-price-body">
+    <span class="sk-sec-en">Pricing</span>
+    <h2 class="sk-sec-title">ご利用料金</h2>
+    <div class="sk-prices">
+      <div class="sk-price sk-price--accent">
+        <span class="sk-price-label">Monthly Fee</span>
+        <p class="sk-price-name">契約管理業務（月額）</p>
+        <div class="sk-price-rows">
           <div class="sk-price-row">
-            <span class="sk-price-row-label">対象</span>
-            <span class="sk-price-row-val">全入居物件の管理</span>
+            <span class="sk-price-row-k">対象</span>
+            <span class="sk-price-row-v">全入居物件の管理</span>
           </div>
           <div class="sk-price-row">
-            <span class="sk-price-row-label">含まれるもの</span>
-            <span class="sk-price-row-val">契約管理・データ連携・<br>算定支援・トラブル一次対応</span>
+            <span class="sk-price-row-k">含まれるもの</span>
+            <span class="sk-price-row-v">契約管理・データ連携・算定支援・トラブル一次対応</span>
           </div>
           <div class="sk-price-row">
-            <span class="sk-price-row-label">料金</span>
-            <span class="sk-price-row-val">規模に応じて個別お見積り</span>
+            <span class="sk-price-row-k">料金</span>
+            <span class="sk-price-row-v">規模に応じて個別お見積り</span>
           </div>
         </div>
-        <p class="sk-price-note-small">物件数・従業員規模をお伺いした上で、具体的な金額をご提示します。</p>
+        <p class="sk-price-sub">物件数・従業員規模をお伺いした上で具体的な金額をご提示します。</p>
       </div>
-      <div class="sk-price-card">
-        <span class="sk-price-card-en">Brokerage Fee</span>
-        <p class="sk-price-card-title">仲介手数料<br>（新規入居時のみ）</p>
-        <div class="sk-price-body">
+      <div class="sk-price">
+        <span class="sk-price-label">Brokerage Fee</span>
+        <p class="sk-price-name">仲介手数料（入居時のみ）</p>
+        <div class="sk-price-rows">
           <div class="sk-price-row">
-            <span class="sk-price-row-label">AD物件</span>
-            <span class="sk-price-row-val">無料</span>
+            <span class="sk-price-row-k">AD物件</span>
+            <span class="sk-price-row-v">無料</span>
           </div>
           <div class="sk-price-row">
-            <span class="sk-price-row-label">一般物件</span>
-            <span class="sk-price-row-val">家賃の30%</span>
+            <span class="sk-price-row-k">一般物件</span>
+            <span class="sk-price-row-v">家賃の30%</span>
           </div>
           <div class="sk-price-row">
-            <span class="sk-price-row-label">名義変更のみ</span>
-            <span class="sk-price-row-val">仲介手数料なし</span>
+            <span class="sk-price-row-k">名義変更のみ</span>
+            <span class="sk-price-row-v">仲介手数料なし</span>
           </div>
         </div>
-        <p class="sk-price-note-small">仲介手数料は新規入居のタイミングのみ発生します。月額費用とは別です。</p>
+        <p class="sk-price-sub">仲介手数料は新規入居のタイミングのみ発生します。月額費用とは別です。</p>
       </div>
     </div>
-    <p class="sk-price-footnote">※ まずは無料相談にてお問い合わせください。現状の物件数・課題をお伺いした上で具体的な金額をご提示します。</p>
+    <p class="sk-price-note">※ まずは無料相談にてお問い合わせください。現状の物件数・課題をお伺いした上で具体的な金額をご提示します。</p>
   </div>
 
   <!-- FAQ -->
   <div class="sk-sec fade">
-    <span class="sk-label">FAQ</span>
-    <h2 class="sk-h2">よくある質問</h2>
-    <div class="sk-faq-list">
-      <div class="sk-faq-row">
+    <span class="sk-sec-en">FAQ</span>
+    <h2 class="sk-sec-title">よくある質問</h2>
+    <div class="sk-faqs">
+      <div class="sk-faq">
         <p class="sk-faq-q">契約の名義は誰になりますか？</p>
         <p class="sk-faq-a">賃貸借契約は家主・管理会社と貴社の間で締結される「代行方式」です。弊社が契約当事者になることはありません。</p>
       </div>
-      <div class="sk-faq-row">
+      <div class="sk-faq">
         <p class="sk-faq-q">税金・社会保険の計算まで代行してもらえますか？</p>
         <p class="sk-faq-a">算定支援ツールと雛形をご提供します。最終的な届出・判断は貴社顧問の社労士・税理士にご対応いただきます。専門家がいない場合は提携先をご紹介します。</p>
       </div>
-      <div class="sk-faq-row">
-        <p class="sk-faq-q">既存の物件（名義変更ケース）も対応できますか？</p>
+      <div class="sk-faq">
+        <p class="sk-faq-q">すでに個人契約している物件も対応できますか？</p>
         <p class="sk-faq-a">対応可能です。個人契約から法人契約への名義変更を代行し、以降の運用管理を月額費用内でサポートします。</p>
       </div>
-      <div class="sk-faq-row">
+      <div class="sk-faq">
         <p class="sk-faq-q">対応エリアはどこですか？</p>
         <p class="sk-faq-a">福岡・九州エリアを中心に対応しています。順次エリア拡大予定です。</p>
       </div>
@@ -490,7 +432,7 @@
   <!-- CTA -->
   <div class="sk-cta fade">
     <p class="sk-cta-title">まずは無料相談から</p>
-    <p class="sk-cta-text">規模・現状の課題をお伺いした上で、具体的なプランと費用をご提示します。</p>
+    <p class="sk-cta-text">規模・現状の課題をお伺いした上で、<br>具体的なプランと費用をご提示します。</p>
     <a class="btn-line-cta" href="https://lin.ee/xNyg5u7" onclick="gtag('event','line_click',{'event_category':'contact','event_label':'line'})" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/></svg>
       LINE で無料相談
@@ -498,7 +440,7 @@
     <a class="btn" href="contact.html" onclick="gtag('event','form_click',{'event_category':'contact','event_label':'contact_form'})">お問い合わせフォーム</a>
   </div>
 
-</div><!-- /.sk -->
+</div><!-- /.sk-page -->
 
 <footer>
   <div class="footer-inner">
