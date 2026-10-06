@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="ja" style="scrollbar-gutter:stable">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZJD5KN0MG6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZJD5KN0MG6');
+</script>
+<meta charset="utf-8"/>
+<meta content="6つの質問に答えるだけで、あなたに合う福岡の街がわかる無料診断。大名・薬院・住吉・西新・大濠・百道浜・千早・高宮から、暮らしにしっくりくるエリアをご提案します。" name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>あなたに合う福岡の街診断 | LIFE株式会社 | 福岡の不動産</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;family=Noto+Sans+JP:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<meta property="og:title" content="あなたに合う福岡の街診断 | LIFE株式会社"/>
+<meta property="og:description" content="6つの質問で、あなたにぴったりの福岡の街がわかります。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://life-fudosan.com/machi-shindan.html"/>
+<meta property="og:image" content="https://life-fudosan.com/interior-3_fixed.jpg"/>
+<style>
+.sp{display:none}
+.tf{max-width:880px;margin:0 auto;padding:96px 40px 140px;min-height:70vh}
+.tf-panel{display:none}
+.tf-panel.is-active{display:block;animation:tfIn .6s ease both}
+@keyframes tfIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.tf-en{font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.3em;color:var(--gray);margin-bottom:18px}
+.tf-title{font-family:var(--mincho);font-weight:400;font-size:clamp(22px,2.8vw,34px);line-height:1.8;letter-spacing:.08em;margin-bottom:28px}
+.tf-lead{font-size:13px;line-height:2.3;color:var(--mid);margin-bottom:48px}
+.tf-btn{display:inline-block;padding:18px 56px;background:var(--black);color:#fff;border:none;font-family:var(--mincho);font-size:14px;letter-spacing:.2em;text-decoration:none;cursor:pointer;transition:opacity .2s}
+.tf-btn:hover{opacity:.75}
+.tf-note{font-size:11px;color:var(--gray);letter-spacing:.06em;margin-top:18px}
+.tf-progress{height:1px;background:var(--border);margin-bottom:28px;position:relative}
+.tf-progress span{position:absolute;left:0;top:0;height:1px;background:var(--black);transition:width .5s ease;width:0}
+.tf-count{font-family:var(--serif);font-size:14px;letter-spacing:.2em;color:var(--gray);margin-bottom:16px}
+.tf-q{font-family:var(--mincho);font-weight:400;font-size:clamp(19px,2.2vw,26px);line-height:1.8;letter-spacing:.06em;margin-bottom:36px}
+.tf-opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tf-opt{text-align:left;background:#fff;border:1px solid var(--border);padding:22px 24px;font-family:var(--sans);font-size:13px;line-height:1.9;color:var(--black);letter-spacing:.04em;cursor:pointer;transition:border-color .2s,background .2s}
+.tf-opt:hover{border-color:var(--black)}
+.tf-opt.is-picked{background:var(--black);color:#fff;border-color:var(--black)}
+.tf-opt small{display:block;font-size:11px;color:var(--gray);margin-top:4px}
+.tf-opt.is-picked small{color:rgba(255,255,255,.6)}
+.tf-back{margin-top:32px;background:none;border:none;font-size:12px;color:var(--gray);letter-spacing:.08em;cursor:pointer;padding:0}
+.tf-back:hover{color:var(--black)}
+.tf-r-tag{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:.2em;color:var(--mid);margin-bottom:6px}
+.tf-r-name{font-family:var(--mincho);font-weight:400;font-size:clamp(34px,5vw,56px);letter-spacing:.12em;line-height:1.4;margin-bottom:24px}
+.tf-r-copy{font-family:var(--mincho);font-size:15px;line-height:2.2;letter-spacing:.06em;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.tf-r-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:56px}
+.tf-r-label{font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.2em;color:var(--gray);margin-bottom:14px}
+.tf-r-points{list-style:none;padding:0;margin:0}
+.tf-r-points li{font-size:13px;line-height:2;color:var(--black);padding:10px 0;border-bottom:1px solid var(--border)}
+.tf-r-fit,.tf-r-second{font-size:13px;line-height:2.1;color:var(--mid)}
+.tf-r-second strong{font-family:var(--mincho);font-weight:500;color:var(--black);font-size:15px;letter-spacing:.06em}
+.tf-r-cta{border:1px solid var(--border);padding:48px;text-align:center}
+.tf-r-cta-text{font-size:13px;line-height:2.2;color:var(--mid);margin-bottom:28px}
+.tf-r-sub{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap}
+.tf-r-sub a,.tf-r-sub button{background:none;border:none;padding:0;font-size:12px;color:var(--mid);letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-family:var(--sans)}
+.tf-disclaimer{font-size:10.5px;color:var(--gray);margin-top:24px;line-height:1.9;letter-spacing:.04em}
+@media (max-width:860px){
+  .sp{display:inline}
+  .tf{padding:56px 20px 100px}
+  .tf-opts{grid-template-columns:1fr}
+  .tf-opt{padding:18px 20px}
+  .tf-r-grid{grid-template-columns:1fr;gap:32px}
+  .tf-r-cta{padding:32px 20px}
+  .tf-btn{padding:16px 32px;width:100%;box-sizing:border-box;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav class="page-nav" id="nav">
+<a class="nav-logo" href="index.html">
+<span class="nav-logo-mark">LIFE</span>
+<span class="nav-logo-sub">不動産</span>
+</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="service.html">Service</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="member.html">Member</a></li>
+<li><a href="company.html">Company</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<button aria-label="メニュー" class="nav-ham" onclick="toggleNav()">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="nav-overlay" id="navOverlay">
+<button class="nav-overlay-close" onclick="toggleNav()">✕</button>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="service.html">Service</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="member.html">Member</a></li>
+<li><a href="company.html">Company</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div id="page-content">
+<div class="page-header">
+<div class="page-header-bg" id="pageHeaderBg" style="background-image:url('interior-3_fixed.jpg')"></div>
+<div class="page-header-body">
+<span class="page-header-en">Town Finder</span>
+<span class="page-header-ja">あなたに合う福岡の街診断</span>
+<p class="page-header-msg">6つの質問に答えるだけ。<br/>あなたの暮らしにしっくりくる、福岡の街を見つけます。</p>
+</div>
+</div>
+
+<section class="tf" id="tf">
+  <!-- スタート -->
+  <div class="tf-panel tf-start is-active" id="tfStart">
+    <p class="tf-en">Find your town</p>
+    <h1 class="tf-title">住む街で、暮らしは<br class="sp"/>もっと心地よくなる。</h1>
+    <p class="tf-lead">天神・博多のどちらに出やすいか、休日をどう過ごしたいか。<br/>福岡で物件探しをお手伝いしてきた私たちが、あなたに合う街を8つのエリアから選びます。</p>
+    <button class="tf-btn" type="button" onclick="TF.start()">診断をはじめる</button>
+    <p class="tf-note">所要時間 約1分 ／ 個人情報の入力はありません</p>
+  </div>
+
+  <!-- 質問 -->
+  <div class="tf-panel tf-quiz" id="tfQuiz">
+    <div class="tf-progress"><span id="tfBar"></span></div>
+    <p class="tf-count"><span id="tfNum">01</span> / 06</p>
+    <h2 class="tf-q" id="tfQ"></h2>
+    <div class="tf-opts" id="tfOpts"></div>
+    <button class="tf-back" type="button" id="tfBack" onclick="TF.back()">← ひとつ前へ</button>
+  </div>
+
+  <!-- 結果 -->
+  <div class="tf-panel tf-result" id="tfResult">
+    <p class="tf-en">Your town is</p>
+    <p class="tf-r-tag" id="tfRTag"></p>
+    <h2 class="tf-r-name" id="tfRName"></h2>
+    <p class="tf-r-copy" id="tfRCopy"></p>
+    <div class="tf-r-grid">
+      <div class="tf-r-box">
+        <p class="tf-r-label">この街の魅力</p>
+        <ul class="tf-r-points" id="tfRPoints"></ul>
+      </div>
+      <div class="tf-r-box">
+        <p class="tf-r-label">こんな人にぴったり</p>
+        <p class="tf-r-fit" id="tfRFit"></p>
+        <p class="tf-r-label" style="margin-top:28px">次に相性がいい街</p>
+        <p class="tf-r-second" id="tfRSecond"></p>
+      </div>
+    </div>
+    <div class="tf-r-cta">
+      <p class="tf-r-cta-text">「<span id="tfRCtaName"></span>で探してみたい」と思ったら、LINEでお気軽にどうぞ。<br/>診断結果を送っていただければ、条件に合う物件をご提案します。</p>
+      <a class="tf-btn" id="tfLine" href="https://lin.ee/xNyg5u7" target="_blank" rel="noopener">この街の物件をLINEで相談</a>
+      <div class="tf-r-sub">
+        <a id="tfShareX" href="#" target="_blank" rel="noopener">Xでシェア</a>
+        <a id="tfShareLine" href="#" target="_blank" rel="noopener">LINEで送る</a>
+        <button type="button" onclick="TF.retry()">もう一度診断する</button>
+      </div>
+    </div>
+    <p class="tf-disclaimer">※ 診断結果は街の雰囲気をもとにした目安です。実際の物件・家賃相場はお気軽にご相談ください。</p>
+  </div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div>
+<span class="footer-logo">LIFE</span>
+<p class="footer-tagline">センスある暮らしを、<br/>福岡から。</p>
+</div>
+<div>
+<p class="footer-col-title">NAVIGATION</p>
+<ul class="footer-nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="service.html">Service</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="member.html">Member</a></li>
+<li><a href="company.html">Company</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-title">INFORMATION</p>
+<p class="footer-info">
+        〒812-0018<br/>
+        福岡県福岡市住吉二丁目16番36号<br/>
+        
+        
+        TEL：070-8333-8023<br/>
+        MAIL：keiri@life-ec.info<br/><br/>
+        福岡県知事(1)20655<br/>
+        (公社) 福岡県宅地建物取引業協会
+      </p>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2026 LIFE株式会社. All Rights Reserved. ／ <a href="privacy.html" style="color:rgba(255,255,255,0.4); text-decoration:none;">プライバシーポリシー</a></p>
+<div class="footer-sns">
+<a href="#">Instagram</a>
+<a href="https://lin.ee/xNyg5u7" onclick="gtag(\'event\',\'line_click\',{\'event_category\':\'contact\',\'event_label\':\'line\'})" rel="noopener" target="_blank">LINE</a>
+</div>
+</div>
+</footer>
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} }), {threshold:0.12});
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</div>
+<a class="line-fixed" href="https://lin.ee/xNyg5u7" onclick="gtag(\'event\',\'line_click\',{\'event_category\':\'contact\',\'event_label\':\'line\'})" rel="noopener" target="_blank">
+<svg class="line-fixed-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"></path></svg>
+  LINE で相談
+</a>
+<script>
+  (function(){
+    var bg = document.getElementById('pageHeaderBg');
+    if(!bg) return;
+    if(window.innerWidth <= 860) return;
+    var leaving = false;
+    function update(){ if(leaving) return; bg.style.transform = 'translateY(' + (window.scrollY * 0.32) + 'px)'; }
+    window.addEventListener('scroll', update, {passive:true});
+    document.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', function(){ leaving = true; }); });
+  })();
+</script>
+<script>
+(function(){
+  var _lk=false;
+  window.toggleNav=function(){
+    if(_lk)return;
+    _lk=true;
+    var ov=document.getElementById("navOverlay");
+    var opening=!ov.classList.contains("open");
+    ov.classList.toggle("open",opening);
+    document.body.classList.toggle("nav-open",opening);
+    setTimeout(function(){_lk=false;},400);
+  };
+  document.addEventListener("click",function(e){
+    if(e.target&&e.target.id==="navOverlay")window.toggleNav();
+  });
+  window.addEventListener("pageshow",function(e){
+    if(e.persisted){
+      var ov=document.getElementById("navOverlay");
+      if(ov)ov.classList.remove("open");
+      document.body.classList.remove("nav-open");
+      _lk=false;
+    }
+  });
+})();
+</script>
+<script>
+var TF=(function(){
+  var AREAS={
+    daimyo:{name:'大名・赤坂',tag:'Daimyo / Akasaka',copy:'天神を庭にして、気になる店にふらりと立ち寄る。<br/>街のにぎわいを、毎日のエネルギーに変えられる人の街です。',points:['天神エリアまで歩いて行ける距離感','古着屋・カフェ・飲食店がぎゅっと集まる','地下鉄空港線の赤坂駅が使いやすい'],fit:'仕事帰りの寄り道や外食が好きな方。ひとり暮らしで、身軽に動きたい方。'},
+    yakuin:{name:'薬院・平尾',tag:'Yakuin / Hirao',copy:'小さなカフェや雑貨店が、路地のあちこちに。<br/>にぎやかさと落ち着きを、ちょうどよく両立できる街です。',points:['個性的なカフェや雑貨店が多い','西鉄と地下鉄七隈線の薬院駅が使える','天神まで歩ける、ほどよい距離感'],fit:'暮らしに「好き」を詰め込みたい方。センスのいいお店を自分の行きつけにしたい方。'},
+    sumiyoshi:{name:'住吉・博多駅南',tag:'Sumiyoshi / Hakata-eki-minami',copy:'博多駅にも天神にも出やすい、福岡の真ん中。<br/>出張も、休日のお出かけも、身軽にこなせる街です。',points:['博多駅・キャナルシティ博多がすぐそば','天神方面にも出やすい立地','歴史ある住吉神社の、落ち着いた空気'],fit:'通勤や出張で移動が多い方。便利さをいちばん大事にしたい方。（LIFEの事務所もこの街にあります）'},
+    nishijin:{name:'西新・藤崎',tag:'Nishijin / Fujisaki',copy:'活気ある商店街と、海まで行ける開放感。<br/>地元に根ざした、あたたかい暮らしができる街です。',points:['昔ながらの西新商店街で日々の買い物','地下鉄空港線で天神・博多へ一本','ももち浜の海辺も生活圏に'],fit:'商店街や地元の店で買い物したい方。学生さんからご家族まで、幅広い方に。'},
+    ohori:{name:'大濠・六本松',tag:'Ohori / Ropponmatsu',copy:'朝は大濠公園をひと回り、週末は本屋さんでゆっくり。<br/>緑と文化に囲まれて、上質に暮らせる街です。',points:['大濠公園でランニングや散歩','六本松には書店やカフェが集まる複合施設も','地下鉄で天神へすぐ'],fit:'自然を身近に感じながら、都心の便利さも欲しい方。落ち着いた大人の暮らしをしたい方。'},
+    momochi:{name:'百道浜・地行',tag:'Momochihama / Jigyo',copy:'窓の外に広い空、歩いて行ける海辺。<br/>リゾートのような開放感を、毎日の景色にできる街です。',points:['シーサイドももち海浜公園が目の前','福岡タワーのある、ひらけた街並み','西新・唐人町駅から都心へ'],fit:'景色や開放感を大切にしたい方。在宅ワークが多く、家で過ごす時間が長い方。'},
+    chihaya:{name:'千早・香椎',tag:'Chihaya / Kashii',copy:'新しく整った街並みに、ゆとりある住まい。<br/>これからの暮らしを、家族と一緒に育てていける街です。',points:['再開発で整った、新しい街並み','JRと西鉄の千早駅で博多方面へ','広さとコスパのバランスがとりやすい'],fit:'ご家族での住み替えを考えている方。広さや住みやすさを重視したい方。'},
+    takamiya:{name:'高宮・大橋',tag:'Takamiya / Ohashi',copy:'西鉄電車で天神へ一本、帰れば静かな住宅街。<br/>オンとオフを、気持ちよく切り替えられる街です。',points:['西鉄天神大牟田線で天神へ一本','落ち着いた住宅街で静かに暮らせる','駅まわりで日々の買い物がそろう'],fit:'静かな環境でのびのび暮らしたい方。ご家族やふたり暮らしの方に。'}
+  };
+  var Q=[
+    {q:'理想の休日の過ごし方は？',o:[
+      ['気になるカフェやお店をはしご','新しいお店を開拓したい',{yakuin:3,daimyo:2}],
+      ['公園や海でのんびり','外の空気を吸いたい',{ohori:3,momochi:3}],
+      ['商店街や地元のお店をぶらぶら','なじみの店をつくりたい',{nishijin:3,takamiya:1}],
+      ['家でゆっくり、家族と過ごす','おうち時間が大事',{chihaya:3,takamiya:2,momochi:1}]]},
+    {q:'いちばんよく行く場所は？',o:[
+      ['天神','仕事も遊びも天神中心',{daimyo:2,yakuin:2,ohori:2,takamiya:1}],
+      ['博多駅','新幹線や空港もよく使う',{sumiyoshi:3,chihaya:2}],
+      ['天神と博多、両方','どっちも同じくらい',{sumiyoshi:3,yakuin:1}],
+      ['在宅が多い・特に決まっていない','家まわりで完結',{momochi:2,chihaya:2,takamiya:1,nishijin:1}]]},
+    {q:'仕事終わりの過ごし方は？',o:[
+      ['外食や飲みに行くことが多い','街に出たい派',{daimyo:3,sumiyoshi:2}],
+      ['ランニングや散歩でリフレッシュ','体を動かしたい',{ohori:3,momochi:2}],
+      ['まっすぐ帰って、家で静かに','オフはしっかりオフ',{takamiya:3,chihaya:1}],
+      ['駅前で買い物して帰る','生活の便利さ重視',{nishijin:2,sumiyoshi:1,takamiya:1}]]},
+    {q:'住まいでいちばん大事にしたいことは？',o:[
+      ['街や部屋の雰囲気・デザイン','センスのある暮らし',{yakuin:3,daimyo:1,ohori:1}],
+      ['広さとコストのバランス','ゆとりがほしい',{chihaya:3,takamiya:2}],
+      ['窓からの景色・自然','開放感がほしい',{momochi:3,ohori:2}],
+      ['駅や買い物の便利さ','とにかく便利に',{sumiyoshi:2,nishijin:2,daimyo:1}]]},
+    {q:'誰と暮らす予定ですか？',o:[
+      ['ひとり暮らし','身軽に',{daimyo:2,yakuin:2,sumiyoshi:1}],
+      ['ふたり暮らし','パートナーと',{ohori:2,yakuin:1,momochi:1,takamiya:1}],
+      ['家族と（お子さまあり）','子育てのしやすさも',{chihaya:3,nishijin:2,takamiya:1}],
+      ['まだ決まっていない','これから考える',{sumiyoshi:1,nishijin:1}]]},
+    {q:'帰り道に見たい景色は？',o:[
+      ['にぎやかな街の灯り','夜の街が好き',{daimyo:2,sumiyoshi:2}],
+      ['水辺や海に沈む夕日','水のある景色',{momochi:3,ohori:2}],
+      ['並木道と静かな住宅街','落ち着いた景色',{takamiya:2,yakuin:1,ohori:1}],
+      ['新しく整った、きれいな街並み','これからの街',{chihaya:3}]]}
+  ];
+  var i=0, ans=[];
+  function $(id){return document.getElementById(id)}
+  function show(id){['tfStart','tfQuiz','tfResult'].forEach(function(p){$(p).classList.toggle('is-active',p===id)});
+    var t=$('tf').getBoundingClientRect().top+window.scrollY-130; if(window.scrollY>t) window.scrollTo({top:t,behavior:'smooth'});}
+  function ev(n,p){try{gtag('event',n,p||{})}catch(e){}}
+  function render(){
+    var d=Q[i]; $('tfNum').textContent=('0'+(i+1)).slice(-2); $('tfBar').style.width=(i/Q.length*100)+'%';
+    $('tfQ').textContent=d.q; $('tfBack').style.visibility=i?'visible':'hidden';
+    var box=$('tfOpts'); box.innerHTML='';
+    d.o.forEach(function(o,k){var b=document.createElement('button');b.type='button';b.className='tf-opt'+(ans[i]===k?' is-picked':'');
+      b.innerHTML=o[0]+'<small>'+o[1]+'</small>'; b.onclick=function(){pick(k,b)}; box.appendChild(b);});
+    var q=$('tfQuiz'); q.classList.remove('is-active'); void q.offsetWidth; q.classList.add('is-active');
+  }
+  function pick(k,b){ans[i]=k; b.classList.add('is-picked'); setTimeout(function(){ if(i<Q.length-1){i++;render();} else result(); },260);}
+  function result(){
+    var s={}; Object.keys(AREAS).forEach(function(a){s[a]=0});
+    ans.forEach(function(k,qi){var w=Q[qi].o[k][2]; for(var a in w) s[a]+=w[a];});
+    var order=Object.keys(s).sort(function(a,b){return s[b]-s[a]});
+    var a=AREAS[order[0]], b=AREAS[order[1]];
+    $('tfRTag').textContent=a.tag; $('tfRName').textContent=a.name; $('tfRCopy').innerHTML=a.copy;
+    $('tfRPoints').innerHTML=a.points.map(function(p){return '<li>'+p+'</li>'}).join('');
+    $('tfRFit').textContent=a.fit; $('tfRSecond').innerHTML='<strong>'+b.name+'</strong><br/>'+b.fit;
+    $('tfRCtaName').textContent=a.name;
+    var url=location.origin.indexOf('http')===0?location.origin+location.pathname:'https://life-fudosan.com/machi-shindan.html';
+    var txt='私に合う福岡の街は「'+a.name+'」でした！ #福岡の街診断 #LIFE不動産';
+    $('tfShareX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(txt)+'&url='+encodeURIComponent(url);
+    $('tfShareLine').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(txt);
+    $('tfLine').onclick=function(){ev('line_click',{event_category:'machi_shindan',event_label:order[0]})};
+    show('tfResult'); ev('shindan_complete',{event_category:'machi_shindan',event_label:order[0]});
+  }
+  return {
+    start:function(){i=0;ans=[];show('tfQuiz');render();ev('shindan_start',{event_category:'machi_shindan'});},
+    back:function(){if(i>0){i--;render();}},
+    retry:function(){this.start();}
+  };
+})();
+</script>
+</body>
+</html>
