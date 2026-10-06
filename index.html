@@ -320,7 +320,28 @@
       .sim-section { padding: 56px 24px; }
       .sim-selects { grid-template-columns: 1fr 1fr; }
     }
-  </style>
+  
+    /* ── 街診断バナー ── */
+    .tf-banner-wrap { padding: 0 60px 96px; }
+    .tf-banner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid var(--border); text-decoration: none; color: var(--black); overflow: hidden; transition: border-color .3s; }
+    .tf-banner:hover { border-color: var(--black); }
+    .tf-banner-img { position: relative; overflow: hidden; min-height: 300px; }
+    .tf-banner-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s ease; }
+    .tf-banner:hover .tf-banner-img img { transform: scale(1.04); }
+    .tf-banner-body { padding: 56px 52px; display: flex; flex-direction: column; justify-content: center; }
+    .tf-banner-en { font-family: var(--serif); font-style: italic; font-size: 12px; letter-spacing: .3em; color: var(--gray); margin-bottom: 16px; }
+    .tf-banner-title { font-family: var(--mincho); font-weight: 400; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.7; letter-spacing: .08em; margin-bottom: 18px; }
+    .tf-banner-text { font-size: 12.5px; line-height: 2.1; color: var(--mid); margin-bottom: 32px; }
+    .tf-banner-btn { align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; padding: 14px 32px; background: var(--black); color: #fff; font-family: var(--mincho); font-size: 13px; letter-spacing: .18em; transition: opacity .2s; }
+    .tf-banner:hover .tf-banner-btn { opacity: .8; }
+    @media (max-width: 860px) {
+      .tf-banner-wrap { padding: 0 20px 64px; }
+      .tf-banner { grid-template-columns: 1fr; }
+      .tf-banner-img { min-height: 200px; }
+      .tf-banner-body { padding: 32px 24px 36px; }
+      .tf-banner-btn { align-self: stretch; justify-content: center; }
+    }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -420,6 +441,18 @@
 </div>
 <p class="about-text">毎日帰りたくなる場所を、一緒に探したい。<br/>これから始まる暮らしの、ワクワクした第一歩を。</p>
 </div>
+</div>
+<!-- TOWN FINDER BANNER -->
+<div class="tf-banner-wrap fade">
+<a class="tf-banner" href="machi-shindan.html" onclick="try{gtag('event','banner_click',{'event_category':'machi_shindan','event_label':'top_banner'})}catch(e){}">
+<div class="tf-banner-img"><picture><source srcset="interior-3_fixed.webp" type="image/webp"><img alt="福岡の暮らし" loading="lazy" src="interior-3_fixed.jpg"/></picture></div>
+<div class="tf-banner-body">
+<span class="tf-banner-en">Town Finder</span>
+<p class="tf-banner-title">あなたに合う福岡の街は、<br/>どこだろう。</p>
+<p class="tf-banner-text">6つの質問に答えるだけで、暮らしにしっくりくる街がわかります。所要時間は約1分です。</p>
+<span class="tf-banner-btn">街診断をはじめる <span>→</span></span>
+</div>
+</a>
 </div>
 <!-- SERVICE -->
 <div class="service-section">
